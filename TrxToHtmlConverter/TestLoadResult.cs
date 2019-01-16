@@ -10,6 +10,6 @@ namespace TrxToHtmlConverter
 	{
 		public IEnumerable<Test> tests { get; set; }
 		public TotalTestsProperties totalTestsProp { get; set; }
-
-	}
+        public List<string> AllTestedClasses { get; set; }
+    }
 }

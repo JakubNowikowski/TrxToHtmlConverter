@@ -7,19 +7,16 @@ using System.Xml.Linq;
 
 namespace TrxToHtmlConverter
 {
-	class XmlReader
+	public class XmlReader
 	{
 		XDocument doc;
 		string xmlns;
-		public TestLoadResult TestLoadResult = new TestLoadResult();
-		public TotalTestsProperties TotalTestsProperties;
-		public List<string> AllTestedClasses = new List<string>();
+		
 
 		public XmlReader(string file)
 		{
 			doc = XDocument.Load(file);
 			xmlns = doc.Root.Name.Namespace.NamespaceName;
-			LoadValuesToReader();
 		}
 
 		public IEnumerable<Test> AllTestsResults()
@@ -28,58 +25,53 @@ namespace TrxToHtmlConverter
 			var allTestDefinitions = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("TestDefinitions", xmlns)).Elements();
 
 			IEnumerable<Test> joinedList = allTests.Join(allTestDefinitions,
-				(XElement e) =>
+				e => e.Attribute("testId").Value,
+				e => e.Attribute("id").Value,
+				(XElement e, XElement e2) => new Test()
 				{
-					return e.Attribute("testId").Value;
-				},
-				(XElement e) =>
-				{
-					return e.Attribute("id").Value;
-				},
-				(XElement e, XElement e2) =>
-				{
-					return new Test()
-					{
-						MethodName = e.Attribute("testName").Value,
-						ID = e.Attribute("testId").Value,
-						ClassName = e2.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value,
-						Result = e.Attribute("outcome").Value
-					};
+					MethodName = e.Attribute("testName").Value,
+					ID = e.Attribute("testId").Value,
+					ClassName = e2.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value,
+					Result = e.Attribute("outcome").Value
 				});
 			return joinedList;
 		}
 
-		public void LoadValuesToReader()
-		{
-			TestLoadResult.tests = AllTestsResults();
-			LoadAllTestedClasses();
-			LoadTotalTestsProperties();
-		}
+        public TestLoadResult CreateTestLoadResult()
+        {
+            return new TestLoadResult()
+            {
+                tests = AllTestsResults(),
+                totalTestsProp = LoadTotalTestsProperties(),
+                AllTestedClasses = LoadAllTestedClasses()
+            };
+        }
 
-		public void LoadAllTestedClasses()
-		{
-			var allTestDefinitions = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("TestDefinitions", xmlns)).Elements();
-			foreach (var e in allTestDefinitions)
-			{
-				AllTestedClasses.Add(e.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value);
-			}
+        public List<string> LoadAllTestedClasses()
+        {
+            List<string> AllTestedClasses = new List<string>();
+            var allTestDefinitions = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("TestDefinitions", xmlns)).Elements();
+            foreach (var e in allTestDefinitions)
+            {
+                AllTestedClasses.Add(e.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value);
+            }
 
-			for (int i = 0; i < AllTestedClasses.Count; i++)
-			{
-				AllTestedClasses[i] = AllTestedClasses[i].Split('.').Last();
-				AllTestedClasses[i] = AllTestedClasses[i].Split('+').First();
-			}
+            for (int i = 0; i < AllTestedClasses.Count; i++)
+            {
+                AllTestedClasses[i] = AllTestedClasses[i].Split('.').Last();
+                AllTestedClasses[i] = AllTestedClasses[i].Split('+').First();
+            }
 
-			AllTestedClasses = AllTestedClasses.Distinct().ToList();
-		}
+            return AllTestedClasses.Distinct().ToList();
+        }
 
-		public void LoadTotalTestsProperties()
+        public TotalTestsProperties LoadTotalTestsProperties()
 		{
 			var total = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns));
 			var startTime = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Times", xmlns)).Attribute("start");
 			var finishTime = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Times", xmlns)).Attribute("finish");
 
-			TotalTestsProperties = new TotalTestsProperties()
+			return new TotalTestsProperties()
 			{
 				Total = total.Attribute("total").Value.ToString(),
 				Executed = total.Attribute("executed").Value.ToString(),

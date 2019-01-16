@@ -17,5 +17,15 @@ namespace TrxToHtmlConverter
 		{
 			return $"{MethodName} - {ClassName.Split('.').Last()} - Result: {Result}";
 		}
-	}
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Test))
+                return false;
+
+            Test o = (Test)obj;
+
+            return MethodName == o.MethodName && ClassName == o.ClassName && ID == o.ID && Result == o.Result;
+        }
+    }
 }
