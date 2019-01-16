@@ -18,7 +18,7 @@ namespace TrxToHtmlConverter
             //var results = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Results", xmlns));
             //var summary = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns)).Attribute("total").Value;
 
-            HtmlGeneration Html = new HtmlGeneration(@"C:\Users\ivakrupa\Downloads\xd.html");
+            HtmlGeneration Html = new HtmlGeneration(@"C:\Users\ivakrupa\Downloads\xd2.html");
             Html.Generation();
 
             //var id =doc.Root.Element(XName.Get("TestRun"));
