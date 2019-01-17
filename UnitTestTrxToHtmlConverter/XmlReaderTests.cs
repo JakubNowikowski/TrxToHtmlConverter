@@ -11,7 +11,7 @@ namespace UnitTestTrxToHtmlConverter
         [Test]
         public void AllTestsResults_ValidFileAsInput_IEnumarableCreatedCorrectly()
         {
-            XmlReader reader = new XmlReader(@"C:\Users\OptiNav\Source\Repos\JakubNowikowski\TrxToHtmlConverter\TrxToHtmlConverter\bin\Debug\report.trx");
+            XmlReader reader = new XmlReader(@"C:\Users\OptiNav\Source\Repos\JakubNowikowski\TrxToHtmlConverter\TrxToHtmlConverter\bin\Debug\shortreport.trx");
             IEnumerable<Test> expected = new List<Test>()
             {
                 new Test()
@@ -34,6 +34,24 @@ namespace UnitTestTrxToHtmlConverter
 
             CollectionAssert.AreEqual(expected, actual);
 
+        }
+
+        [Test]
+        public void LoadAllTestedClasses_ValidFileAsInput_ListCreatedCorrectly()
+        {
+            XmlReader reader = new XmlReader(@"C:\Users\OptiNav\Source\Repos\JakubNowikowski\TrxToHtmlConverter\TrxToHtmlConverter\bin\Debug\fullreport.trx");
+            List<string> expected = new List<string>()
+            {
+                "DxfExportTests",
+                "DxfItemDescriptorTests",
+                "DxfItemTests",
+                "DxfValueTests",
+                "DxfBuilderTests"
+            };
+
+            var actual = reader.LoadAllTestedClasses();
+
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
