@@ -30,7 +30,7 @@ namespace TrxToHtmlConverter
 				{
 					MethodName = e.Attribute("testName").Value,
 					ID = e.Attribute("testId").Value,
-					ClassName = e2.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value,
+					ClassName = e2.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value.ToString().Split('.').Last().Split('+').First(),
 					Result = e.Attribute("outcome").Value
 				});
 			return joinedList;
@@ -100,10 +100,9 @@ namespace TrxToHtmlConverter
 				Completed = total.Attribute("completed").Value.ToString(),
 				InProgress = total.Attribute("inProgress").Value.ToString(),
 				Pending = total.Attribute("pending").Value.ToString(),
-				StartTime = startTime.Value.ToString(),
-				FinishTime = finishTime.Value.ToString(),
+				StartTime = DateTime.Parse(startTime.Value.ToString()),
+				FinishTime = DateTime.Parse(finishTime.Value.ToString()),
 				TestCategory = testCategory.Value.ToString()
-
 			};
 		}
 	}

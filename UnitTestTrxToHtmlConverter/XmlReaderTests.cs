@@ -106,7 +106,10 @@ namespace UnitTestTrxToHtmlConverter
         [Test]
         public void LoadTotalTestsProperties_ValidFileAsInput_TotalTestPropertiesCorrectlyLoaded()
         {
-            XmlReader reader = new XmlReader(filePathShortReport);
+			DateTime startDate = DateTime.Parse("2019-01-15T12:06:36.8892587+01:00");
+			DateTime finishDate = DateTime.Parse("2019-01-15T12:06:36.8892587+01:00");
+
+			XmlReader reader = new XmlReader(filePathShortReport);
             TotalTestsProperties expected = new TotalTestsProperties()
             {
                 Total = "97",
@@ -125,8 +128,8 @@ namespace UnitTestTrxToHtmlConverter
                 Completed = "0",
                 InProgress = "0",
                 Pending = "0",
-                StartTime = "2019-01-15T12:06:36.8892587+01:00",
-                FinishTime = "2019-01-15T12:06:41.3405171+01:00",
+                StartTime = startDate,
+                FinishTime = finishDate,
                 TestCategory = "DxfExportingTests"
             };
 

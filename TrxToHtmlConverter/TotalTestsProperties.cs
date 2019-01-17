@@ -24,8 +24,8 @@ namespace TrxToHtmlConverter
 		public string Completed { get; set; }
 		public string InProgress { get; set; }
 		public string Pending { get; set; }
-		public string StartTime { get; set; }
-		public string FinishTime { get; set; }
+		public DateTime StartTime { get; set; }
+		public DateTime FinishTime { get; set; }
 		public string TestCategory { get; set; }
 
         public override bool Equals(object obj)
