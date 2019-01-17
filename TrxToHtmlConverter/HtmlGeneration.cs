@@ -19,7 +19,7 @@ namespace TrxToHtmlConverter
         public HtmlGeneration(string trxFilePath, string outputPath)
         {
             _OutputPath = outputPath;
-            _TemplatePath = @"C:\Users\ivakrupa\Downloads\xd.html";
+            _TemplatePath = @"template.html";
             _TrxFilePath = trxFilePath;
         }
         public void Generation()

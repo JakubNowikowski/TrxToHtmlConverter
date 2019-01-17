@@ -102,9 +102,6 @@ namespace UnitTestTrxToHtmlConverter
 
 
 		}
-	
-
-         
 
         [Test]
         public void LoadTotalTestsProperties_ValidFileAsInput_TotalTestPropertiesCorrectlyLoaded()
