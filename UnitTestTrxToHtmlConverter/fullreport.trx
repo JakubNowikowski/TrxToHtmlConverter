@@ -1,0 +1,1025 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ae34b24e-080e-4be4-9db0-6e501c5ed144" name="IVAKRUPA@IV05Q000JN 2019-01-15 12:06:39" runUser="CZNET\IVAKRUPA" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2019-01-15T12:06:39.3512245+01:00" queuing="2019-01-15T12:06:39.3512245+01:00" start="2019-01-15T12:06:36.8892587+01:00" finish="2019-01-15T12:06:41.3405171+01:00" />
+  <TestSettings name="default" id="b9c6d835-1a7f-4f0f-9e0e-edaa4c51e02f">
+    <Execution>
+      <TestTypeSpecific />
+    </Execution>
+    <Deployment runDeploymentRoot="IVAKRUPA_IV05Q000JN 2019-01-15 12_06_39" />
+    <Properties />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="6b8f145c-40d4-409d-add4-50ba38b4bc22" testId="42d6fd3c-0bed-e5c0-25f8-dbd17516e7ec" testName="Export_OneLine_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.8708795" startTime="2019-01-15T12:06:36.8892587+01:00" endTime="2019-01-15T12:06:39.1857833+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6b8f145c-40d4-409d-add4-50ba38b4bc22" />
+    <UnitTestResult executionId="b00be097-43a5-4395-afab-ae49cd92ce5f" testId="87ab6a24-2350-c6bb-d941-ec72a0698c69" testName="Export_OneCircle_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0084386" startTime="2019-01-15T12:06:39.2088452+01:00" endTime="2019-01-15T12:06:39.2268926+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b00be097-43a5-4395-afab-ae49cd92ce5f" />
+    <UnitTestResult executionId="f68a1a59-0ae2-4741-8a11-caf430bd8cbd" testId="bf0fb4a4-9373-1ba5-4d99-6766d0122548" testName="Export_OneArc_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0061744" startTime="2019-01-15T12:06:39.2449412+01:00" endTime="2019-01-15T12:06:39.2569732+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f68a1a59-0ae2-4741-8a11-caf430bd8cbd" />
+    <UnitTestResult executionId="b35cfc05-6412-4042-9519-3013a02e2104" testId="e879151a-749f-b64e-ba9e-fa620354c00b" testName="Export_OnePoint_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0045280" startTime="2019-01-15T12:06:39.2720132+01:00" endTime="2019-01-15T12:06:39.2830426+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b35cfc05-6412-4042-9519-3013a02e2104" />
+    <UnitTestResult executionId="beace952-3181-4607-9843-378bdaca4196" testId="df1989a5-2b8a-b1d8-08be-e6ababdeab99" testName="Export_OneSlot_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0031451" startTime="2019-01-15T12:06:39.2940719+01:00" endTime="2019-01-15T12:06:39.3010908+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="beace952-3181-4607-9843-378bdaca4196" />
+    <UnitTestResult executionId="9fefb0e2-c56d-4d55-b25a-a37b9f13d8c5" testId="8af14778-d2fe-2707-4f9c-280ecc970e09" testName="Export_OneRectangle_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0030714" startTime="2019-01-15T12:06:39.3081109+01:00" endTime="2019-01-15T12:06:39.3151287+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fefb0e2-c56d-4d55-b25a-a37b9f13d8c5" />
+    <UnitTestResult executionId="0a1da32e-ec90-47c5-a70a-c64e820fd9e2" testId="4644328a-8880-d707-843c-6f7b07ca97b3" testName="Export_OnePolyline_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0030375" startTime="2019-01-15T12:06:39.3261578+01:00" endTime="2019-01-15T12:06:39.3321729+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a1da32e-ec90-47c5-a70a-c64e820fd9e2" />
+    <UnitTestResult executionId="b1fbf28d-e5ef-43c6-8089-bd202c2bacb7" testId="3ceebaf5-b389-c5c1-7161-29b1e19cbeb1" testName="Export_TwoLines_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0025548" startTime="2019-01-15T12:06:39.3422005+01:00" endTime="2019-01-15T12:06:39.3482165+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1fbf28d-e5ef-43c6-8089-bd202c2bacb7" />
+    <UnitTestResult executionId="9d8b829e-290a-45fc-9809-bd474ec4bf8e" testId="fc81c70e-58d9-42fd-a64b-266bd9b7efd9" testName="Export_TwoCircles_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0025099" startTime="2019-01-15T12:06:39.3612514+01:00" endTime="2019-01-15T12:06:39.3672666+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9d8b829e-290a-45fc-9809-bd474ec4bf8e" />
+    <UnitTestResult executionId="131bbd38-acfd-4296-9a13-013017f11d7f" testId="1f1c0602-b92b-e197-0e8a-2b638bf65e42" testName="Export_TwoArcs_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0025002" startTime="2019-01-15T12:06:39.3782970+01:00" endTime="2019-01-15T12:06:39.3843119+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="131bbd38-acfd-4296-9a13-013017f11d7f" />
+    <UnitTestResult executionId="5d6f5ba9-fde5-4e65-a7e9-cc143e79c708" testId="1b014b45-02a9-e0be-c762-7af8ce646bc1" testName="Export_TwoPoints_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0054175" startTime="2019-01-15T12:06:39.3963439+01:00" endTime="2019-01-15T12:06:39.4143931+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d6f5ba9-fde5-4e65-a7e9-cc143e79c708" />
+    <UnitTestResult executionId="1eb0562e-ce0e-4895-8d2c-555324e271b1" testId="42e4f132-c4b9-f932-ecfc-ac52a65db668" testName="Export_TwoSlots_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0025435" startTime="2019-01-15T12:06:39.4304354+01:00" endTime="2019-01-15T12:06:39.4364509+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1eb0562e-ce0e-4895-8d2c-555324e271b1" />
+    <UnitTestResult executionId="fcfe6de6-07d3-4321-99a8-547c4f23f59f" testId="09a07f7d-2d68-c788-2be0-7f66401177a4" testName="Export_TwoRectangles_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0030603" startTime="2019-01-15T12:06:39.4464778+01:00" endTime="2019-01-15T12:06:39.4534974+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fcfe6de6-07d3-4321-99a8-547c4f23f59f" />
+    <UnitTestResult executionId="2fd7497e-1b89-4d52-8503-50c101401206" testId="4830c22f-0788-99b4-f6ce-16dce7410d7f" testName="Export_TwoPolylines_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0029425" startTime="2019-01-15T12:06:39.4625194+01:00" endTime="2019-01-15T12:06:39.4685374+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2fd7497e-1b89-4d52-8503-50c101401206" />
+    <UnitTestResult executionId="4dbb2a42-a625-4f23-a2b0-78e782665d9f" testId="e6727328-598e-1cf0-bda7-e16e4ad7ffab" testName="Export_VariousItemsCombination1_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0031448" startTime="2019-01-15T12:06:39.4795644+01:00" endTime="2019-01-15T12:06:39.4865842+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4dbb2a42-a625-4f23-a2b0-78e782665d9f" />
+    <UnitTestResult executionId="6ddc73b8-2bd5-492c-acaa-3808a0a9b967" testId="7b17cda9-ecf6-a234-dc46-8fb13a714195" testName="Export_VariousItemsCombination2_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0026248" startTime="2019-01-15T12:06:39.4936018+01:00" endTime="2019-01-15T12:06:39.4996206+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ddc73b8-2bd5-492c-acaa-3808a0a9b967" />
+    <UnitTestResult executionId="0d6302af-3485-4ec9-93a9-0bd7ebda3184" testId="0a63d451-d235-fa29-257f-bb5e5437b625" testName="Export_VariousItemsCombination3_CorrectlyExported" computerName="IV05Q000JN" duration="00:00:00.0028939" startTime="2019-01-15T12:06:39.5096456+01:00" endTime="2019-01-15T12:06:39.5156627+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d6302af-3485-4ec9-93a9-0bd7ebda3184" />
+    <UnitTestResult executionId="843e9d7f-f72f-46e5-ae30-7a12f8b468f8" testId="b229d0f2-abf8-6355-bf17-8eaebd488480" testName="AddComponent_ValidData_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0007708" startTime="2019-01-15T12:06:39.5266909+01:00" endTime="2019-01-15T12:06:39.5307024+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="843e9d7f-f72f-46e5-ae30-7a12f8b468f8" />
+    <UnitTestResult executionId="b9aa1438-e73d-459c-b3f8-031a4788cd73" testId="44e34ea5-ef32-704d-e818-e514f08497ce" testName="AddComponent_EmptyHeader_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0002793" startTime="2019-01-15T12:06:39.5407288+01:00" endTime="2019-01-15T12:06:39.5447389+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b9aa1438-e73d-459c-b3f8-031a4788cd73" />
+    <UnitTestResult executionId="25484877-de43-464c-beaa-9dceb42a714c" testId="f756daf4-3175-ae2c-7d69-b57c1f7557a1" testName="AddComponent_EmptyFooter_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0005876" startTime="2019-01-15T12:06:39.5547653+01:00" endTime="2019-01-15T12:06:39.5647925+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25484877-de43-464c-beaa-9dceb42a714c" />
+    <UnitTestResult executionId="4c468e27-0a32-420a-8ddf-adec493f489a" testId="90dfd727-bd0b-4f09-d4fb-b4e1fc13b12d" testName="AddComponent_InputWithNewLines_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0009335" startTime="2019-01-15T12:06:39.5781481+01:00" endTime="2019-01-15T12:06:39.5918660+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c468e27-0a32-420a-8ddf-adec493f489a" />
+    <UnitTestResult executionId="a655b5d5-bf24-41cc-a8d2-0a36399637b9" testId="89d43805-3151-9a4f-cc8c-9f8b1dc4cdbf" testName="AddComponent_EmptyInput_DescriptorUnchanged" computerName="IV05Q000JN" duration="00:00:00.0002025" startTime="2019-01-15T12:06:39.6079101+01:00" endTime="2019-01-15T12:06:39.6119202+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a655b5d5-bf24-41cc-a8d2-0a36399637b9" />
+    <UnitTestResult executionId="60e3d935-ddbf-4dac-8a36-47771796cee8" testId="d3762183-ebfc-3c92-f032-810984e3680b" testName="AddComponent_AnyInput_OwnInstanceReturned" computerName="IV05Q000JN" duration="00:00:00.0003774" startTime="2019-01-15T12:06:39.6259566+01:00" endTime="2019-01-15T12:06:39.6299676+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="60e3d935-ddbf-4dac-8a36-47771796cee8" />
+    <UnitTestResult executionId="22cfb872-30ae-43a7-83cc-1d01db9076cf" testId="0cc2348c-af7b-bb6b-d7ac-11003bdc47db" testName="AddComponent_MultipleComponentsAdded_ComponentsAddedInRightOrder" computerName="IV05Q000JN" duration="00:00:00.0007065" startTime="2019-01-15T12:06:39.6440044+01:00" endTime="2019-01-15T12:06:39.6540342+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22cfb872-30ae-43a7-83cc-1d01db9076cf" />
+    <UnitTestResult executionId="ef117da5-3245-4331-9d41-6512842f0836" testId="a3132993-2ed5-072c-e73a-76936c882941" testName="AddFooter_FooterAddedAfterComponent_ComponentsAddedInRightOrder" computerName="IV05Q000JN" duration="00:00:00.0002952" startTime="2019-01-15T12:06:39.6710778+01:00" endTime="2019-01-15T12:06:39.6750865+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef117da5-3245-4331-9d41-6512842f0836" />
+    <UnitTestResult executionId="3fea70aa-29f8-4dd5-b62a-069489a394f5" testId="33375184-f0ad-ba2f-9cf6-a463928987b7" testName="AddFooter_ComponentAddedAfterFooter_ComponentsAddedInRightOrder" computerName="IV05Q000JN" duration="00:00:00.0002813" startTime="2019-01-15T12:06:39.6871179+01:00" endTime="2019-01-15T12:06:39.6911289+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3fea70aa-29f8-4dd5-b62a-069489a394f5" />
+    <UnitTestResult executionId="2c562d27-4cdb-4a0e-9583-917872b16595" testId="0f02b62f-319b-b16c-48cb-ae74c2bdc010" testName="AddFooter_TwoFootersAddedAfterComponent_ComponentsAddedInRightOrder" computerName="IV05Q000JN" duration="00:00:00.0003009" startTime="2019-01-15T12:06:39.7031623+01:00" endTime="2019-01-15T12:06:39.7071721+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c562d27-4cdb-4a0e-9583-917872b16595" />
+    <UnitTestResult executionId="efe0ae01-c774-42e3-b1c7-ff0bc9b512df" testId="7f5915dd-241b-6f01-2c21-a0eac2f13aaa" testName="AddFooter_ComponentAddedBetweenFooters_ComponentsAddedInRightOrder" computerName="IV05Q000JN" duration="00:00:00.0004545" startTime="2019-01-15T12:06:39.7171982+01:00" endTime="2019-01-15T12:06:39.7232162+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="efe0ae01-c774-42e3-b1c7-ff0bc9b512df" />
+    <UnitTestResult executionId="d87832c8-77d8-4f82-a372-5e2c89843d4d" testId="2f55f33a-53a2-4fcb-6632-b483ce986c5d" testName="AddFooter_ComponentsAddedBetweenFooters_ComponentsAddedInRightOrder" computerName="IV05Q000JN" duration="00:00:00.0008886" startTime="2019-01-15T12:06:39.7352456+01:00" endTime="2019-01-15T12:06:39.7452726+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d87832c8-77d8-4f82-a372-5e2c89843d4d" />
+    <UnitTestResult executionId="cf5b7142-4930-4e3e-9035-db630eabe990" testId="b0c4a32d-9ed0-cd6b-7f26-4ea19e5f711e" testName="AddDescriptorComponent_ItemWithOneAddedComponent_AddComponentUsedOnce" computerName="IV05Q000JN" duration="00:00:00.0020178" startTime="2019-01-15T12:06:39.7603126+01:00" endTime="2019-01-15T12:06:39.7673341+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf5b7142-4930-4e3e-9035-db630eabe990" />
+    <UnitTestResult executionId="f861700c-35e2-48a7-a59b-b5c543600b73" testId="5b35bc82-0433-9a9a-dc86-55440f829bc0" testName="AddDescriptorComponent_ItemWithOneAddedComponent_AddComponentCalledWithCorrectStringArgument" computerName="IV05Q000JN" duration="00:00:00.0004044" startTime="2019-01-15T12:06:39.7783603+01:00" endTime="2019-01-15T12:06:39.7863816+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f861700c-35e2-48a7-a59b-b5c543600b73" />
+    <UnitTestResult executionId="cf12ace4-3b9b-4ea0-977c-d96d29950f0d" testId="df962f43-807a-1fd0-85b5-fa564e58c3aa" testName="AddDescriptorComponent_EmptyHeaderAndValidFooter_PreventedFromAdding" computerName="IV05Q000JN" duration="00:00:00.0004417" startTime="2019-01-15T12:06:39.8004196+01:00" endTime="2019-01-15T12:06:39.8107844+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf12ace4-3b9b-4ea0-977c-d96d29950f0d" />
+    <UnitTestResult executionId="cb44f22d-7f44-43e6-a3f5-e1ceacfd1fc8" testId="eab141c0-598d-fb5f-c6ba-fe30551d9c20" testName="AddDescriptorComponent_ValidHeader_StringsCorrectlyJoined" computerName="IV05Q000JN" duration="00:00:00.0005299" startTime="2019-01-15T12:06:39.8254885+01:00" endTime="2019-01-15T12:06:39.8358542+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb44f22d-7f44-43e6-a3f5-e1ceacfd1fc8" />
+    <UnitTestResult executionId="4673d0f2-a1df-46f8-8685-4a2718e4a2df" testId="21ac3186-2a8c-a0b4-ee66-a201f64fa840" testName="AddDescriptorComponent_ValidHeaderAndValidFooterWithNums_StringsCorrectlyJoined" computerName="IV05Q000JN" duration="00:00:00.0005378" startTime="2019-01-15T12:06:39.8528987+01:00" endTime="2019-01-15T12:06:39.8617532+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4673d0f2-a1df-46f8-8685-4a2718e4a2df" />
+    <UnitTestResult executionId="385572d6-915d-4d76-86f9-84f539eafdc6" testId="e1ef3f2d-d08c-b258-d5d0-8359441a5cd0" testName="AddDescriptorComponent_HeaderWithoutNumAndFooterWithNum_StringsCorrectlyJoined" computerName="IV05Q000JN" duration="00:00:00.0004801" startTime="2019-01-15T12:06:39.8766237+01:00" endTime="2019-01-15T12:06:39.8826405+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="385572d6-915d-4d76-86f9-84f539eafdc6" />
+    <UnitTestResult executionId="df6bbc21-94a9-4c9d-a3b7-729d56276fdd" testId="492ef8ce-7c05-bd79-6d83-1c1ba5a89a92" testName="AddDescriptorComponent_HeaderIsNull_NoComponentAdded" computerName="IV05Q000JN" duration="00:00:00.0001897" startTime="2019-01-15T12:06:39.8936676+01:00" endTime="2019-01-15T12:06:39.8976811+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df6bbc21-94a9-4c9d-a3b7-729d56276fdd" />
+    <UnitTestResult executionId="c0e0df9e-fe1f-4dd1-b696-0fb6491250e5" testId="fd3b7049-b312-5e9b-0c97-716018b06df3" testName="AddDescriptorComponent_HeaderIsNullAndFooterIsValid_NoComponentAdded" computerName="IV05Q000JN" duration="00:00:00.0001826" startTime="2019-01-15T12:06:39.9077072+01:00" endTime="2019-01-15T12:06:39.9117167+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0e0df9e-fe1f-4dd1-b696-0fb6491250e5" />
+    <UnitTestResult executionId="c6fb8ba2-6b7b-46d1-8780-11dd8018e1b4" testId="24fc8524-feff-3d5d-f737-3c0dd290d242" testName="AddDescriptorComponent_ValidHeaderAndNullFooter_NoComponentAdded" computerName="IV05Q000JN" duration="00:00:00.0001831" startTime="2019-01-15T12:06:39.9197358+01:00" endTime="2019-01-15T12:06:39.9237476+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c6fb8ba2-6b7b-46d1-8780-11dd8018e1b4" />
+    <UnitTestResult executionId="ccaea36f-8db4-4815-969d-d7b30215e28b" testId="78413e28-c806-a70d-79e5-099dc9dfe0d3" testName="JoinStringsWithNewLine_ValidInput_StringsJoined" computerName="IV05Q000JN" duration="00:00:00.0001908" startTime="2019-01-15T12:06:39.9307685+01:00" endTime="2019-01-15T12:06:39.9347783+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ccaea36f-8db4-4815-969d-d7b30215e28b" />
+    <UnitTestResult executionId="44c25aef-2faf-4c24-9a53-b97466d7fa83" testId="de158a1a-310b-b9d3-57f7-0e10e43331f5" testName="JoinStringsWithNewLine_FirstNullSecondValid_NewLineJoinedWithSecondString" computerName="IV05Q000JN" duration="00:00:00.0001900" startTime="2019-01-15T12:06:39.9417976+01:00" endTime="2019-01-15T12:06:39.9458083+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="44c25aef-2faf-4c24-9a53-b97466d7fa83" />
+    <UnitTestResult executionId="edc99695-3edb-43f4-930f-27fb4f906806" testId="7e1495a1-f68a-ccee-62ac-cb8d61a53971" testName="JoinStringsWithNewLine_FirstValidSecondNull_FirstStringJoinedWithNewLine" computerName="IV05Q000JN" duration="00:00:00.0001698" startTime="2019-01-15T12:06:39.9548320+01:00" endTime="2019-01-15T12:06:39.9588426+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="edc99695-3edb-43f4-930f-27fb4f906806" />
+    <UnitTestResult executionId="1121bd3f-5948-4be3-b1bd-1a699c832540" testId="c512de33-c0c0-7a04-2fa2-4954ee148582" testName="AddDescriptorFooter_AddValidFooter_CorrectlyInvoke" computerName="IV05Q000JN" duration="00:00:00.0002574" startTime="2019-01-15T12:06:39.9658610+01:00" endTime="2019-01-15T12:06:39.9698717+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1121bd3f-5948-4be3-b1bd-1a699c832540" />
+    <UnitTestResult executionId="1992e4bf-e206-4796-933d-8854f0ca23cd" testId="d7dd6bc0-1711-085c-56bb-dc23ed7601c8" testName="AddDescriptorFooter_FooterWithNum_InvokedWithCorrectParameters" computerName="IV05Q000JN" duration="00:00:00.0004275" startTime="2019-01-15T12:06:39.9768906+01:00" endTime="2019-01-15T12:06:39.9859132+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1992e4bf-e206-4796-933d-8854f0ca23cd" />
+    <UnitTestResult executionId="283ccbcf-885b-4780-a2d1-5c62ccd4d142" testId="3ad79681-9172-8a33-e4ac-629921df6323" testName="AddChild_ValidInput_ChildAdded" computerName="IV05Q000JN" duration="00:00:00.0006235" startTime="2019-01-15T12:06:39.9969423+01:00" endTime="2019-01-15T12:06:40.0029606+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="283ccbcf-885b-4780-a2d1-5c62ccd4d142" />
+    <UnitTestResult executionId="7142212d-927c-47f3-9516-b5b553c71cd5" testId="06a0c81e-c48c-86d1-b4a2-876bc3aafe42" testName="AddChild_NullInput_ChildNotAdded" computerName="IV05Q000JN" duration="00:00:00.0003928" startTime="2019-01-15T12:06:40.0139879+01:00" endTime="2019-01-15T12:06:40.0223469+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7142212d-927c-47f3-9516-b5b553c71cd5" />
+    <UnitTestResult executionId="02e0b923-4069-48a7-bc33-965d60adedfb" testId="12b93059-2385-baa0-f8e0-1183f7934ae1" testName="AddValue_ValidInput_ValueAddedAsChild" computerName="IV05Q000JN" duration="00:00:00.0016227" startTime="2019-01-15T12:06:40.0380542+01:00" endTime="2019-01-15T12:06:40.0480777+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02e0b923-4069-48a7-bc33-965d60adedfb" />
+    <UnitTestResult executionId="a7752303-b837-4d00-9147-5f21d78aab18" testId="9493d3bf-e87e-7a47-52d2-7bc99444da36" testName="AddValue_NullValueAndValidCode_NoValueAdded" computerName="IV05Q000JN" duration="00:00:00.0002110" startTime="2019-01-15T12:06:40.0634556+01:00" endTime="2019-01-15T12:06:40.0674709+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7752303-b837-4d00-9147-5f21d78aab18" />
+    <UnitTestResult executionId="75e74471-6c5e-48c9-bd4b-9904b57c7b77" testId="0bb667d4-7b58-8472-15bc-a552af7a5591" testName="AddValues_ValidInput_CorrectNumberOfChildrenAdded" computerName="IV05Q000JN" duration="00:00:00.0014648" startTime="2019-01-15T12:06:40.0811683+01:00" endTime="2019-01-15T12:06:40.0932006+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="75e74471-6c5e-48c9-bd4b-9904b57c7b77" />
+    <UnitTestResult executionId="5329742e-af6c-4c61-82b0-a105db7340c8" testId="43c33788-7634-70d3-f261-51a57ad23323" testName="AddValues_ValidInput_AllValuesAddedAsChildren" computerName="IV05Q000JN" duration="00:00:00.0009463" startTime="2019-01-15T12:06:40.1052317+01:00" endTime="2019-01-15T12:06:40.1152573+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5329742e-af6c-4c61-82b0-a105db7340c8" />
+    <UnitTestResult executionId="0af16b09-234f-4df7-b98d-f193166dd887" testId="d547699f-9028-5430-c756-01a808a61f0d" testName="AddValues_NullValuesInInput_NoValuesAdded" computerName="IV05Q000JN" duration="00:00:00.0004892" startTime="2019-01-15T12:06:40.1292949+01:00" endTime="2019-01-15T12:06:40.1366529+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0af16b09-234f-4df7-b98d-f193166dd887" />
+    <UnitTestResult executionId="95051e80-77e4-40c4-bfd8-6eee58be60d9" testId="c8d57475-eaab-a42d-5fd4-a9c7a44d6c0f" testName="AddValues_NullAndCorrectValueInInput_CorrectValueAdded" computerName="IV05Q000JN" duration="00:00:00.0006380" startTime="2019-01-15T12:06:40.1513541+01:00" endTime="2019-01-15T12:06:40.1613845+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="95051e80-77e4-40c4-bfd8-6eee58be60d9" />
+    <UnitTestResult executionId="14ac61b0-0388-4c04-be67-75d3e8cb45b1" testId="f984c499-521c-1972-9c39-266a8179af47" testName="AddPosition_ValidInput_ValueForXAddedToChildren" computerName="IV05Q000JN" duration="00:00:00.0003595" startTime="2019-01-15T12:06:40.1774229+01:00" endTime="2019-01-15T12:06:40.1864495+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="14ac61b0-0388-4c04-be67-75d3e8cb45b1" />
+    <UnitTestResult executionId="3c1732dd-0aa6-4943-b5b1-89b82da9573c" testId="605d90d4-f33d-38b4-fe16-ba4bb4773b19" testName="AddPosition_ValidInput_ValueForYAddedToChildren" computerName="IV05Q000JN" duration="00:00:00.0002380" startTime="2019-01-15T12:06:40.2004837+01:00" endTime="2019-01-15T12:06:40.2054967+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3c1732dd-0aa6-4943-b5b1-89b82da9573c" />
+    <UnitTestResult executionId="3d832bf1-c961-462c-a051-0e51f68a1e91" testId="920870ea-eab4-ce6c-85d6-52593516f10f" testName="AddPosition_ValidInput_ValueForZAddedToChildren" computerName="IV05Q000JN" duration="00:00:00.0002750" startTime="2019-01-15T12:06:40.2198694+01:00" endTime="2019-01-15T12:06:40.2265547+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3d832bf1-c961-462c-a051-0e51f68a1e91" />
+    <UnitTestResult executionId="0579c6de-8f65-45a3-b76f-30ccedeea7d8" testId="fff7538c-4f1b-3d13-b26e-d267569a1e18" testName="AddPosition_NullValuesInInput_NoValuesAdded" computerName="IV05Q000JN" duration="00:00:00.0004494" startTime="2019-01-15T12:06:40.2375863+01:00" endTime="2019-01-15T12:06:40.2466069+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0579c6de-8f65-45a3-b76f-30ccedeea7d8" />
+    <UnitTestResult executionId="beb9a32e-d8b3-416b-ae4e-03c503bb1788" testId="bd6a75ce-02d8-2bcb-d23d-0cae92b9067b" testName="Export_OneChildAndNoDescriptor_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0003714" startTime="2019-01-15T12:06:40.2586420+01:00" endTime="2019-01-15T12:06:40.2616475+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="beb9a32e-d8b3-416b-ae4e-03c503bb1788" />
+    <UnitTestResult executionId="3536ea98-b318-477d-a067-94ffa9b7805f" testId="62742376-e73c-6de8-3c3f-e37a9b3c3d94" testName="Export_TwoChildrenAndNoDescriptor_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0003518" startTime="2019-01-15T12:06:40.2736818+01:00" endTime="2019-01-15T12:06:40.2800331+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3536ea98-b318-477d-a067-94ffa9b7805f" />
+    <UnitTestResult executionId="4427e91a-5b5e-4992-b769-dd9bc5468b7d" testId="7f194155-ba54-b140-f2e7-a4abe419bd03" testName="Export_NoChildrenAndNoDescriptor_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0001911" startTime="2019-01-15T12:06:40.2907251+01:00" endTime="2019-01-15T12:06:40.2957384+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4427e91a-5b5e-4992-b769-dd9bc5468b7d" />
+    <UnitTestResult executionId="f46b3051-789a-438d-b0c1-9049f57ac652" testId="b1beae46-b531-f9c5-aaef-e2852660fb1c" testName="Export_OneChildAndWithDescriptor_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0004061" startTime="2019-01-15T12:06:40.3037595+01:00" endTime="2019-01-15T12:06:40.3087734+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f46b3051-789a-438d-b0c1-9049f57ac652" />
+    <UnitTestResult executionId="e2c71069-7d1c-41ab-8012-5740bf6125a6" testId="4d49a895-5425-36c1-e17e-10edd84b08a8" testName="Export_NoChildrenAndWithDescriptor_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0004022" startTime="2019-01-15T12:06:40.3198022+01:00" endTime="2019-01-15T12:06:40.3328368+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2c71069-7d1c-41ab-8012-5740bf6125a6" />
+    <UnitTestResult executionId="93ac1a78-52ed-4501-aa0a-c68c23456df8" testId="0bc88163-b9ef-2264-cf13-400137c9b993" testName="Export_TwoChildrenWithDescriptor_ValidResult" computerName="IV05Q000JN" duration="00:00:00.0005760" startTime="2019-01-15T12:06:40.3438673+01:00" endTime="2019-01-15T12:06:40.3531664+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93ac1a78-52ed-4501-aa0a-c68c23456df8" />
+    <UnitTestResult executionId="59f01819-bc40-4bbf-a32c-8f493dd52c87" testId="58599da9-9ccc-77cd-de1b-971495621e1f" testName="Export_ValidData_CorrectResult" computerName="IV05Q000JN" duration="00:00:00.0002383" startTime="2019-01-15T12:06:40.3659251+01:00" endTime="2019-01-15T12:06:40.3699358+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59f01819-bc40-4bbf-a32c-8f493dd52c87" />
+    <UnitTestResult executionId="5b49fbca-e70c-4c5c-89aa-d8982016daa0" testId="a30aae58-8ae6-93ac-4971-b4954a5c2fc9" testName="Add_ValidLineAsInput_LineWithCorrectDescriptorAdded" computerName="IV05Q000JN" duration="00:00:00.0016844" startTime="2019-01-15T12:06:40.3789598+01:00" endTime="2019-01-15T12:06:40.3839734+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b49fbca-e70c-4c5c-89aa-d8982016daa0" />
+    <UnitTestResult executionId="3d7a6574-ad7e-442e-bc08-9b3e794d5063" testId="baa639bd-82bd-6bec-ed97-6dfe007a2fba" testName="Add_ValidLineAsInput_LineWithCorrectStartPointValuesAdded" computerName="IV05Q000JN" duration="00:00:00.0040160" startTime="2019-01-15T12:06:40.3909901+01:00" endTime="2019-01-15T12:06:40.4050309+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3d7a6574-ad7e-442e-bc08-9b3e794d5063" />
+    <UnitTestResult executionId="ff6c4f66-1d6d-42a7-8fb7-e47bf3632fef" testId="823b3746-bc8f-7cb1-e443-44c5303b9556" testName="Add_ValidLineAsInput_LineWithCorrectEndPointValuesAdded" computerName="IV05Q000JN" duration="00:00:00.0013366" startTime="2019-01-15T12:06:40.4190651+01:00" endTime="2019-01-15T12:06:40.4300978+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff6c4f66-1d6d-42a7-8fb7-e47bf3632fef" />
+    <UnitTestResult executionId="bc57b043-2b0f-4c30-b76c-88de75d62e40" testId="f8ff5545-0e3d-d005-32ab-5dbf6e9d09d9" testName="Add_NullAsInput_NoItemsAdded" computerName="IV05Q000JN" duration="00:00:00.0007631" startTime="2019-01-15T12:06:40.4421273+01:00" endTime="2019-01-15T12:06:40.4491442+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bc57b043-2b0f-4c30-b76c-88de75d62e40" />
+    <UnitTestResult executionId="88dd9a8a-35d7-4254-93de-bc438244115c" testId="6a338c0c-414f-1e2c-63f0-bf88dc55c58d" testName="Add_ValidPointAsInput_PointWithCorrectDescriptorAdded" computerName="IV05Q000JN" duration="00:00:00.0008223" startTime="2019-01-15T12:06:40.4601741+01:00" endTime="2019-01-15T12:06:40.4651869+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88dd9a8a-35d7-4254-93de-bc438244115c" />
+    <UnitTestResult executionId="7a4af30d-30fd-4b53-98c7-9a2ced23a3d8" testId="edcffa4a-c781-9674-a38a-fd161205f62e" testName="Add_ValidPointAsInput_PointWithCorrectPositionAdded" computerName="IV05Q000JN" duration="00:00:00.0011116" startTime="2019-01-15T12:06:40.4782224+01:00" endTime="2019-01-15T12:06:40.4912568+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a4af30d-30fd-4b53-98c7-9a2ced23a3d8" />
+    <UnitTestResult executionId="df987ae1-4284-455b-b02b-84f98fab0944" testId="1fb242c7-aeb8-58dc-eb11-9edfc045f32e" testName="Add_NullAsInput_NoItemsAdded" computerName="IV05Q000JN" duration="00:00:00.0005546" startTime="2019-01-15T12:06:40.5012838+01:00" endTime="2019-01-15T12:06:40.5072980+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df987ae1-4284-455b-b02b-84f98fab0944" />
+    <UnitTestResult executionId="6d28567b-1a33-4a6d-a51d-eb67d0ec7fdb" testId="6578aaf6-5f90-3ef6-5720-7459e136b220" testName="Add_ValidCircleAsInput_CircleWithCorrectDescriptorAdded" computerName="IV05Q000JN" duration="00:00:00.0009574" startTime="2019-01-15T12:06:40.5163220+01:00" endTime="2019-01-15T12:06:40.5223381+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6d28567b-1a33-4a6d-a51d-eb67d0ec7fdb" />
+    <UnitTestResult executionId="ab33d887-a645-4c45-8146-17aeebaab91b" testId="157022d0-910d-28d1-7901-b4e9febeae81" testName="Add_ValidCircleAsInput_CircleWithCorrectNumberOfValuesAdded" computerName="IV05Q000JN" duration="00:00:00.0009597" startTime="2019-01-15T12:06:40.5353730+01:00" endTime="2019-01-15T12:06:40.5464029+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ab33d887-a645-4c45-8146-17aeebaab91b" />
+    <UnitTestResult executionId="7c1eb187-4df7-4bdb-b69d-b9f3fbe00c3a" testId="4751aef9-6914-c7f5-021c-2ee5bc01a3eb" testName="Add_ValidCircleAsInput_CircleWithCorrectPositionAdded" computerName="IV05Q000JN" duration="00:00:00.0006775" startTime="2019-01-15T12:06:40.5534216+01:00" endTime="2019-01-15T12:06:40.5584349+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c1eb187-4df7-4bdb-b69d-b9f3fbe00c3a" />
+    <UnitTestResult executionId="e7e116ea-6121-4da1-a72b-fb1958d2188f" testId="2d8046dd-ab1f-0b84-a92d-891454c0917d" testName="Add_ValidCircleAsInput_CircleWithCorrectRadiusAdded" computerName="IV05Q000JN" duration="00:00:00.0007549" startTime="2019-01-15T12:06:40.5644518+01:00" endTime="2019-01-15T12:06:40.5694645+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7e116ea-6121-4da1-a72b-fb1958d2188f" />
+    <UnitTestResult executionId="52ea8c47-603f-49f1-b508-72855e01a1d0" testId="6cd744c6-d6a8-988f-fdea-9869d42101f2" testName="Add_NullAsInput_NoItemsAdded" computerName="IV05Q000JN" duration="00:00:00.0006758" startTime="2019-01-15T12:06:40.5754803+01:00" endTime="2019-01-15T12:06:40.5794909+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52ea8c47-603f-49f1-b508-72855e01a1d0" />
+    <UnitTestResult executionId="c487066e-7aea-4d7a-8d66-8c3d00532c59" testId="8445cf76-6929-26f3-39be-4ce3d9163e34" testName="Add_ValidRectangleAsInput_RectangleWithCorrectDescriptorAdded" computerName="IV05Q000JN" duration="00:00:00.0013124" startTime="2019-01-15T12:06:40.5855069+01:00" endTime="2019-01-15T12:06:40.5925259+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c487066e-7aea-4d7a-8d66-8c3d00532c59" />
+    <UnitTestResult executionId="125b2d08-a722-42ad-bbcd-c3f990805ccc" testId="3a689bb7-08fa-2e59-b6b2-d34391f61748" testName="Add_ValidRectangleAsInput_CorrectNumberOfLinesAdded" computerName="IV05Q000JN" duration="00:00:00.0007819" startTime="2019-01-15T12:06:40.5995457+01:00" endTime="2019-01-15T12:06:40.6065629+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="125b2d08-a722-42ad-bbcd-c3f990805ccc" />
+    <UnitTestResult executionId="caf8b4b7-19c6-4ef0-9309-4720c3d7eba1" testId="4b8bab0c-969e-c9eb-ac14-4088e1834746" testName="Add_ValidRectangleAsInput_AllVerticesHaveTwoLinesConnectedToThem" computerName="IV05Q000JN" duration="00:00:00.0032878" startTime="2019-01-15T12:06:40.6135819+01:00" endTime="2019-01-15T12:06:40.6216029+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="caf8b4b7-19c6-4ef0-9309-4720c3d7eba1" />
+    <UnitTestResult executionId="49af4927-7428-4585-a870-162b60a3330b" testId="9dba34dc-1dea-aca8-ba65-72410f187533" testName="Add_ValidRectangleAsInput_RectangleWithLinesInRightOrder" computerName="IV05Q000JN" duration="00:00:00.0010146" startTime="2019-01-15T12:06:40.6316310+01:00" endTime="2019-01-15T12:06:40.6376465+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49af4927-7428-4585-a870-162b60a3330b" />
+    <UnitTestResult executionId="e59ab6bc-d938-4569-a1e1-e2f2e0d09f8a" testId="c2b8b98e-08fb-24b1-ee38-ec5ed526aeeb" testName="Add_NullAsInput_NoItemsAdded" computerName="IV05Q000JN" duration="00:00:00.0006835" startTime="2019-01-15T12:06:40.6466707+01:00" endTime="2019-01-15T12:06:40.6516844+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e59ab6bc-d938-4569-a1e1-e2f2e0d09f8a" />
+    <UnitTestResult executionId="62fd4177-0bcb-49bf-91ee-f9ab7393a1c7" testId="e0fa8a42-4767-6e2e-9713-5739fafdd221" testName="Add_ValidSlotAsInput_LinesWithCorrectDescriptorsAdded" computerName="IV05Q000JN" duration="00:00:00.0018059" startTime="2019-01-15T12:06:40.6587036+01:00" endTime="2019-01-15T12:06:40.6667249+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62fd4177-0bcb-49bf-91ee-f9ab7393a1c7" />
+    <UnitTestResult executionId="20f44893-a70f-43c3-9a42-40a7c16caad1" testId="931b94c9-9fb6-575e-cea0-53ffeecd2308" testName="Add_ValidSlotAsInput_ArcsWithCorrectDescriptorsAdded" computerName="IV05Q000JN" duration="00:00:00.0019214" startTime="2019-01-15T12:06:40.6757498+01:00" endTime="2019-01-15T12:06:40.6847735+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="20f44893-a70f-43c3-9a42-40a7c16caad1" />
+    <UnitTestResult executionId="ed403605-0744-4e35-9322-a71b2a8e508f" testId="a4d6177b-9f6f-01a7-2f9d-22e6df67a087" testName="Add_ValidSlotAsInput_LinesWithCorrectEndPositionsAdded" computerName="IV05Q000JN" duration="00:00:00.0012003" startTime="2019-01-15T12:06:40.6978093+01:00" endTime="2019-01-15T12:06:40.7018177+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed403605-0744-4e35-9322-a71b2a8e508f" />
+    <UnitTestResult executionId="bdca8b7a-5fa3-4d12-bf05-5dae595324f2" testId="60108990-deb8-a727-1359-2afcd7af057f" testName="Add_ValidSlotAsInput_LinesConnectCorrectVertices" computerName="IV05Q000JN" duration="00:00:00.0014077" startTime="2019-01-15T12:06:40.7108446+01:00" endTime="2019-01-15T12:06:40.7168563+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bdca8b7a-5fa3-4d12-bf05-5dae595324f2" />
+    <UnitTestResult executionId="400d2733-8e14-457b-ae13-a5c418f32f9d" testId="93650808-d203-c7c9-33bd-5d6c6996ac9d" testName="Add_ValidSlotAsInput_ArcsWithCorrectPositionsAdded" computerName="IV05Q000JN" duration="00:00:00.0011133" startTime="2019-01-15T12:06:40.7268852+01:00" endTime="2019-01-15T12:06:40.7339065+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="400d2733-8e14-457b-ae13-a5c418f32f9d" />
+    <UnitTestResult executionId="5fa6da31-cabe-4c5a-83f1-51c48c180381" testId="0bf354f4-e66d-875f-3aee-9c7eae612e7c" testName="Add_ValidSlotAsInput_ArcsAreNotInSamePosition" computerName="IV05Q000JN" duration="00:00:00.0011852" startTime="2019-01-15T12:06:40.7419233+01:00" endTime="2019-01-15T12:06:40.7479390+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5fa6da31-cabe-4c5a-83f1-51c48c180381" />
+    <UnitTestResult executionId="10922902-af57-4ce7-b7ef-fc7de5853031" testId="44187acd-50f1-0612-a478-703b604b16a2" testName="Add_ValidSlotAsInput_ArcsWithCorrectRadiusAdded" computerName="IV05Q000JN" duration="00:00:00.0010743" startTime="2019-01-15T12:06:40.7559603+01:00" endTime="2019-01-15T12:06:40.7609739+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10922902-af57-4ce7-b7ef-fc7de5853031" />
+    <UnitTestResult executionId="bff57188-6697-4453-9215-5c309aac1763" testId="c83ddc0b-50ec-2a3e-5247-5a8d8fe61d11" testName="Add_ValidSlotAsInput_ArcsWithCorrectDirectionsAdded" computerName="IV05Q000JN" duration="00:00:00.0012293" startTime="2019-01-15T12:06:40.7689953+01:00" endTime="2019-01-15T12:06:40.7750113+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bff57188-6697-4453-9215-5c309aac1763" />
+    <UnitTestResult executionId="45407cda-4e84-40c3-ad6b-c6a88959fd9d" testId="08a91d08-4769-0c71-4736-7014cd30b502" testName="Add_NullAsInput_NoItemsAdded" computerName="IV05Q000JN" duration="00:00:00.0007844" startTime="2019-01-15T12:06:40.7840347+01:00" endTime="2019-01-15T12:06:40.7890495+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45407cda-4e84-40c3-ad6b-c6a88959fd9d" />
+    <UnitTestResult executionId="eaddbd34-17f3-4225-9d0a-ed6a1a06e1bb" testId="fcf9ddde-791a-b00d-a195-502b861d287c" testName="Add_ValidArcAsInput_ArcWithCorrectDescriptorAdded" computerName="IV05Q000JN" duration="00:00:00.0010459" startTime="2019-01-15T12:06:40.7990781+01:00" endTime="2019-01-15T12:06:40.8040903+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eaddbd34-17f3-4225-9d0a-ed6a1a06e1bb" />
+    <UnitTestResult executionId="d0b4d6c3-2fc9-4a8d-9b04-29bbfad28e38" testId="708501cd-d46c-9395-aa56-07ba8cc67c26" testName="Add_ValidArcAsInput_ArcAdded" computerName="IV05Q000JN" duration="00:00:00.0017271" startTime="2019-01-15T12:06:40.8201304+01:00" endTime="2019-01-15T12:06:40.8301599+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0b4d6c3-2fc9-4a8d-9b04-29bbfad28e38" />
+    <UnitTestResult executionId="373d3273-f443-42bf-887e-c184b857cd50" testId="58752781-0b6e-2ab2-5a98-e2fa923a42c4" testName="Add_ValidArcAsInput_ArcWithCorrectRadiusAdded" computerName="IV05Q000JN" duration="00:00:00.0018432" startTime="2019-01-15T12:06:40.8431957+01:00" endTime="2019-01-15T12:06:40.8542231+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="373d3273-f443-42bf-887e-c184b857cd50" />
+    <UnitTestResult executionId="f859e845-0ea8-4ea9-9948-c05c703cd4c4" testId="cf1dcdb0-4752-0e05-d14b-ddd95cd98cf1" testName="Add_ValidArcAsInput_ArcWithCorrectPositionAdded" computerName="IV05Q000JN" duration="00:00:00.0009193" startTime="2019-01-15T12:06:40.8652541+01:00" endTime="2019-01-15T12:06:40.8722725+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f859e845-0ea8-4ea9-9948-c05c703cd4c4" />
+    <UnitTestResult executionId="0078f926-e0bb-4bde-b727-57fbc70fe929" testId="82edff78-32af-c1bd-d347-fe62e1add22b" testName="Add_NullAsInput_NoItemsAdded" computerName="IV05Q000JN" duration="00:00:00.0006923" startTime="2019-01-15T12:06:40.8853069+01:00" endTime="2019-01-15T12:06:40.8913209+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0078f926-e0bb-4bde-b727-57fbc70fe929" />
+    <UnitTestResult executionId="52ec2083-22fc-4643-b452-50aced759372" testId="de203f78-b67f-b615-7a26-a97837d96ffe" testName="Add_ValidPolylineAsInput_PolylineWithCorrectDescriptorAdded" computerName="IV05Q000JN" duration="00:00:00.0013220" startTime="2019-01-15T12:06:40.8993431+01:00" endTime="2019-01-15T12:06:40.9053600+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52ec2083-22fc-4643-b452-50aced759372" />
+    <UnitTestResult executionId="ae20fabb-b755-4808-b9ed-9d8bed84d3ae" testId="b85666ed-8695-9110-2a4b-9b0bcdb76769" testName="Add_ValidCurveAsInput_PolylineWithCorrectVerticesCountAdded" computerName="IV05Q000JN" duration="00:00:00.0005577" startTime="2019-01-15T12:06:40.9123761+01:00" endTime="2019-01-15T12:06:40.9163887+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae20fabb-b755-4808-b9ed-9d8bed84d3ae" />
+    <UnitTestResult executionId="55c48955-3fcb-450f-b377-269a6bb45a96" testId="26ce7d43-318e-6407-4914-7a636383817c" testName="Add_ValidCurveAsInput_PolylineWithCorrectlyPositionedVerticesAdded" computerName="IV05Q000JN" duration="00:00:00.0008035" startTime="2019-01-15T12:06:40.9254116+01:00" endTime="2019-01-15T12:06:40.9324305+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55c48955-3fcb-450f-b377-269a6bb45a96" />
+    <UnitTestResult executionId="d74eac31-015d-4caf-8f8f-61cd77ca4f38" testId="958c1cd2-212b-82a4-099a-9887e79fe445" testName="Add_NullAsInput_NoItemsAdded" computerName="IV05Q000JN" duration="00:00:00.0005754" startTime="2019-01-15T12:06:40.9404519+01:00" endTime="2019-01-15T12:06:40.9444617+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d74eac31-015d-4caf-8f8f-61cd77ca4f38" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Export_OneLine_CorrectlyExported" storage="ng.optics.tests.dll" id="42d6fd3c-0bed-e5c0-25f8-dbd17516e7ec">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="6b8f145c-40d4-409d-add4-50ba38b4bc22" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_OneLine_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_OneCircle_CorrectlyExported" storage="ng.optics.tests.dll" id="87ab6a24-2350-c6bb-d941-ec72a0698c69">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="b00be097-43a5-4395-afab-ae49cd92ce5f" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_OneCircle_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_OneArc_CorrectlyExported" storage="ng.optics.tests.dll" id="bf0fb4a4-9373-1ba5-4d99-6766d0122548">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="f68a1a59-0ae2-4741-8a11-caf430bd8cbd" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_OneArc_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_OnePoint_CorrectlyExported" storage="ng.optics.tests.dll" id="e879151a-749f-b64e-ba9e-fa620354c00b">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="b35cfc05-6412-4042-9519-3013a02e2104" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_OnePoint_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_OneSlot_CorrectlyExported" storage="ng.optics.tests.dll" id="df1989a5-2b8a-b1d8-08be-e6ababdeab99">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="beace952-3181-4607-9843-378bdaca4196" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_OneSlot_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_OneRectangle_CorrectlyExported" storage="ng.optics.tests.dll" id="8af14778-d2fe-2707-4f9c-280ecc970e09">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="9fefb0e2-c56d-4d55-b25a-a37b9f13d8c5" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_OneRectangle_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_OnePolyline_CorrectlyExported" storage="ng.optics.tests.dll" id="4644328a-8880-d707-843c-6f7b07ca97b3">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="0a1da32e-ec90-47c5-a70a-c64e820fd9e2" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_OnePolyline_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_TwoLines_CorrectlyExported" storage="ng.optics.tests.dll" id="3ceebaf5-b389-c5c1-7161-29b1e19cbeb1">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="b1fbf28d-e5ef-43c6-8089-bd202c2bacb7" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_TwoLines_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_TwoCircles_CorrectlyExported" storage="ng.optics.tests.dll" id="fc81c70e-58d9-42fd-a64b-266bd9b7efd9">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="9d8b829e-290a-45fc-9809-bd474ec4bf8e" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_TwoCircles_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_TwoArcs_CorrectlyExported" storage="ng.optics.tests.dll" id="1f1c0602-b92b-e197-0e8a-2b638bf65e42">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="131bbd38-acfd-4296-9a13-013017f11d7f" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_TwoArcs_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_TwoPoints_CorrectlyExported" storage="ng.optics.tests.dll" id="1b014b45-02a9-e0be-c762-7af8ce646bc1">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="5d6f5ba9-fde5-4e65-a7e9-cc143e79c708" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_TwoPoints_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_TwoSlots_CorrectlyExported" storage="ng.optics.tests.dll" id="42e4f132-c4b9-f932-ecfc-ac52a65db668">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="1eb0562e-ce0e-4895-8d2c-555324e271b1" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_TwoSlots_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_TwoRectangles_CorrectlyExported" storage="ng.optics.tests.dll" id="09a07f7d-2d68-c788-2be0-7f66401177a4">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="fcfe6de6-07d3-4321-99a8-547c4f23f59f" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_TwoRectangles_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_TwoPolylines_CorrectlyExported" storage="ng.optics.tests.dll" id="4830c22f-0788-99b4-f6ce-16dce7410d7f">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="2fd7497e-1b89-4d52-8503-50c101401206" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_TwoPolylines_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_VariousItemsCombination1_CorrectlyExported" storage="ng.optics.tests.dll" id="e6727328-598e-1cf0-bda7-e16e4ad7ffab">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="4dbb2a42-a625-4f23-a2b0-78e782665d9f" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_VariousItemsCombination1_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_VariousItemsCombination2_CorrectlyExported" storage="ng.optics.tests.dll" id="7b17cda9-ecf6-a234-dc46-8fb13a714195">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="6ddc73b8-2bd5-492c-acaa-3808a0a9b967" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_VariousItemsCombination2_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="Export_VariousItemsCombination3_CorrectlyExported" storage="ng.optics.tests.dll" id="0a63d451-d235-fa29-257f-bb5e5437b625">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="0d6302af-3485-4ec9-93a9-0bd7ebda3184" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfExportTests" name="Export_VariousItemsCombination3_CorrectlyExported" />
+    </UnitTest>
+    <UnitTest name="AddComponent_ValidData_ValidResult" storage="ng.optics.tests.dll" id="b229d0f2-abf8-6355-bf17-8eaebd488480">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="843e9d7f-f72f-46e5-ae30-7a12f8b468f8" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddComponent_ValidData_ValidResult" />
+    </UnitTest>
+    <UnitTest name="AddComponent_EmptyHeader_ValidResult" storage="ng.optics.tests.dll" id="44e34ea5-ef32-704d-e818-e514f08497ce">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="b9aa1438-e73d-459c-b3f8-031a4788cd73" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddComponent_EmptyHeader_ValidResult" />
+    </UnitTest>
+    <UnitTest name="AddComponent_EmptyFooter_ValidResult" storage="ng.optics.tests.dll" id="f756daf4-3175-ae2c-7d69-b57c1f7557a1">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="25484877-de43-464c-beaa-9dceb42a714c" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddComponent_EmptyFooter_ValidResult" />
+    </UnitTest>
+    <UnitTest name="AddComponent_InputWithNewLines_ValidResult" storage="ng.optics.tests.dll" id="90dfd727-bd0b-4f09-d4fb-b4e1fc13b12d">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="4c468e27-0a32-420a-8ddf-adec493f489a" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddComponent_InputWithNewLines_ValidResult" />
+    </UnitTest>
+    <UnitTest name="AddComponent_EmptyInput_DescriptorUnchanged" storage="ng.optics.tests.dll" id="89d43805-3151-9a4f-cc8c-9f8b1dc4cdbf">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="a655b5d5-bf24-41cc-a8d2-0a36399637b9" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddComponent_EmptyInput_DescriptorUnchanged" />
+    </UnitTest>
+    <UnitTest name="AddComponent_AnyInput_OwnInstanceReturned" storage="ng.optics.tests.dll" id="d3762183-ebfc-3c92-f032-810984e3680b">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="60e3d935-ddbf-4dac-8a36-47771796cee8" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddComponent_AnyInput_OwnInstanceReturned" />
+    </UnitTest>
+    <UnitTest name="AddComponent_MultipleComponentsAdded_ComponentsAddedInRightOrder" storage="ng.optics.tests.dll" id="0cc2348c-af7b-bb6b-d7ac-11003bdc47db">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="22cfb872-30ae-43a7-83cc-1d01db9076cf" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddComponent_MultipleComponentsAdded_ComponentsAddedInRightOrder" />
+    </UnitTest>
+    <UnitTest name="AddFooter_FooterAddedAfterComponent_ComponentsAddedInRightOrder" storage="ng.optics.tests.dll" id="a3132993-2ed5-072c-e73a-76936c882941">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="ef117da5-3245-4331-9d41-6512842f0836" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddFooter_FooterAddedAfterComponent_ComponentsAddedInRightOrder" />
+    </UnitTest>
+    <UnitTest name="AddFooter_ComponentAddedAfterFooter_ComponentsAddedInRightOrder" storage="ng.optics.tests.dll" id="33375184-f0ad-ba2f-9cf6-a463928987b7">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="3fea70aa-29f8-4dd5-b62a-069489a394f5" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddFooter_ComponentAddedAfterFooter_ComponentsAddedInRightOrder" />
+    </UnitTest>
+    <UnitTest name="AddFooter_TwoFootersAddedAfterComponent_ComponentsAddedInRightOrder" storage="ng.optics.tests.dll" id="0f02b62f-319b-b16c-48cb-ae74c2bdc010">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="2c562d27-4cdb-4a0e-9583-917872b16595" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddFooter_TwoFootersAddedAfterComponent_ComponentsAddedInRightOrder" />
+    </UnitTest>
+    <UnitTest name="AddFooter_ComponentAddedBetweenFooters_ComponentsAddedInRightOrder" storage="ng.optics.tests.dll" id="7f5915dd-241b-6f01-2c21-a0eac2f13aaa">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="efe0ae01-c774-42e3-b1c7-ff0bc9b512df" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddFooter_ComponentAddedBetweenFooters_ComponentsAddedInRightOrder" />
+    </UnitTest>
+    <UnitTest name="AddFooter_ComponentsAddedBetweenFooters_ComponentsAddedInRightOrder" storage="ng.optics.tests.dll" id="2f55f33a-53a2-4fcb-6632-b483ce986c5d">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="d87832c8-77d8-4f82-a372-5e2c89843d4d" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemDescriptorTests" name="AddFooter_ComponentsAddedBetweenFooters_ComponentsAddedInRightOrder" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_ItemWithOneAddedComponent_AddComponentUsedOnce" storage="ng.optics.tests.dll" id="b0c4a32d-9ed0-cd6b-7f26-4ea19e5f711e">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="cf5b7142-4930-4e3e-9035-db630eabe990" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_ItemWithOneAddedComponent_AddComponentUsedOnce" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_ItemWithOneAddedComponent_AddComponentCalledWithCorrectStringArgument" storage="ng.optics.tests.dll" id="5b35bc82-0433-9a9a-dc86-55440f829bc0">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="f861700c-35e2-48a7-a59b-b5c543600b73" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_ItemWithOneAddedComponent_AddComponentCalledWithCorrectStringArgument" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_EmptyHeaderAndValidFooter_PreventedFromAdding" storage="ng.optics.tests.dll" id="df962f43-807a-1fd0-85b5-fa564e58c3aa">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="cf12ace4-3b9b-4ea0-977c-d96d29950f0d" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_EmptyHeaderAndValidFooter_PreventedFromAdding" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_ValidHeader_StringsCorrectlyJoined" storage="ng.optics.tests.dll" id="eab141c0-598d-fb5f-c6ba-fe30551d9c20">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="cb44f22d-7f44-43e6-a3f5-e1ceacfd1fc8" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_ValidHeader_StringsCorrectlyJoined" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_ValidHeaderAndValidFooterWithNums_StringsCorrectlyJoined" storage="ng.optics.tests.dll" id="21ac3186-2a8c-a0b4-ee66-a201f64fa840">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="4673d0f2-a1df-46f8-8685-4a2718e4a2df" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_ValidHeaderAndValidFooterWithNums_StringsCorrectlyJoined" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_HeaderWithoutNumAndFooterWithNum_StringsCorrectlyJoined" storage="ng.optics.tests.dll" id="e1ef3f2d-d08c-b258-d5d0-8359441a5cd0">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="385572d6-915d-4d76-86f9-84f539eafdc6" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_HeaderWithoutNumAndFooterWithNum_StringsCorrectlyJoined" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_HeaderIsNull_NoComponentAdded" storage="ng.optics.tests.dll" id="492ef8ce-7c05-bd79-6d83-1c1ba5a89a92">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="df6bbc21-94a9-4c9d-a3b7-729d56276fdd" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_HeaderIsNull_NoComponentAdded" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_HeaderIsNullAndFooterIsValid_NoComponentAdded" storage="ng.optics.tests.dll" id="fd3b7049-b312-5e9b-0c97-716018b06df3">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="c0e0df9e-fe1f-4dd1-b696-0fb6491250e5" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_HeaderIsNullAndFooterIsValid_NoComponentAdded" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorComponent_ValidHeaderAndNullFooter_NoComponentAdded" storage="ng.optics.tests.dll" id="24fc8524-feff-3d5d-f737-3c0dd290d242">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="c6fb8ba2-6b7b-46d1-8780-11dd8018e1b4" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorComponent_ValidHeaderAndNullFooter_NoComponentAdded" />
+    </UnitTest>
+    <UnitTest name="JoinStringsWithNewLine_ValidInput_StringsJoined" storage="ng.optics.tests.dll" id="78413e28-c806-a70d-79e5-099dc9dfe0d3">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="ccaea36f-8db4-4815-969d-d7b30215e28b" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="JoinStringsWithNewLine_ValidInput_StringsJoined" />
+    </UnitTest>
+    <UnitTest name="JoinStringsWithNewLine_FirstNullSecondValid_NewLineJoinedWithSecondString" storage="ng.optics.tests.dll" id="de158a1a-310b-b9d3-57f7-0e10e43331f5">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="44c25aef-2faf-4c24-9a53-b97466d7fa83" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="JoinStringsWithNewLine_FirstNullSecondValid_NewLineJoinedWithSecondString" />
+    </UnitTest>
+    <UnitTest name="JoinStringsWithNewLine_FirstValidSecondNull_FirstStringJoinedWithNewLine" storage="ng.optics.tests.dll" id="7e1495a1-f68a-ccee-62ac-cb8d61a53971">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="edc99695-3edb-43f4-930f-27fb4f906806" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="JoinStringsWithNewLine_FirstValidSecondNull_FirstStringJoinedWithNewLine" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorFooter_AddValidFooter_CorrectlyInvoke" storage="ng.optics.tests.dll" id="c512de33-c0c0-7a04-2fa2-4954ee148582">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="1121bd3f-5948-4be3-b1bd-1a699c832540" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorFooter_AddValidFooter_CorrectlyInvoke" />
+    </UnitTest>
+    <UnitTest name="AddDescriptorFooter_FooterWithNum_InvokedWithCorrectParameters" storage="ng.optics.tests.dll" id="d7dd6bc0-1711-085c-56bb-dc23ed7601c8">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="1992e4bf-e206-4796-933d-8854f0ca23cd" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddDescriptorFooter_FooterWithNum_InvokedWithCorrectParameters" />
+    </UnitTest>
+    <UnitTest name="AddChild_ValidInput_ChildAdded" storage="ng.optics.tests.dll" id="3ad79681-9172-8a33-e4ac-629921df6323">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="283ccbcf-885b-4780-a2d1-5c62ccd4d142" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddChild_ValidInput_ChildAdded" />
+    </UnitTest>
+    <UnitTest name="AddChild_NullInput_ChildNotAdded" storage="ng.optics.tests.dll" id="06a0c81e-c48c-86d1-b4a2-876bc3aafe42">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="7142212d-927c-47f3-9516-b5b553c71cd5" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddChild_NullInput_ChildNotAdded" />
+    </UnitTest>
+    <UnitTest name="AddValue_ValidInput_ValueAddedAsChild" storage="ng.optics.tests.dll" id="12b93059-2385-baa0-f8e0-1183f7934ae1">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="02e0b923-4069-48a7-bc33-965d60adedfb" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddValue_ValidInput_ValueAddedAsChild" />
+    </UnitTest>
+    <UnitTest name="AddValue_NullValueAndValidCode_NoValueAdded" storage="ng.optics.tests.dll" id="9493d3bf-e87e-7a47-52d2-7bc99444da36">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="a7752303-b837-4d00-9147-5f21d78aab18" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddValue_NullValueAndValidCode_NoValueAdded" />
+    </UnitTest>
+    <UnitTest name="AddValues_ValidInput_CorrectNumberOfChildrenAdded" storage="ng.optics.tests.dll" id="0bb667d4-7b58-8472-15bc-a552af7a5591">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="75e74471-6c5e-48c9-bd4b-9904b57c7b77" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddValues_ValidInput_CorrectNumberOfChildrenAdded" />
+    </UnitTest>
+    <UnitTest name="AddValues_ValidInput_AllValuesAddedAsChildren" storage="ng.optics.tests.dll" id="43c33788-7634-70d3-f261-51a57ad23323">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="5329742e-af6c-4c61-82b0-a105db7340c8" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddValues_ValidInput_AllValuesAddedAsChildren" />
+    </UnitTest>
+    <UnitTest name="AddValues_NullValuesInInput_NoValuesAdded" storage="ng.optics.tests.dll" id="d547699f-9028-5430-c756-01a808a61f0d">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="0af16b09-234f-4df7-b98d-f193166dd887" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddValues_NullValuesInInput_NoValuesAdded" />
+    </UnitTest>
+    <UnitTest name="AddValues_NullAndCorrectValueInInput_CorrectValueAdded" storage="ng.optics.tests.dll" id="c8d57475-eaab-a42d-5fd4-a9c7a44d6c0f">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="95051e80-77e4-40c4-bfd8-6eee58be60d9" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddValues_NullAndCorrectValueInInput_CorrectValueAdded" />
+    </UnitTest>
+    <UnitTest name="AddPosition_ValidInput_ValueForXAddedToChildren" storage="ng.optics.tests.dll" id="f984c499-521c-1972-9c39-266a8179af47">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="14ac61b0-0388-4c04-be67-75d3e8cb45b1" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddPosition_ValidInput_ValueForXAddedToChildren" />
+    </UnitTest>
+    <UnitTest name="AddPosition_ValidInput_ValueForYAddedToChildren" storage="ng.optics.tests.dll" id="605d90d4-f33d-38b4-fe16-ba4bb4773b19">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="3c1732dd-0aa6-4943-b5b1-89b82da9573c" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddPosition_ValidInput_ValueForYAddedToChildren" />
+    </UnitTest>
+    <UnitTest name="AddPosition_ValidInput_ValueForZAddedToChildren" storage="ng.optics.tests.dll" id="920870ea-eab4-ce6c-85d6-52593516f10f">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="3d832bf1-c961-462c-a051-0e51f68a1e91" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddPosition_ValidInput_ValueForZAddedToChildren" />
+    </UnitTest>
+    <UnitTest name="AddPosition_NullValuesInInput_NoValuesAdded" storage="ng.optics.tests.dll" id="fff7538c-4f1b-3d13-b26e-d267569a1e18">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="0579c6de-8f65-45a3-b76f-30ccedeea7d8" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="AddPosition_NullValuesInInput_NoValuesAdded" />
+    </UnitTest>
+    <UnitTest name="Export_OneChildAndNoDescriptor_ValidResult" storage="ng.optics.tests.dll" id="bd6a75ce-02d8-2bcb-d23d-0cae92b9067b">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="beb9a32e-d8b3-416b-ae4e-03c503bb1788" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="Export_OneChildAndNoDescriptor_ValidResult" />
+    </UnitTest>
+    <UnitTest name="Export_TwoChildrenAndNoDescriptor_ValidResult" storage="ng.optics.tests.dll" id="62742376-e73c-6de8-3c3f-e37a9b3c3d94">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="3536ea98-b318-477d-a067-94ffa9b7805f" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="Export_TwoChildrenAndNoDescriptor_ValidResult" />
+    </UnitTest>
+    <UnitTest name="Export_NoChildrenAndNoDescriptor_ValidResult" storage="ng.optics.tests.dll" id="7f194155-ba54-b140-f2e7-a4abe419bd03">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="4427e91a-5b5e-4992-b769-dd9bc5468b7d" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="Export_NoChildrenAndNoDescriptor_ValidResult" />
+    </UnitTest>
+    <UnitTest name="Export_OneChildAndWithDescriptor_ValidResult" storage="ng.optics.tests.dll" id="b1beae46-b531-f9c5-aaef-e2852660fb1c">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="f46b3051-789a-438d-b0c1-9049f57ac652" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="Export_OneChildAndWithDescriptor_ValidResult" />
+    </UnitTest>
+    <UnitTest name="Export_NoChildrenAndWithDescriptor_ValidResult" storage="ng.optics.tests.dll" id="4d49a895-5425-36c1-e17e-10edd84b08a8">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="e2c71069-7d1c-41ab-8012-5740bf6125a6" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="Export_NoChildrenAndWithDescriptor_ValidResult" />
+    </UnitTest>
+    <UnitTest name="Export_TwoChildrenWithDescriptor_ValidResult" storage="ng.optics.tests.dll" id="0bc88163-b9ef-2264-cf13-400137c9b993">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="93ac1a78-52ed-4501-aa0a-c68c23456df8" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfItemTests" name="Export_TwoChildrenWithDescriptor_ValidResult" />
+    </UnitTest>
+    <UnitTest name="Export_ValidData_CorrectResult" storage="ng.optics.tests.dll" id="58599da9-9ccc-77cd-de1b-971495621e1f">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="59f01819-bc40-4bbf-a32c-8f493dd52c87" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfValueTests" name="Export_ValidData_CorrectResult" />
+    </UnitTest>
+    <UnitTest name="Add_ValidLineAsInput_LineWithCorrectDescriptorAdded" storage="ng.optics.tests.dll" id="a30aae58-8ae6-93ac-4971-b4954a5c2fc9">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="5b49fbca-e70c-4c5c-89aa-d8982016daa0" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfLineTests" name="Add_ValidLineAsInput_LineWithCorrectDescriptorAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidLineAsInput_LineWithCorrectStartPointValuesAdded" storage="ng.optics.tests.dll" id="baa639bd-82bd-6bec-ed97-6dfe007a2fba">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="3d7a6574-ad7e-442e-bc08-9b3e794d5063" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfLineTests" name="Add_ValidLineAsInput_LineWithCorrectStartPointValuesAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidLineAsInput_LineWithCorrectEndPointValuesAdded" storage="ng.optics.tests.dll" id="823b3746-bc8f-7cb1-e443-44c5303b9556">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="ff6c4f66-1d6d-42a7-8fb7-e47bf3632fef" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfLineTests" name="Add_ValidLineAsInput_LineWithCorrectEndPointValuesAdded" />
+    </UnitTest>
+    <UnitTest name="Add_NullAsInput_NoItemsAdded" storage="ng.optics.tests.dll" id="f8ff5545-0e3d-d005-32ab-5dbf6e9d09d9">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="bc57b043-2b0f-4c30-b76c-88de75d62e40" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfLineTests" name="Add_NullAsInput_NoItemsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidPointAsInput_PointWithCorrectDescriptorAdded" storage="ng.optics.tests.dll" id="6a338c0c-414f-1e2c-63f0-bf88dc55c58d">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="88dd9a8a-35d7-4254-93de-bc438244115c" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfPointTests" name="Add_ValidPointAsInput_PointWithCorrectDescriptorAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidPointAsInput_PointWithCorrectPositionAdded" storage="ng.optics.tests.dll" id="edcffa4a-c781-9674-a38a-fd161205f62e">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="7a4af30d-30fd-4b53-98c7-9a2ced23a3d8" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfPointTests" name="Add_ValidPointAsInput_PointWithCorrectPositionAdded" />
+    </UnitTest>
+    <UnitTest name="Add_NullAsInput_NoItemsAdded" storage="ng.optics.tests.dll" id="1fb242c7-aeb8-58dc-eb11-9edfc045f32e">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="df987ae1-4284-455b-b02b-84f98fab0944" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfPointTests" name="Add_NullAsInput_NoItemsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidCircleAsInput_CircleWithCorrectDescriptorAdded" storage="ng.optics.tests.dll" id="6578aaf6-5f90-3ef6-5720-7459e136b220">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="6d28567b-1a33-4a6d-a51d-eb67d0ec7fdb" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfCircleTests" name="Add_ValidCircleAsInput_CircleWithCorrectDescriptorAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidCircleAsInput_CircleWithCorrectNumberOfValuesAdded" storage="ng.optics.tests.dll" id="157022d0-910d-28d1-7901-b4e9febeae81">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="ab33d887-a645-4c45-8146-17aeebaab91b" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfCircleTests" name="Add_ValidCircleAsInput_CircleWithCorrectNumberOfValuesAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidCircleAsInput_CircleWithCorrectPositionAdded" storage="ng.optics.tests.dll" id="4751aef9-6914-c7f5-021c-2ee5bc01a3eb">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="7c1eb187-4df7-4bdb-b69d-b9f3fbe00c3a" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfCircleTests" name="Add_ValidCircleAsInput_CircleWithCorrectPositionAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidCircleAsInput_CircleWithCorrectRadiusAdded" storage="ng.optics.tests.dll" id="2d8046dd-ab1f-0b84-a92d-891454c0917d">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="e7e116ea-6121-4da1-a72b-fb1958d2188f" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfCircleTests" name="Add_ValidCircleAsInput_CircleWithCorrectRadiusAdded" />
+    </UnitTest>
+    <UnitTest name="Add_NullAsInput_NoItemsAdded" storage="ng.optics.tests.dll" id="6cd744c6-d6a8-988f-fdea-9869d42101f2">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="52ea8c47-603f-49f1-b508-72855e01a1d0" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfCircleTests" name="Add_NullAsInput_NoItemsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidRectangleAsInput_RectangleWithCorrectDescriptorAdded" storage="ng.optics.tests.dll" id="8445cf76-6929-26f3-39be-4ce3d9163e34">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="c487066e-7aea-4d7a-8d66-8c3d00532c59" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfRectangleTests" name="Add_ValidRectangleAsInput_RectangleWithCorrectDescriptorAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidRectangleAsInput_CorrectNumberOfLinesAdded" storage="ng.optics.tests.dll" id="3a689bb7-08fa-2e59-b6b2-d34391f61748">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="125b2d08-a722-42ad-bbcd-c3f990805ccc" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfRectangleTests" name="Add_ValidRectangleAsInput_CorrectNumberOfLinesAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidRectangleAsInput_AllVerticesHaveTwoLinesConnectedToThem" storage="ng.optics.tests.dll" id="4b8bab0c-969e-c9eb-ac14-4088e1834746">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="caf8b4b7-19c6-4ef0-9309-4720c3d7eba1" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfRectangleTests" name="Add_ValidRectangleAsInput_AllVerticesHaveTwoLinesConnectedToThem" />
+    </UnitTest>
+    <UnitTest name="Add_ValidRectangleAsInput_RectangleWithLinesInRightOrder" storage="ng.optics.tests.dll" id="9dba34dc-1dea-aca8-ba65-72410f187533">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="49af4927-7428-4585-a870-162b60a3330b" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfRectangleTests" name="Add_ValidRectangleAsInput_RectangleWithLinesInRightOrder" />
+    </UnitTest>
+    <UnitTest name="Add_NullAsInput_NoItemsAdded" storage="ng.optics.tests.dll" id="c2b8b98e-08fb-24b1-ee38-ec5ed526aeeb">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="e59ab6bc-d938-4569-a1e1-e2f2e0d09f8a" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfRectangleTests" name="Add_NullAsInput_NoItemsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_LinesWithCorrectDescriptorsAdded" storage="ng.optics.tests.dll" id="e0fa8a42-4767-6e2e-9713-5739fafdd221">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="62fd4177-0bcb-49bf-91ee-f9ab7393a1c7" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_LinesWithCorrectDescriptorsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_ArcsWithCorrectDescriptorsAdded" storage="ng.optics.tests.dll" id="931b94c9-9fb6-575e-cea0-53ffeecd2308">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="20f44893-a70f-43c3-9a42-40a7c16caad1" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_ArcsWithCorrectDescriptorsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_LinesWithCorrectEndPositionsAdded" storage="ng.optics.tests.dll" id="a4d6177b-9f6f-01a7-2f9d-22e6df67a087">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="ed403605-0744-4e35-9322-a71b2a8e508f" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_LinesWithCorrectEndPositionsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_LinesConnectCorrectVertices" storage="ng.optics.tests.dll" id="60108990-deb8-a727-1359-2afcd7af057f">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="bdca8b7a-5fa3-4d12-bf05-5dae595324f2" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_LinesConnectCorrectVertices" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_ArcsWithCorrectPositionsAdded" storage="ng.optics.tests.dll" id="93650808-d203-c7c9-33bd-5d6c6996ac9d">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="400d2733-8e14-457b-ae13-a5c418f32f9d" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_ArcsWithCorrectPositionsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_ArcsAreNotInSamePosition" storage="ng.optics.tests.dll" id="0bf354f4-e66d-875f-3aee-9c7eae612e7c">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="5fa6da31-cabe-4c5a-83f1-51c48c180381" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_ArcsAreNotInSamePosition" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_ArcsWithCorrectRadiusAdded" storage="ng.optics.tests.dll" id="44187acd-50f1-0612-a478-703b604b16a2">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="10922902-af57-4ce7-b7ef-fc7de5853031" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_ArcsWithCorrectRadiusAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidSlotAsInput_ArcsWithCorrectDirectionsAdded" storage="ng.optics.tests.dll" id="c83ddc0b-50ec-2a3e-5247-5a8d8fe61d11">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="bff57188-6697-4453-9215-5c309aac1763" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_ValidSlotAsInput_ArcsWithCorrectDirectionsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_NullAsInput_NoItemsAdded" storage="ng.optics.tests.dll" id="08a91d08-4769-0c71-4736-7014cd30b502">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="45407cda-4e84-40c3-ad6b-c6a88959fd9d" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfSlotTests" name="Add_NullAsInput_NoItemsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidArcAsInput_ArcWithCorrectDescriptorAdded" storage="ng.optics.tests.dll" id="fcf9ddde-791a-b00d-a195-502b861d287c">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="eaddbd34-17f3-4225-9d0a-ed6a1a06e1bb" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfArcTests" name="Add_ValidArcAsInput_ArcWithCorrectDescriptorAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidArcAsInput_ArcAdded" storage="ng.optics.tests.dll" id="708501cd-d46c-9395-aa56-07ba8cc67c26">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="d0b4d6c3-2fc9-4a8d-9b04-29bbfad28e38" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfArcTests" name="Add_ValidArcAsInput_ArcAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidArcAsInput_ArcWithCorrectRadiusAdded" storage="ng.optics.tests.dll" id="58752781-0b6e-2ab2-5a98-e2fa923a42c4">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="373d3273-f443-42bf-887e-c184b857cd50" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfArcTests" name="Add_ValidArcAsInput_ArcWithCorrectRadiusAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidArcAsInput_ArcWithCorrectPositionAdded" storage="ng.optics.tests.dll" id="cf1dcdb0-4752-0e05-d14b-ddd95cd98cf1">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="f859e845-0ea8-4ea9-9948-c05c703cd4c4" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfArcTests" name="Add_ValidArcAsInput_ArcWithCorrectPositionAdded" />
+    </UnitTest>
+    <UnitTest name="Add_NullAsInput_NoItemsAdded" storage="ng.optics.tests.dll" id="82edff78-32af-c1bd-d347-fe62e1add22b">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="0078f926-e0bb-4bde-b727-57fbc70fe929" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfArcTests" name="Add_NullAsInput_NoItemsAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidPolylineAsInput_PolylineWithCorrectDescriptorAdded" storage="ng.optics.tests.dll" id="de203f78-b67f-b615-7a26-a97837d96ffe">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="52ec2083-22fc-4643-b452-50aced759372" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfPolylineTests" name="Add_ValidPolylineAsInput_PolylineWithCorrectDescriptorAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidCurveAsInput_PolylineWithCorrectVerticesCountAdded" storage="ng.optics.tests.dll" id="b85666ed-8695-9110-2a4b-9b0bcdb76769">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="ae20fabb-b755-4808-b9ed-9d8bed84d3ae" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfPolylineTests" name="Add_ValidCurveAsInput_PolylineWithCorrectVerticesCountAdded" />
+    </UnitTest>
+    <UnitTest name="Add_ValidCurveAsInput_PolylineWithCorrectlyPositionedVerticesAdded" storage="ng.optics.tests.dll" id="26ce7d43-318e-6407-4914-7a636383817c">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="55c48955-3fcb-450f-b377-269a6bb45a96" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfPolylineTests" name="Add_ValidCurveAsInput_PolylineWithCorrectlyPositionedVerticesAdded" />
+    </UnitTest>
+    <UnitTest name="Add_NullAsInput_NoItemsAdded" storage="ng.optics.tests.dll" id="958c1cd2-212b-82a4-099a-9887e79fe445">
+      <TestCategory>
+        <TestCategoryItem TestCategory="DxfExportingTests" />
+      </TestCategory>
+      <Execution id="d74eac31-015d-4caf-8f8f-61cd77ca4f38" />
+      <TestMethod codeBase="NG.Optics.Tests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter" className="Zeiss.IMT.NG.Optics.Tests.DxfBuilderTests+DxfPolylineTests" name="Add_NullAsInput_NoItemsAdded" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="42d6fd3c-0bed-e5c0-25f8-dbd17516e7ec" executionId="6b8f145c-40d4-409d-add4-50ba38b4bc22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="87ab6a24-2350-c6bb-d941-ec72a0698c69" executionId="b00be097-43a5-4395-afab-ae49cd92ce5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bf0fb4a4-9373-1ba5-4d99-6766d0122548" executionId="f68a1a59-0ae2-4741-8a11-caf430bd8cbd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e879151a-749f-b64e-ba9e-fa620354c00b" executionId="b35cfc05-6412-4042-9519-3013a02e2104" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df1989a5-2b8a-b1d8-08be-e6ababdeab99" executionId="beace952-3181-4607-9843-378bdaca4196" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8af14778-d2fe-2707-4f9c-280ecc970e09" executionId="9fefb0e2-c56d-4d55-b25a-a37b9f13d8c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4644328a-8880-d707-843c-6f7b07ca97b3" executionId="0a1da32e-ec90-47c5-a70a-c64e820fd9e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ceebaf5-b389-c5c1-7161-29b1e19cbeb1" executionId="b1fbf28d-e5ef-43c6-8089-bd202c2bacb7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fc81c70e-58d9-42fd-a64b-266bd9b7efd9" executionId="9d8b829e-290a-45fc-9809-bd474ec4bf8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1f1c0602-b92b-e197-0e8a-2b638bf65e42" executionId="131bbd38-acfd-4296-9a13-013017f11d7f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b014b45-02a9-e0be-c762-7af8ce646bc1" executionId="5d6f5ba9-fde5-4e65-a7e9-cc143e79c708" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="42e4f132-c4b9-f932-ecfc-ac52a65db668" executionId="1eb0562e-ce0e-4895-8d2c-555324e271b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="09a07f7d-2d68-c788-2be0-7f66401177a4" executionId="fcfe6de6-07d3-4321-99a8-547c4f23f59f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4830c22f-0788-99b4-f6ce-16dce7410d7f" executionId="2fd7497e-1b89-4d52-8503-50c101401206" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6727328-598e-1cf0-bda7-e16e4ad7ffab" executionId="4dbb2a42-a625-4f23-a2b0-78e782665d9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b17cda9-ecf6-a234-dc46-8fb13a714195" executionId="6ddc73b8-2bd5-492c-acaa-3808a0a9b967" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a63d451-d235-fa29-257f-bb5e5437b625" executionId="0d6302af-3485-4ec9-93a9-0bd7ebda3184" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b229d0f2-abf8-6355-bf17-8eaebd488480" executionId="843e9d7f-f72f-46e5-ae30-7a12f8b468f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="44e34ea5-ef32-704d-e818-e514f08497ce" executionId="b9aa1438-e73d-459c-b3f8-031a4788cd73" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f756daf4-3175-ae2c-7d69-b57c1f7557a1" executionId="25484877-de43-464c-beaa-9dceb42a714c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90dfd727-bd0b-4f09-d4fb-b4e1fc13b12d" executionId="4c468e27-0a32-420a-8ddf-adec493f489a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="89d43805-3151-9a4f-cc8c-9f8b1dc4cdbf" executionId="a655b5d5-bf24-41cc-a8d2-0a36399637b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d3762183-ebfc-3c92-f032-810984e3680b" executionId="60e3d935-ddbf-4dac-8a36-47771796cee8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0cc2348c-af7b-bb6b-d7ac-11003bdc47db" executionId="22cfb872-30ae-43a7-83cc-1d01db9076cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a3132993-2ed5-072c-e73a-76936c882941" executionId="ef117da5-3245-4331-9d41-6512842f0836" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33375184-f0ad-ba2f-9cf6-a463928987b7" executionId="3fea70aa-29f8-4dd5-b62a-069489a394f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f02b62f-319b-b16c-48cb-ae74c2bdc010" executionId="2c562d27-4cdb-4a0e-9583-917872b16595" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f5915dd-241b-6f01-2c21-a0eac2f13aaa" executionId="efe0ae01-c774-42e3-b1c7-ff0bc9b512df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2f55f33a-53a2-4fcb-6632-b483ce986c5d" executionId="d87832c8-77d8-4f82-a372-5e2c89843d4d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b0c4a32d-9ed0-cd6b-7f26-4ea19e5f711e" executionId="cf5b7142-4930-4e3e-9035-db630eabe990" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b35bc82-0433-9a9a-dc86-55440f829bc0" executionId="f861700c-35e2-48a7-a59b-b5c543600b73" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df962f43-807a-1fd0-85b5-fa564e58c3aa" executionId="cf12ace4-3b9b-4ea0-977c-d96d29950f0d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eab141c0-598d-fb5f-c6ba-fe30551d9c20" executionId="cb44f22d-7f44-43e6-a3f5-e1ceacfd1fc8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21ac3186-2a8c-a0b4-ee66-a201f64fa840" executionId="4673d0f2-a1df-46f8-8685-4a2718e4a2df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1ef3f2d-d08c-b258-d5d0-8359441a5cd0" executionId="385572d6-915d-4d76-86f9-84f539eafdc6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="492ef8ce-7c05-bd79-6d83-1c1ba5a89a92" executionId="df6bbc21-94a9-4c9d-a3b7-729d56276fdd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fd3b7049-b312-5e9b-0c97-716018b06df3" executionId="c0e0df9e-fe1f-4dd1-b696-0fb6491250e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="24fc8524-feff-3d5d-f737-3c0dd290d242" executionId="c6fb8ba2-6b7b-46d1-8780-11dd8018e1b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78413e28-c806-a70d-79e5-099dc9dfe0d3" executionId="ccaea36f-8db4-4815-969d-d7b30215e28b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de158a1a-310b-b9d3-57f7-0e10e43331f5" executionId="44c25aef-2faf-4c24-9a53-b97466d7fa83" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e1495a1-f68a-ccee-62ac-cb8d61a53971" executionId="edc99695-3edb-43f4-930f-27fb4f906806" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c512de33-c0c0-7a04-2fa2-4954ee148582" executionId="1121bd3f-5948-4be3-b1bd-1a699c832540" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7dd6bc0-1711-085c-56bb-dc23ed7601c8" executionId="1992e4bf-e206-4796-933d-8854f0ca23cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ad79681-9172-8a33-e4ac-629921df6323" executionId="283ccbcf-885b-4780-a2d1-5c62ccd4d142" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="06a0c81e-c48c-86d1-b4a2-876bc3aafe42" executionId="7142212d-927c-47f3-9516-b5b553c71cd5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="12b93059-2385-baa0-f8e0-1183f7934ae1" executionId="02e0b923-4069-48a7-bc33-965d60adedfb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9493d3bf-e87e-7a47-52d2-7bc99444da36" executionId="a7752303-b837-4d00-9147-5f21d78aab18" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0bb667d4-7b58-8472-15bc-a552af7a5591" executionId="75e74471-6c5e-48c9-bd4b-9904b57c7b77" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="43c33788-7634-70d3-f261-51a57ad23323" executionId="5329742e-af6c-4c61-82b0-a105db7340c8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d547699f-9028-5430-c756-01a808a61f0d" executionId="0af16b09-234f-4df7-b98d-f193166dd887" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8d57475-eaab-a42d-5fd4-a9c7a44d6c0f" executionId="95051e80-77e4-40c4-bfd8-6eee58be60d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f984c499-521c-1972-9c39-266a8179af47" executionId="14ac61b0-0388-4c04-be67-75d3e8cb45b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="605d90d4-f33d-38b4-fe16-ba4bb4773b19" executionId="3c1732dd-0aa6-4943-b5b1-89b82da9573c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="920870ea-eab4-ce6c-85d6-52593516f10f" executionId="3d832bf1-c961-462c-a051-0e51f68a1e91" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fff7538c-4f1b-3d13-b26e-d267569a1e18" executionId="0579c6de-8f65-45a3-b76f-30ccedeea7d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd6a75ce-02d8-2bcb-d23d-0cae92b9067b" executionId="beb9a32e-d8b3-416b-ae4e-03c503bb1788" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62742376-e73c-6de8-3c3f-e37a9b3c3d94" executionId="3536ea98-b318-477d-a067-94ffa9b7805f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f194155-ba54-b140-f2e7-a4abe419bd03" executionId="4427e91a-5b5e-4992-b769-dd9bc5468b7d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b1beae46-b531-f9c5-aaef-e2852660fb1c" executionId="f46b3051-789a-438d-b0c1-9049f57ac652" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d49a895-5425-36c1-e17e-10edd84b08a8" executionId="e2c71069-7d1c-41ab-8012-5740bf6125a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0bc88163-b9ef-2264-cf13-400137c9b993" executionId="93ac1a78-52ed-4501-aa0a-c68c23456df8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="58599da9-9ccc-77cd-de1b-971495621e1f" executionId="59f01819-bc40-4bbf-a32c-8f493dd52c87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a30aae58-8ae6-93ac-4971-b4954a5c2fc9" executionId="5b49fbca-e70c-4c5c-89aa-d8982016daa0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="baa639bd-82bd-6bec-ed97-6dfe007a2fba" executionId="3d7a6574-ad7e-442e-bc08-9b3e794d5063" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="823b3746-bc8f-7cb1-e443-44c5303b9556" executionId="ff6c4f66-1d6d-42a7-8fb7-e47bf3632fef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f8ff5545-0e3d-d005-32ab-5dbf6e9d09d9" executionId="bc57b043-2b0f-4c30-b76c-88de75d62e40" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a338c0c-414f-1e2c-63f0-bf88dc55c58d" executionId="88dd9a8a-35d7-4254-93de-bc438244115c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="edcffa4a-c781-9674-a38a-fd161205f62e" executionId="7a4af30d-30fd-4b53-98c7-9a2ced23a3d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1fb242c7-aeb8-58dc-eb11-9edfc045f32e" executionId="df987ae1-4284-455b-b02b-84f98fab0944" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6578aaf6-5f90-3ef6-5720-7459e136b220" executionId="6d28567b-1a33-4a6d-a51d-eb67d0ec7fdb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="157022d0-910d-28d1-7901-b4e9febeae81" executionId="ab33d887-a645-4c45-8146-17aeebaab91b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4751aef9-6914-c7f5-021c-2ee5bc01a3eb" executionId="7c1eb187-4df7-4bdb-b69d-b9f3fbe00c3a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d8046dd-ab1f-0b84-a92d-891454c0917d" executionId="e7e116ea-6121-4da1-a72b-fb1958d2188f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6cd744c6-d6a8-988f-fdea-9869d42101f2" executionId="52ea8c47-603f-49f1-b508-72855e01a1d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8445cf76-6929-26f3-39be-4ce3d9163e34" executionId="c487066e-7aea-4d7a-8d66-8c3d00532c59" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a689bb7-08fa-2e59-b6b2-d34391f61748" executionId="125b2d08-a722-42ad-bbcd-c3f990805ccc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4b8bab0c-969e-c9eb-ac14-4088e1834746" executionId="caf8b4b7-19c6-4ef0-9309-4720c3d7eba1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9dba34dc-1dea-aca8-ba65-72410f187533" executionId="49af4927-7428-4585-a870-162b60a3330b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c2b8b98e-08fb-24b1-ee38-ec5ed526aeeb" executionId="e59ab6bc-d938-4569-a1e1-e2f2e0d09f8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0fa8a42-4767-6e2e-9713-5739fafdd221" executionId="62fd4177-0bcb-49bf-91ee-f9ab7393a1c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="931b94c9-9fb6-575e-cea0-53ffeecd2308" executionId="20f44893-a70f-43c3-9a42-40a7c16caad1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4d6177b-9f6f-01a7-2f9d-22e6df67a087" executionId="ed403605-0744-4e35-9322-a71b2a8e508f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="60108990-deb8-a727-1359-2afcd7af057f" executionId="bdca8b7a-5fa3-4d12-bf05-5dae595324f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93650808-d203-c7c9-33bd-5d6c6996ac9d" executionId="400d2733-8e14-457b-ae13-a5c418f32f9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0bf354f4-e66d-875f-3aee-9c7eae612e7c" executionId="5fa6da31-cabe-4c5a-83f1-51c48c180381" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="44187acd-50f1-0612-a478-703b604b16a2" executionId="10922902-af57-4ce7-b7ef-fc7de5853031" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c83ddc0b-50ec-2a3e-5247-5a8d8fe61d11" executionId="bff57188-6697-4453-9215-5c309aac1763" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08a91d08-4769-0c71-4736-7014cd30b502" executionId="45407cda-4e84-40c3-ad6b-c6a88959fd9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fcf9ddde-791a-b00d-a195-502b861d287c" executionId="eaddbd34-17f3-4225-9d0a-ed6a1a06e1bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="708501cd-d46c-9395-aa56-07ba8cc67c26" executionId="d0b4d6c3-2fc9-4a8d-9b04-29bbfad28e38" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="58752781-0b6e-2ab2-5a98-e2fa923a42c4" executionId="373d3273-f443-42bf-887e-c184b857cd50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf1dcdb0-4752-0e05-d14b-ddd95cd98cf1" executionId="f859e845-0ea8-4ea9-9948-c05c703cd4c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="82edff78-32af-c1bd-d347-fe62e1add22b" executionId="0078f926-e0bb-4bde-b727-57fbc70fe929" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de203f78-b67f-b615-7a26-a97837d96ffe" executionId="52ec2083-22fc-4643-b452-50aced759372" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b85666ed-8695-9110-2a4b-9b0bcdb76769" executionId="ae20fabb-b755-4808-b9ed-9d8bed84d3ae" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26ce7d43-318e-6407-4914-7a636383817c" executionId="55c48955-3fcb-450f-b377-269a6bb45a96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="958c1cd2-212b-82a4-099a-9887e79fe445" executionId="d74eac31-015d-4caf-8f8f-61cd77ca4f38" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="97" executed="97" passed="97" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.0768166+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'log4net' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.0798257+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'System.Reactive.Core' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.0838361+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'System.Reactive.Interfaces' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.0908556+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'System.Reactive.Linq' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.0948657+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'System.Collections.Immutable' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.0978723+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'System.Threading.Tasks.Dataflow' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1058933+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'System.Reactive.Windows.Threading' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1109061+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.Core.Interop' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1189277+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.Numerics.Interop' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1229387+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.UI.Application.Core' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1259458+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Interop.TDxInput.1.0' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1319607+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.GUI' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1449979+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.CAD.Core' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1500121+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.CAD.Modeller.Acis' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1580352+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.CAD.GUI' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1630456+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.UI' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1660562+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.UI.Windows' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1750796+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'ICSharpCode.SharpZipLib' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1790892+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'MotionPlanningCore' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1800910+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Intermediate.Cpp' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1820943+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.PointCloudProcessingCLR' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1961319+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Reporting' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1971346+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'clipper_library' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.1991411+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.UI.InspectionPlan' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2111722+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'obsolet_Zeiss.IMT.MUMCPP.ManagedOpticalToolComponents' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2131779+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'obsolet_Zeiss.IMT.CMMOS.CMMConfiguration' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2151832+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'obsolet_Zeiss.IMT.CMMOS.DMEInterface' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2282184+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'obsolet_MPCloudInterface' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2302240+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'obsolet_Zeiss.IMT.CMMOS.DMECommandUtility' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2422563+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.CMMOS.Facade' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2462673+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.CMMOS.DMEInstances' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2482726+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.CMMOS.Control' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2582996+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.CMMOS.Tool' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2633121+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Technology.Visualization' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2663206+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Evaluations.CAD' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2743417+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Intermediate.Visualization' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2793547+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.GDT' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2873775+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Evaluations.Core' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2923897+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Optics' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.2994092+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Optics.CADExtension' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.3064270+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Tactile.Technology' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="IV05Q000JN" outcome="Warning" timestamp="2019-01-15T12:06:41.3124433+01:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Zeiss.IMT.NG.Optics.Assists' directly or indirectly referenced by the test container 'D:\Krupa\Eos\Feature\2.4\89870 DXF Export\NG.Optics\NG.Optics.Tests\obj\x64\Debug\ng.optics.tests.dll' was not found.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

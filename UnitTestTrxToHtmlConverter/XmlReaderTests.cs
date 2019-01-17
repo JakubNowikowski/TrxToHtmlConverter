@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
 using TrxToHtmlConverter;
 
@@ -8,13 +9,26 @@ namespace UnitTestTrxToHtmlConverter
 	[TestFixture]
 	public class XmlReaderTests
 	{
-		//public string filePath = @"C:\Users\OptiNav\Source\Repos\JakubNowikowski\TrxToHtmlConverter\TrxToHtmlConverter\bin\Debug\shortreport.trx";
-		public string filePath = @"C:\Users\User\source\repos\TrxToHtmlConverter\TrxToHtmlConverter\bin\Debug\shortreport.trx";
+		public string filePathShortReport = @"..\..\shortreport.trx";
+		public string filePathFullReport = @"..\..\fullreport.trx";
+
+		[OneTimeSetUp]
+		public void RunBeforeAnyTests()
+		{
+			var dir = Path.GetDirectoryName(typeof(XmlReaderTests).Assembly.Location);
+			if (dir != null)
+			{
+				Environment.CurrentDirectory = dir;
+				Directory.SetCurrentDirectory(dir);
+			}
+			else
+				throw new Exception("Path.GetDirectoryName(typeof(TestingWithReferencedFiles).Assembly.Location) returned null");
+		}
 
 		[Test]
 		public void AllTestsResults_ValidFileAsInput_IEnumarableCreatedCorrectly()
 		{
-			XmlReader reader = new XmlReader(filePath);
+			XmlReader reader = new XmlReader(filePathShortReport);
 			IEnumerable<Test> expected = new List<Test>()
 			{
 				new Test()
@@ -41,7 +55,7 @@ namespace UnitTestTrxToHtmlConverter
 		[Test]
 		public void LoadAllTestedClasses_ValidFileAsInput_ListCreatedCorrectly()
 		{
-			XmlReader reader = new XmlReader(filePath);
+			XmlReader reader = new XmlReader(filePathFullReport);
 			List<string> expected = new List<string>()
 			{
 				"DxfExportTests",
@@ -95,7 +109,7 @@ namespace UnitTestTrxToHtmlConverter
         [Test]
         public void LoadTotalTestsProperties_ValidFileAsInput_TotalTestPropertiesCorrectlyLoaded()
         {
-            XmlReader reader = new XmlReader(@"C:\Users\OptiNav\Source\Repos\JakubNowikowski\TrxToHtmlConverter\TrxToHtmlConverter\bin\Debug\shortreport.trx");
+            XmlReader reader = new XmlReader(filePathShortReport);
             TotalTestsProperties expected = new TotalTestsProperties()
             {
                 Total = "97",
