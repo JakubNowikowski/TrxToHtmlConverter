@@ -52,5 +52,37 @@ namespace UnitTestTrxToHtmlConverter
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void LoadTotalTestsProperties_ValidFileAsInput_TotalTestPropertiesCorrectlyLoaded()
+        {
+            XmlReader reader = new XmlReader(@"C:\Users\OptiNav\Source\Repos\JakubNowikowski\TrxToHtmlConverter\TrxToHtmlConverter\bin\Debug\shortreport.trx");
+            TotalTestsProperties expected = new TotalTestsProperties()
+            {
+                Total = "97",
+                Executed = "97",
+                Passed = "97",
+                Failed = "0",
+                Error = "0",
+                Timeout = "0",
+                Aborted = "0",
+                Inconclusive = "0",
+                PassedButRunAborted = "0",
+                NotRunnable = "0",
+                NotExecuted = "0",
+                Disconnected = "0",
+                Warning = "0",
+                Completed = "0",
+                InProgress = "0",
+                Pending = "0",
+                StartTime = "2019-01-15T12:06:36.8892587+01:00",
+                FinishTime = "2019-01-15T12:06:41.3405171+01:00",
+                TestCategory = "DxfExportingTests"
+            };
+
+            var actual = reader.LoadTotalTestsProperties();
+
+            Assert.IsTrue(expected.Equals(actual));
+        }
     }
 }

@@ -27,5 +27,19 @@ namespace TrxToHtmlConverter
 		public string StartTime { get; set; }
 		public string FinishTime { get; set; }
 		public string TestCategory { get; set; }
- 	}
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is TotalTestsProperties))
+                return false;
+
+            TotalTestsProperties o = (TotalTestsProperties)obj;
+
+            return  Total == o.Total && Executed == o.Executed && Passed == o.Passed && Failed == o.Failed &&
+                    Error == o.Error && Timeout == o.Timeout && Aborted == o.Aborted && Inconclusive == o.Inconclusive &&
+                    PassedButRunAborted == o.PassedButRunAborted && NotRunnable == o.NotRunnable && NotExecuted == o.NotExecuted && Disconnected == o.Disconnected &&
+                    Warning == o.Warning && Completed == o.Completed && InProgress == o.InProgress && Pending == o.Pending &&
+                    StartTime == o.StartTime && FinishTime == o.FinishTime && InProgress == o.InProgress && TestCategory == o.TestCategory;
+        }
+    }
 }
