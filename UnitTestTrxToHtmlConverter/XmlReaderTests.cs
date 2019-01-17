@@ -31,9 +31,8 @@ namespace UnitTestTrxToHtmlConverter
             };
 
             var actual = reader.AllTestsResults();
-
+            
             CollectionAssert.AreEqual(expected, actual);
-
         }
 
         [Test]
