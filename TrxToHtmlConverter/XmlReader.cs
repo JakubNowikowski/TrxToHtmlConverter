@@ -17,7 +17,7 @@ namespace TrxToHtmlConverter
 			doc = XDocument.Load(file);
 			xmlns = doc.Root.Name.Namespace.NamespaceName;
 		}
-		
+
 		public IEnumerable<Test> AllTestsResults()
 		{
 			var allTests = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Results", xmlns)).Elements().ToList();
@@ -36,35 +36,41 @@ namespace TrxToHtmlConverter
 			return joinedList;
 		}
 
-        public TestLoadResult CreateTestLoadResult()
-        {
-            return new TestLoadResult()
-            {
-                tests = AllTestsResults(),
-                totalTestsProp = LoadTotalTestsProperties(),
-                AllTestedClasses = LoadAllTestedClasses()
-            };
-        }
+		public TestLoadResult CreateTestLoadResult()
+		{
+			return new TestLoadResult()
+			{
+				tests = AllTestsResults(),
+				totalTestsProp = LoadTotalTestsProperties(),
+				AllTestedClasses = LoadAllTestedClasses()
+			};
+		}
 
-        public List<string> LoadAllTestedClasses()
-        {
-            List<string> AllTestedClasses = new List<string>();
-            var allTestDefinitions = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("TestDefinitions", xmlns)).Elements();
-            foreach (var e in allTestDefinitions)
-            {
-                AllTestedClasses.Add(e.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value);
-            }
+		public List<string> LoadAllTestedClasses()
+		{
+			List<string> AllTestedClasses = new List<string>();
+			var allTestDefinitions = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("TestDefinitions", xmlns)).Elements();
+			foreach (var e in allTestDefinitions)
+			{
+				AllTestedClasses.Add(e.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value);
+			}
+			return RemoveDuplicates(AllTestedClasses);
+		}
 
-            for (int i = 0; i < AllTestedClasses.Count; i++)
-            {
-                AllTestedClasses[i] = AllTestedClasses[i].Split('.').Last();
-                AllTestedClasses[i] = AllTestedClasses[i].Split('+').First();
-            }
+		public static List<string> RemoveDuplicates(List<string> list)
+		{
+			list = list.Select(s => s.Split('.').Last().Split('+').First()).ToList();
 
-            return AllTestedClasses.Distinct().ToList();
-        }
+			for (int i = 0; i < list.Count; i++)
+			{
+				list[i] = list[i].Split('.').Last();
+				list[i] = list[i].Split('+').First();
+			}
+			return list.Distinct().ToList();
+		}
 
-        public TotalTestsProperties LoadTotalTestsProperties()
+
+		public TotalTestsProperties LoadTotalTestsProperties()
 		{
 			var total = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns));
 			var startTime = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Times", xmlns)).Attribute("start");
