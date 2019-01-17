@@ -26,5 +26,6 @@ namespace TrxToHtmlConverter
 		public string Pending { get; set; }
 		public string StartTime { get; set; }
 		public string FinishTime { get; set; }
+		public string TestCategory { get; set; }
  	}
 }

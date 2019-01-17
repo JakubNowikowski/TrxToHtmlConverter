@@ -11,14 +11,13 @@ namespace TrxToHtmlConverter
 	{
 		XDocument doc;
 		string xmlns;
-		
 
 		public XmlReader(string file)
 		{
 			doc = XDocument.Load(file);
 			xmlns = doc.Root.Name.Namespace.NamespaceName;
 		}
-
+		
 		public IEnumerable<Test> AllTestsResults()
 		{
 			var allTests = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Results", xmlns)).Elements().ToList();
@@ -70,6 +69,12 @@ namespace TrxToHtmlConverter
 			var total = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns));
 			var startTime = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Times", xmlns)).Attribute("start");
 			var finishTime = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Times", xmlns)).Attribute("finish");
+			var testCategory = doc.Element(XName.Get("TestRun", xmlns))
+				.Element(XName.Get("TestDefinitions", xmlns))
+				.Element(XName.Get("UnitTest", xmlns))
+				.Element(XName.Get("TestCategory", xmlns))
+				.Element(XName.Get("TestCategoryItem", xmlns))
+				.Attribute("TestCategory");
 
 			return new TotalTestsProperties()
 			{
@@ -90,7 +95,8 @@ namespace TrxToHtmlConverter
 				InProgress = total.Attribute("inProgress").Value.ToString(),
 				Pending = total.Attribute("pending").Value.ToString(),
 				StartTime = startTime.Value.ToString(),
-				FinishTime = finishTime.Value.ToString()
+				FinishTime = finishTime.Value.ToString(),
+				TestCategory = testCategory.Value.ToString()
 
 			};
 		}
