@@ -19,7 +19,7 @@ namespace TrxToHtmlConverter
 		public HtmlGeneration(string trxFilePath, string outputPath)
 		{
 			_OutputPath = outputPath;
-			_TemplatePath = @"template.html";
+			_TemplatePath = @"../../template.html";
 			_TrxFilePath = trxFilePath;
 		}
 		public void Generation()
@@ -36,17 +36,17 @@ namespace TrxToHtmlConverter
 
 
 			HtmlNode totalResultNode = HtmlNode.CreateNode($"<p>" +
-				$"Result: <strong>{TotalResultString()}</strong></br>" +
+				$"Result: <strong>{CreateColoredResult(TotalResultString())}</strong></br>" +
 				$"Start time: {_TestLoadResult.totalTestsProp.StartTime}</br>" +
 				$"End time: {_TestLoadResult.totalTestsProp.FinishTime}</br>" +
 				$"Test duration: {TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)}</p>");
 			HtmlNode summaryOfTestResultsHeader = HtmlNode.CreateNode($"<h2>Summary of the test cases</h2>");
 			HtmlNode summaryList = HtmlNode.CreateNode($"<ul>" +
-				$"<li>{GetTotalTestNumber()} tests in total</li>" +
-				$"<li>{_TestLoadResult.totalTestsProp.Passed} tests <code style='color:green;'>PASSED</code></li>" +
-				$"<li>{_TestLoadResult.totalTestsProp.Failed} tests <code style='color:red;'>FAILED</code></li>" +
-				$"<li>{_TestLoadResult.totalTestsProp.Inconclusive} tests are <code>INCONCLUSIVE</code></li>" +
-				$"<li>{_TestLoadResult.totalTestsProp.Warning} tests have <code style='color:orange;'>WARNING</code></li>" +
+				$"<li>{GetTotalTestNumber()} tests in TOTAL </li>" +
+				$"<li>{_TestLoadResult.totalTestsProp.Passed} tests <font color=green>PASSED</font></li>" +
+				$"<li>{_TestLoadResult.totalTestsProp.Failed} tests <font color=red>FAILED</font></li>" +
+				$"<li>{_TestLoadResult.totalTestsProp.Inconclusive} tests are <font color=blue>INCONCLUSIVE</font></li>" +
+				$"<li>{_TestLoadResult.totalTestsProp.Warning} tests have <font color=orange>WARNING</font></li>" +
 				$"</ul>");
 
 			htmlNodes.Add(totalResultNode);
@@ -69,9 +69,9 @@ namespace TrxToHtmlConverter
 				{
 					if (test.ClassName == e)
 					{
-						HtmlNode testNodeMethod = HtmlNode.CreateNode($"<ul>" +
-								$"<li><code style='color:green;'>{test.Result}</code></li>" +
-								$"<li><code style='fontsize:50;'>Method Name</code> <br> {test.MethodName}</li>" +
+                        HtmlNode testNodeMethod = HtmlNode.CreateNode($"<ul>" +
+                                $"<li>{CreateColoredResult(test.Result)}" +
+                                $"<b>Method Name</b> <br> {test.MethodName}</li>" +
 								$"</ul>");
 
 						htmlNodes.Add(testNodeMethod);
@@ -87,6 +87,20 @@ namespace TrxToHtmlConverter
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
+
+        private string CreateColoredResult(string result)
+        {
+            string color = "";
+            switch (result)
+            {
+                case "Passed": color = "green"; break;
+                case "Failed": color = "red"; break;
+                case "Inconclusive": color = "blue"; break;
+                case "Warning": color = "orange"; break;
+            }
+            
+            return $"<font color={color} size=4><strong>{result}</strong></font><br>";
+        }
 
 		private TimeSpan TestsDuration(DateTimeOffset startTime, DateTimeOffset stopTime)
 		{
@@ -104,9 +118,9 @@ namespace TrxToHtmlConverter
 		private string TotalResultString()
 		{
 			if ((Convert.ToInt32(_TestLoadResult.totalTestsProp.Passed) / Convert.ToInt32(GetTotalTestNumber())) == 1)
-				return "<code style='color:green;'>PASSED</code>";
+				return "Passed";
 			else
-				return "<code style='color:red;'>FAILED</code>";
+				return "Failed";
 		}
 
 		private string GetTotalTestNumber()
