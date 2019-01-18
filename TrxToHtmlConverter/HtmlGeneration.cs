@@ -53,56 +53,53 @@ namespace TrxToHtmlConverter
 			htmlNodes.Add(summaryOfTestResultsHeader);
 			htmlNodes.Add(summaryList);
 
-
 			HtmlNode resultOfTestCasesTitle = HtmlNode.CreateNode("<h2>Results of the test cases</h2>");
 			htmlNodes.Add(resultOfTestCasesTitle);
-
-			IEnumerable<Test> tests = _TestLoadResult.tests;
-
+			
 			List<string> listOfClasses = _TestLoadResult.AllTestedClasses;
 			foreach (string e in listOfClasses)
 			{
 				HtmlNode testNodeClassName = HtmlNode.CreateNode($"<h3>{e}</h3>");
 				htmlNodes.Add(testNodeClassName);
-
-				foreach (Test test in tests)
-				{
-					if (test.ClassName == e)
-					{
-                        HtmlNode testNodeMethod = HtmlNode.CreateNode($"<ul>" +
-                                $"<li>{CreateColoredResult(test.Result)}" +
-                                $"<b>Method Name</b> <br> {test.MethodName}</li>" +
-								$"</ul>");
-
-						htmlNodes.Add(testNodeMethod);
-
-					}
-				}
-
+				IEnumerable<Test> testsByClassName = _TestLoadResult.tests.Where(x => x.ClassName == e);
+				GetMethods(testsByClassName, htmlNodes);
 			}
 
-
+			//IEnumerable<Test>  testsByResult = _TestLoadResult.tests.Where(x => x.Result== "passed");
+			//GetMethods(testsByResult, htmlNodes);
 
 			document.DocumentNode.AppendChildren(htmlNodes);
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
+			
+		private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
+		{
+			foreach (Test method in methodList)
+			{
+				HtmlNode testNodeMethod = HtmlNode.CreateNode($"<ul>" +
+				$"<li>{CreateColoredResult(method.Result)}" +
+				$"<b>Method Name</b> <br> {method.MethodName}</li>" +
+				$"</ul>");
+				htmlNode.Add(testNodeMethod);
+			}
+		}
 
-        private string CreateColoredResult(string result)
-        {
-            string color = "";
-            switch (result)
-            {
-                case "Passed": color = "green"; break;
-                case "Failed": color = "red"; break;
-                case "Inconclusive": color = "blue"; break;
-                case "Warning": color = "orange"; break;
-            }
-            
-            return $"<font color={color} size=4><strong>{result}</strong></font><br>";
-        }
+		private string CreateColoredResult(string result)
+		{
+			string color = "";
+			switch (result)
+			{
+				case "Passed": color = "green"; break;
+				case "Failed": color = "red"; break;
+				case "Inconclusive": color = "blue"; break;
+				case "Warning": color = "orange"; break;
+			}
 
-		private TimeSpan TestsDuration(DateTimeOffset startTime, DateTimeOffset stopTime)
+			return $"<font color={color} size=4><strong>{result}</strong></font><br>";
+		}
+
+		private TimeSpan TestsDuration(DateTime startTime, DateTime stopTime)
 		{
 			return stopTime - startTime;
 		}
