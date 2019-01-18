@@ -75,39 +75,18 @@ namespace TrxToHtmlConverter
 
             var tableTestCase = document.DocumentNode.SelectSingleNode("/html/body/table/tbody").Elements("tr").First(d => d.Id == "TestsContainer").SelectSingleNode("td/table/thead");
 
-            HtmlNode tableRowTestCase = HtmlNode.CreateNode("<tr class=\"Test\"></tr>");
-
-            tableTestCase.AppendChild(tableRowTestCase);
-            tableTestCase = tableTestCase.LastChild;
-
-            tableRowTestCase = HtmlNode.CreateNode("<th scope=\"row\" class=\"column1\">7/28/2014 9:47:32 PM</th>");
-            tableTestCase.AppendChild(tableRowTestCase);
-
-            tableRowTestCase = HtmlNode.CreateNode("<td class=\"failed\">FAILED</td>");
-            tableTestCase.AppendChild(tableRowTestCase);
-
-            tableRowTestCase = HtmlNode.CreateNode("<td class=\"Function\">MixedStatuses</td>");
-            tableTestCase.AppendChild(tableRowTestCase);
-
-            tableRowTestCase = HtmlNode.CreateNode("<td class=\"Message\"></td>");
-            tableTestCase.AppendChild(tableRowTestCase);
-
-            tableRowTestCase = HtmlNode.CreateNode("<td class=\"Message\"></td>");
-            tableTestCase.AppendChild(tableRowTestCase);
-
-            tableRowTestCase = HtmlNode.CreateNode("<td class=\"Message\">138.6413 ms</td>");
-            tableTestCase.AppendChild(tableRowTestCase);
+            CreateTestCaseTableRows(tableTestCase);
 
             IEnumerable<Test> tests = _TestLoadResult.tests;
 
-			List<string> listOfClasses = _TestLoadResult.AllTestedClasses;
-			foreach (string e in listOfClasses)
-			{
-				HtmlNode testNodeClassName = HtmlNode.CreateNode($"<h3>{e}</h3>");
-				htmlNodes.Add(testNodeClassName);
-				IEnumerable<Test> testsByClassName = _TestLoadResult.tests.Where(x => x.ClassName == e);
-				GetMethods(testsByClassName, htmlNodes);
-			}
+			//List<string> listOfClasses = _TestLoadResult.AllTestedClasses;
+			//foreach (string e in listOfClasses)
+			//{
+			//	HtmlNode testNodeClassName = HtmlNode.CreateNode($"<h3>{e}</h3>");
+			//	htmlNodes.Add(testNodeClassName);
+			//	IEnumerable<Test> testsByClassName = _TestLoadResult.tests.Where(x => x.ClassName == e);
+			//	GetMethods(testsByClassName, htmlNodes);
+			//}
 
 			//IEnumerable<Test>  testsByResult = _TestLoadResult.tests.Where(x => x.Result== "passed");
 			//GetMethods(testsByResult, htmlNodes);
@@ -116,6 +95,37 @@ namespace TrxToHtmlConverter
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
+
+        private void CreateTestCaseTableRows(HtmlNode tableTestCase)
+        {
+            foreach(Test test in _TestLoadResult.tests)
+            {
+                HtmlNode tableRowTestCase = HtmlNode.CreateNode("<tr class=\"Test\"></tr>");
+
+                tableTestCase.AppendChild(tableRowTestCase);
+                tableTestCase = tableTestCase.LastChild;
+
+                tableRowTestCase = HtmlNode.CreateNode("<th scope=\"row\" class=\"column1\">7/28/2014 9:47:32 PM</th>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"{test.Result}\">{CreateColoredResult(test.Result)}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Function\">{test.MethodName}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode("<td class=\"Message\"></td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode("<td class=\"Message\"></td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode("<td class=\"Message\">138.6413 ms</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+            }
+
+           
+        }
 			
 		private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
 		{

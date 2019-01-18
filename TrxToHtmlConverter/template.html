@@ -412,9 +412,9 @@ td.error {
     background: #F08080;
 }
 
-tr.odd .warn,
-tr.sep .warn,
-td.warn {
+tr.odd .Warning,
+tr.sep .Warning,
+td.Warning {
     color: #E4C100;
     background: #FBE87E;
     width: 90px;
@@ -428,17 +428,17 @@ tr.sep .info {
     width: 90px;
 }
 
-tr.odd .failed,
-tr.sep.failed,
-td.failed {
+tr.odd .Failed,
+tr.sep.Failed,
+td.Failed {
     color: #d42945;
     background: #fed9d9;
     width: 90px;
 }
 
-tr.odd .passed,
-tr.sep.passed,
-td.passed {
+tr.odd .Passed,
+tr.sep.Passed,
+td.Passed {
     color: #7CCD7C;
     background: #c0eec0;
     width: 90px;
@@ -514,19 +514,19 @@ tfoot th {
 		<table id="ReportsTable">
 			<caption>All Failed Tests</caption>
 			<tbody>
-			  <tr>
-				<td class="column1Failed"></td>
-				<td class="Function">
-					  Faileds
+				<tr>
+					<td class="column1Failed"></td>
+					<td class="Function">
+						  Faileds
+						</td>
+					<td class="Message" name="Id">13 Tests</td>
+					<td class="ex">
+					  <div class="OpenMoreButton" onclick="ShowHide('TestsContainer','Button','Show Tests','Hide Tests');">
+						<div class="MoreButtonText" id="Button">Hide Tests</div>
+					  </div>
 					</td>
-				<td class="Message" name="Id">13 Tests</td>
-				<td class="ex">
-				  <div class="OpenMoreButton" onclick="ShowHide('TestsContainer','Button','Show Tests','Hide Tests');">
-					<div class="MoreButtonText" id="Button">Hide Tests</div>
-				  </div>
-				</td>
-			</tr>
-			<tr id="TestsContainer" class="visibleRow">
+				</tr>
+				<tr id="TestsContainer" class="visibleRow">
 				<td colspan="4">
 				  <div id="exceptionArrow">↳</div>
 				  <table>
@@ -539,22 +539,9 @@ tfoot th {
 						<th scope="col" class="TestsTable" abbr="Message">Owner</th>
 						<th scope="col" class="TestsTable" abbr="Exception">Duration</th>
 					  </tr>
-					  <tr class="Test">
-						<th scope="row" class="column1">7/28/2014 9:47:32 PM</th>
-						<td class="failed">FAILED</td>
-						<td class="Function">MixedStatuses</div>
-						</td>
-						<td class="Message"></td>
-						<td class="Message"></td>
-						<td class="Message">138.6413 ms</td>
-					  </tr>
 					</thead>
 				</td>
-			</tr>
-					<tbody>
-					'TABLES'
-					</tbody>
-					
-				</tbody>
+				</tr>
+			</tbody>
 		</table>
 	</body>
