@@ -105,28 +105,28 @@ namespace TrxToHtmlConverter
 			{
 				HtmlNode testNodeClassName = HtmlNode.CreateNode($"<h3>{e}</h3>");
 				htmlNodes.Add(testNodeClassName);
-
-				foreach (Test test in tests)
-				{
-					if (test.ClassName == e)
-					{
-                        HtmlNode testNodeMethod = HtmlNode.CreateNode($"<ul>" +
-                                $"<li>{CreateColoredResult(test.Result)}" +
-                                $"<b>Method Name</b> <br> {test.MethodName}</li>" +
-								$"</ul>");
-
-						htmlNodes.Add(testNodeMethod);
-
-					}
-				}
-
+				IEnumerable<Test> testsByClassName = _TestLoadResult.tests.Where(x => x.ClassName == e);
+				GetMethods(testsByClassName, htmlNodes);
 			}
 
-
+			//IEnumerable<Test>  testsByResult = _TestLoadResult.tests.Where(x => x.Result== "passed");
+			//GetMethods(testsByResult, htmlNodes);
 
 			document.DocumentNode.AppendChildren(htmlNodes);
 
 			ExportToFile(document.DocumentNode.InnerHtml);
+		}
+			
+		private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
+		{
+			foreach (Test method in methodList)
+			{
+				HtmlNode testNodeMethod = HtmlNode.CreateNode($"<ul>" +
+				$"<li>{CreateColoredResult(method.Result)}" +
+				$"<b>Method Name</b> <br> {method.MethodName}</li>" +
+				$"</ul>");
+				htmlNode.Add(testNodeMethod);
+			}
 		}
 
         public string CreateClassFilter(List<string> listOfClasses)
@@ -161,7 +161,7 @@ namespace TrxToHtmlConverter
             return $"<font color={color} size=4><strong>{result}</strong></font><br>";
         }
 
-		private TimeSpan TestsDuration(DateTimeOffset startTime, DateTimeOffset stopTime)
+		private TimeSpan TestsDuration(DateTime startTime, DateTime stopTime)
 		{
 			return stopTime - startTime;
 		}
