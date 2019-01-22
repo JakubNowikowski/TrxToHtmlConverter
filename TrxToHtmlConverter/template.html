@@ -518,30 +518,30 @@
 		</div>
 
 		<div id="test">
-			<div class="SummaryDiv">
-				<table id="DetailsTable StatusesTable">
+			<div id="SummaryDiv" class="SummaryDiv">
+				<table id="DetailsTable_StatusesTable">
 					<caption>Tests Statuses</caption>
 					<tbody>
-						<tr id="odd">
+						<tr id="total">
 							<th class="column1 statusCount">Total</th>
 							<td class="statusCount">VALUE</td>
 						</tr>
-						<tr>
+						<tr id="passed">
 							<th scope="row" class="column1 statusCount">Passed</th>
 							<td class="statusCount">VALUE</td>
-						</tr>
-						<tr>
+						</tr >
+						<tr id="failed">
 							<th scope="row" class="column1 statusCount">Failed</th>
-							<td class="statusCount">13</td>
+							<td class="statusCount">VALUE</td>
 						</tr>
-						<tr>
+						<tr id="inconclusive">
 							<th scope="row" class="column1 statusCount">Inconclusive</th>
-							<td class="statusCount">0</td>
+							<td class="statusCount">VALUE</td>
 						</tr>
 
-						<tr>
+						<tr id="warning">
 							<th scope="row" class="column1 statusCount">Warning</th>
-							<td class="statusCount">1</td>
+							<td class="statusCount">VALUE</td>
 						</tr>
 
 					</tbody>
@@ -549,22 +549,22 @@
 				<table id="SummaryTable">
 					<caption>Run Time Summary</caption>
 					<tbody>
-						<tr class="odd">
+						<tr class="odd" id="startTime">
 							<th class="column1">Start Time</th>
-							<td>7/28/2014 9:47:32 PM</td>
+							<td>VALUE</td>
 						</tr>
-						<tr>
-							<th class="column1">End Time</th>
-							<td>7/28/2014 9:47:42 PM</td>
+						<tr id="endTime">
+							<th class="column1" >End Time</th>
+							<td>VALUE</td>
 						</tr>
-						<tr>
+						<tr id="duration">
 							<th class="column1">Duration</th>
-							<td>10.14 seconds</td>
+							<td>VALUE</td>
 						</tr>
 					</tbody>
 				</table>
 				<table id="ReportsTable">
-					<caption>All Failed Tests</caption>
+					<caption>'CLASSNAME'</caption>
 					<tbody>
 						<tr>
 							<td class="column1Failed"></td>
@@ -591,16 +591,13 @@
 											<th scope="col" class="TestsTable" abbr="Message">Owner</th>
 											<th scope="col" class="TestsTable" abbr="Exception">Duration</th>
 										</tr>
-
 									</thead>
+									<tbody>
+									</tbody>
 								</table>
 							</td>
 						</tr>
 					</tbody>
-					<tbody></tbody>
-
-
-
 				</table>
 			</div>
 		</div>

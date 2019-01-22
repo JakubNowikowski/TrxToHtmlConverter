@@ -29,93 +29,70 @@ namespace TrxToHtmlConverter
 
 			HtmlNodeCollection htmlNodes = new HtmlNodeCollection(document.DocumentNode);
 
-            //var headerNode = document.DocumentNode.SelectSingleNode("body").Elements("div").First(d => d.Id == "header");
-            //var text = headerNode.Element("h1").InnerText;
-            //text = text.Replace("TEMPLATE", _TestLoadResult.totalTestsProp.TestCategory);
-            //headerNode.Element("h1").InnerHtml = HtmlDocument.HtmlEncode(text);
+            document = ReplaceAllTotalValues(document);
+            document = ReplaceAllRunTimeSummaryValues(document);
 
-
-            //HtmlNode totalResultNode = HtmlNode.CreateNode($"<p>" +
-            //	$"Result: <strong>{CreateColoredResult(TotalResultString())}</strong></br>" +
-            //	$"Start time: {_TestLoadResult.totalTestsProp.StartTime}</br>" +
-            //	$"End time: {_TestLoadResult.totalTestsProp.FinishTime}</br>" +
-            //	$"Test duration: {TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)}</p>");
-            //HtmlNode summaryOfTestResultsHeader = HtmlNode.CreateNode($"<h2>Summary of the test cases</h2>");
-            //HtmlNode summaryList = HtmlNode.CreateNode($"<ul>" +
-            //	$"<li>{GetTotalTestNumber()} tests in TOTAL </li>" +
-            //	$"<li>{_TestLoadResult.totalTestsProp.Passed} tests <font color=green>PASSED</font></li>" +
-            //	$"<li>{_TestLoadResult.totalTestsProp.Failed} tests <font color=red>FAILED</font></li>" +
-            //	$"<li>{_TestLoadResult.totalTestsProp.Inconclusive} tests are <font color=blue>INCONCLUSIVE</font></li>" +
-            //	$"<li>{_TestLoadResult.totalTestsProp.Warning} tests have <font color=orange>WARNING</font></li>" +
-            //	$"</ul>");
-
-            //htmlNodes.Add(totalResultNode);
-            //htmlNodes.Add(summaryOfTestResultsHeader);
-            //htmlNodes.Add(summaryList);
-
-
-            //HtmlNode resultOfTestCasesTitle = HtmlNode.CreateNode("<h2>Results of the test cases</h2>");
-            //htmlNodes.Add(resultOfTestCasesTitle);
-
-            //HtmlNode startForm = HtmlNode.CreateNode("<form action=\"\" method=\"post\">" + CreateClassFilter(_TestLoadResult.AllTestedClasses) + CreateResultFilter() + "<input type=\"submit\" value=\"SHOW\"></form>");
-            //htmlNodes.Add(startForm);
-
-            //HtmlNode classFilter = HtmlNode.CreateNode(CreateClassFilter(_TestLoadResult.AllTestedClasses));
-            //htmlNodes.Add(classFilter);
-
-            //HtmlNode resultFilter = HtmlNode.CreateNode(CreateResultFilter());
-            //htmlNodes.Add(resultFilter);
-
-            //HtmlNode buttonShow = HtmlNode.CreateNode("<input type=\"submit\" value=\"SHOW\"></form>");
-            //htmlNodes.Add(buttonShow);
-
-            //HtmlNode php = HtmlNode.CreateNode("<p><?php echo \"cos\"?></p>");
-            //htmlNodes.Add(php);
-
-
-            var tableTestCase = document.DocumentNode.SelectSingleNode("/html/body/table/tbody").Elements("tr").First(d => d.Id == "TestsContainer").SelectSingleNode("td/table/thead");
-
-            CreateTestCaseTableRows(tableTestCase); var totalResultNode = document.DocumentNode.SelectSingleNode("body")
-                 .Element("div").Elements("div").First(d => d.Id == "test")
-                 .Element("div").Elements("table").First(d => d.Id == "DetailsTable StatusesTable")
-                 .Element("tbody").Elements("tr").First(d => d.Id == "odd");
-            var value = totalResultNode.Element("td").InnerText;
-            value = value.Replace("VALUE", _TestLoadResult.totalTestsProp.Total);
-            totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(value);
-
-
-            HtmlNode.CreateNode($"<p>" +
-                $"Result: <strong>{CreateColoredResult(TotalResultString())}</strong></br>" +
-                $"Start time: {_TestLoadResult.totalTestsProp.StartTime}</br>" +
-                $"End time: {_TestLoadResult.totalTestsProp.FinishTime}</br>" +
-                $"Test duration: {TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)}</p>");
-
-            //HtmlNode totalResultNode = HtmlNode.CreateNode($"<p>" +
-            //	$"Result: <strong>{CreateColoredResult(TotalResultString())}</strong></br>" +
-            //	$"Start time: {_TestLoadResult.totalTestsProp.StartTime}</br>" +
-            //	$"End time: {_TestLoadResult.totalTestsProp.FinishTime}</br>" +
-            //	$"Test duration: {TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)}</p>");
-            HtmlNode summaryOfTestResultsHeader = HtmlNode.CreateNode($"<h2>Summary of the test cases</h2>");
-            HtmlNode summaryList = HtmlNode.CreateNode($"<ul>" +
-                $"<li>{GetTotalTestNumber()} tests in TOTAL </li>" +
-                $"<li>{_TestLoadResult.totalTestsProp.Passed} tests <font color=green>PASSED</font></li>" +
-                $"<li>{_TestLoadResult.totalTestsProp.Failed} tests <font color=red>FAILED</font></li>" +
-                $"<li>{_TestLoadResult.totalTestsProp.Inconclusive} tests are <font color=blue>INCONCLUSIVE</font></li>" +
-                $"<li>{_TestLoadResult.totalTestsProp.Warning} tests have <font color=orange>WARNING</font></li>" +
-                $"</ul>");
-            tableRowTestCase = HtmlNode.CreateNode("<td class=\"Message\"></td>");
-            tableTestCase.AppendChild(tableRowTestCase);
-
-
+            var tableTestCase = document.DocumentNode.SelectSingleNode("/html/body")
+                .Element("div").Elements("div").First(d => d.Id == "test")
+                .Element("div").Elements("table").First(d => d.Id == "ReportsTable").Element("tbody").
+                Elements("tr").First(d => d.Id == "TestsContainer").Element("td").Element("table").Element("tbody");
+           
+            CreateTestCaseTableRows(tableTestCase);
 
             document.DocumentNode.AppendChildren(htmlNodes);
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
 
+        private HtmlDocument ReplaceAllRunTimeSummaryValues(HtmlDocument doc)
+        {
+            doc = ReplaceOneRunTimeSummaryValue(doc, "startTime", _TestLoadResult.totalTestsProp.StartTime.ToString());
+            doc = ReplaceOneRunTimeSummaryValue(doc, "endTime", _TestLoadResult.totalTestsProp.FinishTime.ToString());
+            doc = ReplaceOneRunTimeSummaryValue(doc, "duration", TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime).ToString());
+
+            return doc;
+        }
+
+        private HtmlDocument ReplaceOneRunTimeSummaryValue(HtmlDocument doc, string id, string value)
+        {
+            var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
+                .Element("div").Elements("div").First(d => d.Id == "test")
+                .Element("div").Elements("table").First(d => d.Id == "SummaryTable")
+                .Element("tbody").Elements("tr").First(d => d.Id == id);
+            var valueNode = totalResultNode.Element("td").InnerText;
+            valueNode = valueNode.Replace("VALUE", value);
+            totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
+
+            return doc;
+        }
+
+        private HtmlDocument ReplaceAllTotalValues(HtmlDocument doc)
+        {
+            doc = ReplaceOneTotalValue(doc, "total", _TestLoadResult.totalTestsProp.Total);
+            doc = ReplaceOneTotalValue(doc, "passed", _TestLoadResult.totalTestsProp.Passed);
+            doc = ReplaceOneTotalValue(doc, "failed", _TestLoadResult.totalTestsProp.Failed);
+            doc = ReplaceOneTotalValue(doc, "inconclusive", _TestLoadResult.totalTestsProp.Inconclusive);
+            doc = ReplaceOneTotalValue(doc, "warning", _TestLoadResult.totalTestsProp.Warning);
+
+            return doc;
+        }
+
+        private HtmlDocument ReplaceOneTotalValue(HtmlDocument doc, string id, string value)
+        {
+            var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
+                .Element("div").Elements("div").First(d => d.Id == "test")
+                .Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
+                .Element("tbody").Elements("tr").First(d => d.Id == id);
+            var valueNode = totalResultNode.Element("td").InnerText;
+            valueNode = valueNode.Replace("VALUE", value);
+            totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
+
+            return doc;
+        }
+
         private void CreateTestCaseTableRows(HtmlNode tableTestCase)
         {
-            foreach(Test test in _TestLoadResult.tests)
+            foreach (Test test in _TestLoadResult.tests)
             {
                 HtmlNode tableRowTestCase = HtmlNode.CreateNode("<tr class=\"Test\"></tr>");
 
@@ -141,7 +118,7 @@ namespace TrxToHtmlConverter
                 tableTestCase.AppendChild(tableRowTestCase);
             }
 
-           
+
         }
 			
 		private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
@@ -224,7 +201,7 @@ namespace TrxToHtmlConverter
 		private HtmlDocument LoadTemplate(string templatePath)
 		{
 			var doc = new HtmlDocument();
-			doc.Load(templatePath);
+			doc.Load(templatePath, Encoding.UTF8);
 
 			return doc;
 		}
