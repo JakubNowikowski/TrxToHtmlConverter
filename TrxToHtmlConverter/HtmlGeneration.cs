@@ -29,6 +29,7 @@ namespace TrxToHtmlConverter
 
 			HtmlNodeCollection htmlNodes = new HtmlNodeCollection(document.DocumentNode);
 
+            document = ChangeNameOfDocument(document, _TestLoadResult.totalTestsProp.TestCategory);
             document = ReplaceAllTotalValues(document);
             document = ReplaceAllRunTimeSummaryValues(document);
 
@@ -43,6 +44,17 @@ namespace TrxToHtmlConverter
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
+
+        private HtmlDocument ChangeNameOfDocument(HtmlDocument doc, string nameValue)
+        {
+            var titleNode = doc.DocumentNode.SelectSingleNode("/html/body").
+                Element("div").Elements("div").First(d => d.Id == "header");
+            var valueNode = titleNode.Element("h1").InnerHtml;
+            valueNode = valueNode.Replace("TEMPLATE", nameValue);
+            titleNode.Element("h1").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
+
+            return doc;
+        }
 
         private HtmlDocument ReplaceAllRunTimeSummaryValues(HtmlDocument doc)
         {
