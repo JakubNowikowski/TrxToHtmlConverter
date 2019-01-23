@@ -47,12 +47,65 @@ namespace TrxToHtmlConverter
                 .Element("div").Elements("table").First(d => d.Id == "ReportsTable");
             foreach (string testedClass in _TestLoadResult.AllTestedClasses)
             {
-                HtmlNode htmlNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}\"></tr>");
+                HtmlNode tbodyNode = HtmlNode.CreateNode("<tbody></tbody>");
+                HtmlNode headerNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}\"></tr>");
                 HtmlNode colummTdNode = HtmlNode.CreateNode("<td class=\"column1\"></td>");
+
                 HtmlNode functionNode = HtmlNode.CreateNode($"<td class=\"Function\">{testedClass}</td>");
-                htmlNode.AppendChild(colummTdNode);
-                htmlNode.AppendChild(functionNode);
-                tableTestCase.ChildNodes.Append(htmlNode);
+                HtmlNode numberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"Message\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
+                HtmlNode exNode = HtmlNode.CreateNode("<td class=\"ex\"></td>");
+
+                HtmlNode openMoreButtonNode = HtmlNode.CreateNode($"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{testedClass}TestsContainer', '{testedClass}Button', 'Show Tests', 'Hide Tests'); \"></div>");
+                HtmlNode moreButtonNode = HtmlNode.CreateNode($"<div class=\"MoreButtonText\" id=\"{testedClass}Button\">Hide Tests</div>");
+
+                HtmlNode rowsNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}TestsContainer\" class=\"visibleRow\"></tr>");
+                HtmlNode colSpanNode = HtmlNode.CreateNode("<td colspan=\"4\"></td>");
+                HtmlNode arrowNode = HtmlNode.CreateNode("<div id=\"exceptionArrow\">↳</div>");
+                HtmlNode tableNode = HtmlNode.CreateNode("<table></table>");
+                HtmlNode theadNode = HtmlNode.CreateNode("<thead></thead>");
+                HtmlNode oddNode = HtmlNode.CreateNode("<tr class=\"odd\"></tr>");
+                
+                HtmlNode timeNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\">Time</th>");
+                HtmlNode statusNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Status\">Status</th>");
+                HtmlNode nameNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Test\">Test</th>");
+                HtmlNode messageNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Message\">Message</th>");
+                HtmlNode idNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Message\">ID</th>");
+                HtmlNode exeptionNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Exception\">Duration</th>");
+                HtmlNodeCollection columnTitles = new HtmlNodeCollection(oddNode);
+                HtmlNode tbodyTestsNode = HtmlNode.CreateNode("<tbody></tbody>");
+
+                var classPredicate = PredicateCreator(c => c.ClassName, testedClass);
+                CreateTestCaseTableRows(tbodyTestsNode, classPredicate);
+
+
+
+                columnTitles.Add(timeNode);
+                columnTitles.Add(statusNode);
+                columnTitles.Add(nameNode);
+                columnTitles.Add(messageNode);
+                columnTitles.Add(idNode);
+                columnTitles.Add(exeptionNode);
+ 
+                headerNode.AppendChild(colummTdNode);
+                headerNode.AppendChild(functionNode);
+                headerNode.AppendChild(numberNode);
+                
+                openMoreButtonNode.AppendChild(moreButtonNode);
+                exNode.AppendChild(openMoreButtonNode);
+                headerNode.AppendChild(exNode);
+                tbodyNode.AppendChild(headerNode);
+
+                oddNode.AppendChildren(columnTitles);
+                theadNode.AppendChild(oddNode);
+
+                tableNode.AppendChild(theadNode);
+                tableNode.AppendChild(tbodyTestsNode);
+                colSpanNode.AppendChild(arrowNode);
+                colSpanNode.AppendChild(tableNode);
+                rowsNode.AppendChild(colSpanNode);
+                tbodyNode.AppendChild(rowsNode);
+
+                tableTestCase.ChildNodes.Append(tbodyNode);
 
             }
 
