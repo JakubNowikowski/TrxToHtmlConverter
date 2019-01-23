@@ -33,11 +33,30 @@ namespace TrxToHtmlConverter
             document = ReplaceAllTotalValues(document);
             document = ReplaceAllRunTimeSummaryValues(document);
             document = FillFailedTestsTable(document);
-            
+            document = FillAllTestsByClasses(document);
 
             document.DocumentNode.AppendChildren(htmlNodes);
 
             ExportToFile(document.DocumentNode.InnerHtml);
+        }
+
+        private HtmlDocument FillAllTestsByClasses(HtmlDocument doc)
+        {
+            var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
+                .Element("div").Elements("div").First(d => d.Id == "test")
+                .Element("div").Elements("table").First(d => d.Id == "ReportsTable");
+            foreach (string testedClass in _TestLoadResult.AllTestedClasses)
+            {
+                HtmlNode htmlNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}\"></tr>");
+                HtmlNode colummTdNode = HtmlNode.CreateNode("<td class=\"column1\"></td>");
+                HtmlNode functionNode = HtmlNode.CreateNode($"<td class=\"Function\">{testedClass}</td>");
+                htmlNode.AppendChild(colummTdNode);
+                htmlNode.AppendChild(functionNode);
+                tableTestCase.ChildNodes.Append(htmlNode);
+
+            }
+
+            return doc;
         }
 
         private HtmlDocument FillFailedTestsTable(HtmlDocument doc)
@@ -134,7 +153,7 @@ namespace TrxToHtmlConverter
         {
             foreach (Test test in _TestLoadResult.tests.Where(func))
             {
-                HtmlNode tableRowTestCase = HtmlNode.CreateNode("<tr class=\"Test\"></tr>");
+                HtmlNode tableRowTestCase = HtmlNode.CreateNode($"<tr id=\"{test.ID}\"class=\"Test\"></tr>");
 
                 tableTestCase.AppendChild(tableRowTestCase);
                 tableTestCase = tableTestCase.LastChild;
