@@ -184,11 +184,11 @@ namespace TrxToHtmlConverter
 			return doc;
 		}
 
-		private HtmlDocument ReplaceAllRunTimeSummaryValues(HtmlDocument doc)
-		{
-			doc = ReplaceOneRunTimeSummaryValue(doc, "startTime", _TestLoadResult.totalTestsProp.StartTime.ToString());
-			doc = ReplaceOneRunTimeSummaryValue(doc, "endTime", _TestLoadResult.totalTestsProp.FinishTime.ToString());
-			doc = ReplaceOneRunTimeSummaryValue(doc, "duration", TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime).ToString());
+        private HtmlDocument ReplaceAllRunTimeSummaryValues(HtmlDocument doc)
+        {
+            doc = ReplaceOneRunTimeSummaryValue(doc, "startTime", _TestLoadResult.totalTestsProp.StartTime.ToString());
+            doc = ReplaceOneRunTimeSummaryValue(doc, "endTime", _TestLoadResult.totalTestsProp.FinishTime.ToString());
+            doc = ReplaceOneRunTimeSummaryValue(doc, "duration", string.Format("{0:hh\\:mm\\:ss\\.fff}", TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)));
 
 			return doc;
 		}
