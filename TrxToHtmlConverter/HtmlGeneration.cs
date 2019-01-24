@@ -14,7 +14,6 @@ namespace TrxToHtmlConverter
 		private string _OutputPath;
 		private string _TemplatePath;
 		private string _TrxFilePath;
-		private XmlReader _XmlReader;
 		private TestLoadResult _TestLoadResult;
 		public HtmlGeneration(string trxFilePath, string outputPath)
 		{
@@ -30,7 +29,7 @@ namespace TrxToHtmlConverter
 			var document = LoadTemplate(_TemplatePath);
 
 			document = ChangeNameOfDocument(document, _TestLoadResult.totalTestsProp.TestCategory);
-			document = ReplaceAllTotalValues(document);
+            document = TestStatusesTableCreator.CreateStatusesTable(document, _TestLoadResult);
 			document = ReplaceAllRunTimeSummaryValues(document);
 			document = FillFailedTestsTable(document);
 			document = FillAllTestsByClasses(document);
@@ -212,30 +211,6 @@ namespace TrxToHtmlConverter
 			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
 				.Element("div").Elements("div").First(d => d.Id == "test")
 				.Element("div").Elements("table").First(d => d.Id == "SummaryTable")
-				.Element("tbody").Elements("tr").First(d => d.Id == id);
-			var valueNode = totalResultNode.Element("td").InnerText;
-			valueNode = valueNode.Replace("VALUE", value);
-			totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
-
-			return doc;
-		}
-
-		private HtmlDocument ReplaceAllTotalValues(HtmlDocument doc)
-		{
-			doc = ReplaceOneTotalValue(doc, "total", _TestLoadResult.totalTestsProp.Total);
-			doc = ReplaceOneTotalValue(doc, "passed", _TestLoadResult.totalTestsProp.Passed);
-			doc = ReplaceOneTotalValue(doc, "failed", _TestLoadResult.totalTestsProp.Failed);
-			doc = ReplaceOneTotalValue(doc, "inconclusive", _TestLoadResult.totalTestsProp.Inconclusive);
-			doc = ReplaceOneTotalValue(doc, "warning", _TestLoadResult.totalTestsProp.Warning);
-
-			return doc;
-		}
-
-		private HtmlDocument ReplaceOneTotalValue(HtmlDocument doc, string id, string value)
-		{
-			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-				.Element("div").Elements("div").First(d => d.Id == "test")
-				.Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
 				.Element("tbody").Elements("tr").First(d => d.Id == id);
 			var valueNode = totalResultNode.Element("td").InnerText;
 			valueNode = valueNode.Replace("VALUE", value);
