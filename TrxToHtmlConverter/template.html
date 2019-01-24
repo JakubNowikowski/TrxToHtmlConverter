@@ -198,6 +198,22 @@
 			width: 170px;
 		}
 
+		.column1Passed {
+			background: #c0eec0;
+			width: 30px;
+		}
+
+
+		.column1Inconclusive {
+			background: #1b2dff54;
+			width: 30px;
+		}
+
+		.column1Warning {
+			background: #ffce1b85;
+			width: 30px;
+		}
+
 		.column1Failed {
 			background: #f44336d9;
 			width: 30px;
@@ -396,7 +412,13 @@
 			width: 100px;
 		}
 
-		td.Message {
+		td.ID {
+			text-align: left;
+			width: auto;
+			word-wrap: break-word;
+		}
+
+		td.Duration {
 			text-align: left;
 			width: auto;
 			word-wrap: break-word;
@@ -588,7 +610,7 @@
 							<td class="Function">
 								Failed tests
 							</td>
-							<td id="number" class="Message" name="Id">VALUE</td>
+							<td id="number" class="ID" name="Id">VALUE</td>
 							<td class="ex">
 								<div class="OpenMoreButton" onclick="ShowHide('TestsContainer','Button','Show Tests','Hide Tests');">
 									<div class="MoreButtonText" id="Button">Hide Tests</div>
@@ -603,10 +625,9 @@
 										<tr class="odd">
 											<th scope="col" class="TestsTable" abbr="Status">Status</th>
 											<th scope="col" class="TestsTable" abbr="Test">Test</th>
-											<th scope="col" class="TestsTable" abbr="Message">Message</th>
-											<th scope="col" class="TestsTable" abbr="Message">ID</th>
-											<th scope="col" class="TestsTable">Time</th>
-											<th scope="col" class="TestsTable" abbr="Exception">Duration</th>
+											<th scope="col" class="TestsTable" abbr="ID">ID</th>
+											<th scope="col" class="TestsTable">Start Time</th>
+											<th scope="col" class="TestsTable" abbr="Duration">Duration</th>
 										</tr>
 									</thead>
 									<tbody></tbody>
