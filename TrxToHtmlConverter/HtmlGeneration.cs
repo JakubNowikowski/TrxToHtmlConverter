@@ -113,7 +113,7 @@ namespace TrxToHtmlConverter
 				HtmlNode moreButtonNode = HtmlNode.CreateNode($"<div class=\"MoreButtonText\" id=\"{testedClass}Button\">Show Tests</div>");
 
 				HtmlNode rowsNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}TestsContainer\" class=\"hiddenRow\"></tr>");
-				HtmlNode colSpanNode = HtmlNode.CreateNode("<td colspan=\"4\"></td>");
+				HtmlNode colSpanNode = HtmlNode.CreateNode("<td colspan=\"8\"></td>");
 				HtmlNode arrowNode = HtmlNode.CreateNode("<div id=\"exceptionArrow\">↳</div>");
 				HtmlNode tableNode = HtmlNode.CreateNode("<table></table>");
 				HtmlNode theadNode = HtmlNode.CreateNode("<thead></thead>");
