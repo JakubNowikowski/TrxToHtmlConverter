@@ -97,14 +97,14 @@ namespace TrxToHtmlConverter
 
 				HtmlNode functionNode = HtmlNode.CreateNode($"<td class=\"Function\">{testedClass}</td>");
 				HtmlNode allNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
-				HtmlNode passNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
-				HtmlNode failedNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
-				HtmlNode warningNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
-				HtmlNode inconclusiveNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
+				HtmlNode passedNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Passed").Count()}</td>");
+				HtmlNode failedNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count()}</td>");
+                HtmlNode warningNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Warning").Count()}</td>");
+                HtmlNode inconclusiveNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{_TestLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Inconclusive").Count()}</td>");
 
 
 
-				HtmlNode exNode = HtmlNode.CreateNode("<td class=\"ex\"></td>");
+                HtmlNode exNode = HtmlNode.CreateNode("<td class=\"ex\"></td>");
 				HtmlNode openMoreButtonNode = HtmlNode.CreateNode($"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{testedClass}TestsContainer', '{testedClass}Button', 'Show Tests', 'Hide Tests'); \"></div>");
 				HtmlNode moreButtonNode = HtmlNode.CreateNode($"<div class=\"MoreButtonText\" id=\"{testedClass}Button\">Show Tests</div>");
 
@@ -127,7 +127,7 @@ namespace TrxToHtmlConverter
 				headerNode.AppendChild(colummTdNode);
 				headerNode.AppendChild(functionNode);
 				headerNode.AppendChild(allNumberNode);
-				headerNode.AppendChild(passNumberNode);
+				headerNode.AppendChild(passedNumberNode);
 				headerNode.AppendChild(failedNumberNode);
 				headerNode.AppendChild(warningNumberNode);
 				headerNode.AppendChild(inconclusiveNumberNode);
