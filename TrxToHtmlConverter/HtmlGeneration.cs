@@ -77,8 +77,6 @@ namespace TrxToHtmlConverter
                 var classPredicate = PredicateCreator(c => c.ClassName, testedClass);
                 CreateTestCaseTableRows(tbodyTestsNode, classPredicate);
 
-
-
                 columnTitles.Add(timeNode);
                 columnTitles.Add(statusNode);
                 columnTitles.Add(nameNode);
@@ -211,9 +209,9 @@ namespace TrxToHtmlConverter
                 tableTestCase.AppendChild(tableRowTestCase);
                 tableTestCase = tableTestCase.LastChild;
 
-                tableRowTestCase = HtmlNode.CreateNode($"<th scope=\"row\" class=\"column1\"></th>");
-                tableTestCase.AppendChild(tableRowTestCase);
 
+                tableRowTestCase = HtmlNode.CreateNode($"<th scope=\"row\" class=\"td\"></th>");
+                tableTestCase.AppendChild(tableRowTestCase);
                 tableRowTestCase = HtmlNode.CreateNode($"<td class=\"{test.Result}\">{CreateColoredResult(test.Result)}</td>");
                 tableTestCase.AppendChild(tableRowTestCase);
 
@@ -269,9 +267,9 @@ namespace TrxToHtmlConverter
             switch (result)
             {
                 case "Passed": color = "green"; break;
-                case "Failed": color = "red"; break;
-                case "Inconclusive": color = "blue"; break;
-                case "Warning": color = "orange"; break;
+                case "Failed": color = "SaddleBrown"; break;
+                case "Inconclusive": color = "BlueViolet"; break;
+                case "Warning": color = "DarkGoldenrod"; break;
             }
 
             return $"<font color={color} size=4><strong>{result}</strong></font><br>";

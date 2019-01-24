@@ -91,7 +91,7 @@
 		}
 
 		body {
-			font: 15px/20px "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+			/* font: initial; */
 			margin-top: -10px;
 			min-width: 890px;
 		}
@@ -199,7 +199,7 @@
 		}
 
 		.column1Failed {
-			background: #fed9d9;
+			background: #f44336d9;
 			width: 30px;
 		}
 
@@ -339,8 +339,8 @@
 		}
 
 		caption {
-			color: #9ba9b4;
-			font-size: 16px;
+			color: #141e8c;
+			font-size: 22px;
 			letter-spacing: .2em;
 			margin: 1em 0 0 0;
 			padding: 0;
@@ -350,6 +350,7 @@
 			border-top: 1px solid #141e8c;
 			border-left: 1px solid #141e8c;
 			border-right: 1px solid #141e8c;
+			background: #141e8c0d;
 		}
 
 		tr.odd .column1 {
@@ -434,8 +435,24 @@
 		tr.odd .Failed,
 		tr.sep.Failed,
 		td.Failed {
-			color: #d42945;
-			background: #fed9d9;
+			color: #000000a1;
+			background: #f44336d9;
+			width: 90px;
+		}
+
+		tr.odd .Inconclusive,
+		tr.sep.Inconclusive,
+		td.Inconclusive {
+			color: #000000a1;
+			background: #1b2dff54;
+			width: 90px;
+		}
+
+		tr.odd .Warning,
+		tr.sep.Warning,
+		td.Warning {
+			color: #7e7415;
+			background: #ffce1b85;
 			width: 90px;
 		}
 
@@ -473,8 +490,8 @@
 		thead th {
 			background: #5f66b1;
 			text-align: center;
-			font: bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
-			/* color: #66a3d3; */
+			font: sans-serif;
+			color: #ffffff;
 		}
 
 		tfoot th {
@@ -584,11 +601,11 @@
 								<table>
 									<thead>
 										<tr class="odd">
-											<th scope="col" class="TestsTable">Time</th>
 											<th scope="col" class="TestsTable" abbr="Status">Status</th>
 											<th scope="col" class="TestsTable" abbr="Test">Test</th>
 											<th scope="col" class="TestsTable" abbr="Message">Message</th>
 											<th scope="col" class="TestsTable" abbr="Message">ID</th>
+											<th scope="col" class="TestsTable">Time</th>
 											<th scope="col" class="TestsTable" abbr="Exception">Duration</th>
 										</tr>
 									</thead>
@@ -600,14 +617,11 @@
 				</table>
 				<table id="ReportsTable">
 					<caption>All Tests Gouped By Classes</caption>
-					
+
 				</table>
 			</div>
 		</div>
 
 	</div>
-
-
-
-
 </body>
+</html>
