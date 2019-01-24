@@ -81,6 +81,12 @@ namespace TrxToHtmlConverter
 			return "column1Inconclusive";
 		}
 
+        private HtmlDocument testTemplateTable(HtmlDocument doc)
+        {
+            var template = LoadTemplate(@"../../tableTemplate.html");
+
+            throw new NotImplementedException();
+        }
 
 		private HtmlDocument FillAllTestsByClasses(HtmlDocument doc)
 		{
@@ -369,6 +375,7 @@ namespace TrxToHtmlConverter
 			fw.Close();
 		}
 
+        //TODO: write exeption
 		private HtmlDocument LoadTemplate(string templatePath)
 		{
 			var doc = new HtmlDocument();
