@@ -31,8 +31,10 @@ namespace TrxToHtmlConverter
 					MethodName = e.Attribute("testName").Value,
 					ID = e.Attribute("testId").Value,
 					ClassName = e2.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value.ToString().Split('.').Last().Split('+').First(),
-					Result = e.Attribute("outcome").Value
-				});
+					Result = e.Attribute("outcome").Value,
+                    StartTime = e.Attribute("startTime").Value,
+                    Duration = e.Attribute("duration").Value
+                });
 			return joinedList;
 		}
 
