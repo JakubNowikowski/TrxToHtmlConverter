@@ -12,6 +12,8 @@ namespace TrxToHtmlConverter
 		public string ClassName { get; set; }
 		public string ID { get; set; }
 		public string Result { get; set; }
+        public string StartTime { get; set; }
+        public string Duration { get; set; }
 
 		public override string ToString()
 		{
