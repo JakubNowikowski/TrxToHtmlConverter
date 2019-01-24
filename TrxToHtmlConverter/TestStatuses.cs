@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter
 {
-    public class TestStatusesTableCreator : HtmlDocument
+    public class TestStatuses : TableCreator
     {
-        public static HtmlDocument CreateStatusesTable(HtmlDocument doc, TestLoadResult testLoadResult)
+        public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
             doc = ReplaceOneTotalValue(doc, "total", testLoadResult.totalTestsProp.Total);
             doc = ReplaceOneTotalValue(doc, "passed", testLoadResult.totalTestsProp.Passed);

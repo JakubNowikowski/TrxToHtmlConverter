@@ -29,10 +29,10 @@ namespace TrxToHtmlConverter
 			var document = LoadTemplate(_TemplatePath);
 
 			document = ChangeNameOfDocument(document, _TestLoadResult.totalTestsProp.TestCategory);
-            document = TestStatusesTableCreator.CreateStatusesTable(document, _TestLoadResult);
-            document = RunTimeSummaryTableCreator.CreateRunTimeSummaryTable(document, _TestLoadResult);
-            document = AllFailedTestsTableCreator.CreateAllFailedTestsTable(document, _TestLoadResult);
-            document = AllTestesGroupedByClassesTableCreator.CreateAllTestesGroupedByClassesTable(document, _TestLoadResult);
+            document = TestStatuses.CreateTable(document, _TestLoadResult);
+            document = RunTimeSummary.CreateTable(document, _TestLoadResult);
+            document = AllFailedTests.CreateTable(document, _TestLoadResult);
+            document = AllTestesGroupedByClasses.CreateTable(document, _TestLoadResult);
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
@@ -53,49 +53,6 @@ namespace TrxToHtmlConverter
 			titleNode.Element("h1").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
 
 			return doc;
-		}
-
-		private HtmlDocument ReplaceOneRunTimeSummaryValue(HtmlDocument doc, string id, string value)
-		{
-			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-				.Element("div").Elements("div").First(d => d.Id == "test")
-				.Element("div").Elements("table").First(d => d.Id == "SummaryTable")
-				.Element("tbody").Elements("tr").First(d => d.Id == id);
-			var valueNode = totalResultNode.Element("td").InnerText;
-			valueNode = valueNode.Replace("VALUE", value);
-			totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
-
-			return doc;
-		}
-
-		//private HtmlDocument ReplaceAllTotalValues(HtmlDocument doc)
-		//{
-		//	doc = ReplaceOneTotalValue(doc, "total", _TestLoadResult.totalTestsProp.Total);
-		//	doc = ReplaceOneTotalValue(doc, "passed", _TestLoadResult.totalTestsProp.Passed);
-		//	doc = ReplaceOneTotalValue(doc, "failed", _TestLoadResult.totalTestsProp.Failed);
-		//	doc = ReplaceOneTotalValue(doc, "inconclusive", _TestLoadResult.totalTestsProp.Inconclusive);
-		//	doc = ReplaceOneTotalValue(doc, "warning", _TestLoadResult.totalTestsProp.Warning);
-
-		//	return doc;
-		//}
-
-		//private HtmlDocument ReplaceOneTotalValue(HtmlDocument doc, string id, string value)
-		//{
-		//	var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-		//		.Element("div").Elements("div").First(d => d.Id == "test")
-		//		.Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
-		//		.Element("tbody").Elements("tr").First(d => d.Id == id);
-		//	var valueNode = totalResultNode.Element("td").InnerText;
-		//	valueNode = valueNode.Replace("VALUE", value);
-		//	totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
-
-		//	return doc;
-		//}
-
-
-		private Func<Test, bool> PredicateCreator<T>(Func<Test, T> selector, T expected) where T : IEquatable<T>
-		{
-			return t => selector(t).Equals(expected);
 		}
         
         private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter
 {
-    class AllTestesGroupedByClassesTableCreator : TableCreator
+    class AllTestesGroupedByClasses : TableCreator
     {
-        public static HtmlDocument CreateAllTestesGroupedByClassesTable(HtmlDocument doc, TestLoadResult testLoadResult)
+        public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
             var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
                 .Element("div").Elements("div").First(d => d.Id == "test")

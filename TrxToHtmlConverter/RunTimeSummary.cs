@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter
 {
-    public class RunTimeSummaryTableCreator
+    public class RunTimeSummary : TableCreator
     {
-        public static HtmlDocument CreateRunTimeSummaryTable(HtmlDocument doc, TestLoadResult testLoadResult)
+        public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
             doc = ReplaceOneRunTimeSummaryValue(doc, "startTime", testLoadResult.totalTestsProp.StartTime.ToString());
             doc = ReplaceOneRunTimeSummaryValue(doc, "endTime", testLoadResult.totalTestsProp.FinishTime.ToString());

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter
 {
-    abstract class TableCreator
+    public abstract class TableCreator
     {
+        protected static HtmlDocument CreateTable()
+        {
+            return new HtmlDocument();
+        }
         protected static Func<Test, bool> PredicateCreator<T>(Func<Test, T> selector, T expected) where T : IEquatable<T>
         {
             return t => selector(t).Equals(expected);
