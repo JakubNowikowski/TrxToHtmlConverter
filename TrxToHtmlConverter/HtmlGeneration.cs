@@ -49,7 +49,6 @@ namespace TrxToHtmlConverter
 			
 			columnTitles.Add(CreateTestTableHeader("Status"));
 			columnTitles.Add(CreateTestTableHeader("Test"));
-			columnTitles.Add(CreateTestTableHeader("ID"));
             columnTitles.Add(CreateTestTableHeader("Start Time"));
             columnTitles.Add(CreateTestTableHeader("Duration"));
 
@@ -84,7 +83,6 @@ namespace TrxToHtmlConverter
 
 		private HtmlDocument FillAllTestsByClasses(HtmlDocument doc)
 		{
-
 			var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
 				.Element("div").Elements("div").First(d => d.Id == "test")
 				.Element("div").Elements("table").First(d => d.Id == "ReportsTable");
@@ -260,9 +258,6 @@ namespace TrxToHtmlConverter
 				tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Function\">{test.MethodName}</td>");
 				tableTestCase.AppendChild(tableRowTestCase);
 
-				tableRowTestCase = HtmlNode.CreateNode($"<td class=\"ID\">{test.ID}</td>");
-				tableTestCase.AppendChild(tableRowTestCase);
-
 				tableRowTestCase = HtmlNode.CreateNode($"<td class=\"StartTime\">{DateTime.Parse(test.StartTime.ToString())}</td>");
 				tableTestCase.AppendChild(tableRowTestCase);
 
@@ -291,13 +286,10 @@ namespace TrxToHtmlConverter
                 tableRowTestCase = HtmlNode.CreateNode($"<td class=\"ClassName\">{test.ClassName}</td>");
                 tableTestCase.AppendChild(tableRowTestCase);
 
-                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"ID\">{test.ID}</td>");
-                tableTestCase.AppendChild(tableRowTestCase);
-
                 tableRowTestCase = HtmlNode.CreateNode($"<td class=\"StartTime\">{DateTime.Parse(test.StartTime.ToString())}</td>");
                 tableTestCase.AppendChild(tableRowTestCase);
 
-                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Duration\">{test.Duration}</td>");
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"statusCount\">{test.Duration}</td>");
                 tableTestCase.AppendChild(tableRowTestCase);
             }
 
