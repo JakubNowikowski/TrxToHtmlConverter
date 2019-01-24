@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllFailedTestsTableCreator.cs" />
+    <Compile Include="AllTestesGroupedByClassesTableCreator.cs" />
     <Compile Include="HtmlGeneration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
