@@ -76,9 +76,7 @@ namespace TrxToHtmlConverter
 
                 var classPredicate = PredicateCreator(c => c.ClassName, testedClass);
                 CreateTestCaseTableRows(tbodyTestsNode, classPredicate);
-
-
-
+                
                 columnTitles.Add(timeNode);
                 columnTitles.Add(statusNode);
                 columnTitles.Add(nameNode);
@@ -289,20 +287,8 @@ namespace TrxToHtmlConverter
 
             return xmlReader;
         }
-
-        private string TotalResultString()
-        {
-            if ((Convert.ToInt32(_TestLoadResult.totalTestsProp.Passed) / Convert.ToInt32(GetTotalTestNumber())) == 1)
-                return "Passed";
-            else
-                return "Failed";
-        }
-
-        private string GetTotalTestNumber()
-        {
-            return _TestLoadResult.totalTestsProp.Total;
-        }
-
+        
+        
         private void ExportToFile(string fileContent)
         {
             StreamWriter fw = new StreamWriter(_OutputPath);
