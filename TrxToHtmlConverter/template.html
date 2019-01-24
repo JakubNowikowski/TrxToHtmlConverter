@@ -198,6 +198,11 @@
 			width: 170px;
 		}
 
+		.column1Summary {
+			background: #141e8cad;
+			width: 30px;
+		}
+
 		.column1Passed {
 			background: #c0eec0;
 			width: 30px;
@@ -220,8 +225,9 @@
 		}
 
 		#ReportsTable > tbody > tr > th {
-			background: #E8E8E8;
+			background: #cbcde6;
 			width: 170px;
+			color: #141e8c;
 		}
 
 		#ReportsTable th {
@@ -638,7 +644,18 @@
 				</table>
 				<table id="ReportsTable">
 					<caption>All Tests Gouped By Classes</caption>
-
+					<tbody>
+						<tr class="odd" id="startTime">
+							<th></th>
+							<th class="summaryClassTests">Class Name</th>
+							<th>All</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Warning</th>
+							<th>Inconclusive</th>
+							<th></th>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		</div>
