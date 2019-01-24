@@ -46,11 +46,12 @@ namespace TrxToHtmlConverter
 		private HtmlNodeCollection testTableTitlesCreator(HtmlNode parentNode)
 		{
 			HtmlNodeCollection columnTitles = new HtmlNodeCollection(parentNode);
-			columnTitles.Add(CreateTestTableHeader("Start Time"));
+			
 			columnTitles.Add(CreateTestTableHeader("Status"));
 			columnTitles.Add(CreateTestTableHeader("Test"));
 			columnTitles.Add(CreateTestTableHeader("ID"));
-			columnTitles.Add(CreateTestTableHeader("Duration"));
+            columnTitles.Add(CreateTestTableHeader("Start Time"));
+            columnTitles.Add(CreateTestTableHeader("Duration"));
 
 			return columnTitles;
 
