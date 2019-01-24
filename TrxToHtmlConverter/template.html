@@ -430,6 +430,12 @@
 			word-wrap: break-word;
 		}
 
+        td.StartTime
+            text-align: left;
+            width: auto;
+            word-wrap: break-word;
+        }
+
 		.Atached {
 			width: 30px
 		}
@@ -510,7 +516,7 @@
 			padding: .3em 1em;
 		}
 
-		thead th.TestsTable {
+		thead th.TestsTableHeader {
 			font-size: 17px;
 			font-weight: normal;
 		}
@@ -619,22 +625,23 @@
 							<td id="number" class="ID" name="Id">VALUE</td>
 							<td class="ex">
 								<div class="OpenMoreButton" onclick="ShowHide('TestsContainer','Button','Show Tests','Hide Tests');">
-									<div class="MoreButtonText" id="Button">Hide Tests</div>
+									<div class="MoreButtonText" id="Button">Show Tests</div>
 								</div>
 							</td>
 						</tr>
-						<tr id="TestsContainer" class="visibleRow">
+						<tr id="TestsContainer" class="hiddenRow">
 							<td colspan="4">
 								<div id="exceptionArrow">↳</div>
 								<table>
 									<thead>
-										<tr class="odd">
-											<th scope="col" class="TestsTable" abbr="Status">Status</th>
-											<th scope="col" class="TestsTable" abbr="Test">Test</th>
-											<th scope="col" class="TestsTable" abbr="ID">ID</th>
-											<th scope="col" class="TestsTable">Start Time</th>
-											<th scope="col" class="TestsTable" abbr="Duration">Duration</th>
-										</tr>
+                                        <tr class="odd">
+                                            <th scope="col" class="TestsTableHeader">Status</th>
+                                            <th class="TestsTableHeader">Test</th>
+                                            <th class="TestsTableHeader">Class Name</th>
+                                            <th class="TestsTableHeader">ID</th>
+                                            <th class="TestsTableHeader">Start Time</th>
+                                            <th class="TestsTableHeader">Duration</th>
+                                        </tr>
 									</thead>
 									<tbody></tbody>
 								</table>

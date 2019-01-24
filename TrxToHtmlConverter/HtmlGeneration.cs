@@ -24,18 +24,16 @@ namespace TrxToHtmlConverter
 		}
 		public void Generation()
 		{
-			_XmlReader = InitializeTrxData();
-			var document = LoadTemplate(_TemplatePath);
+            if (_TestLoadResult == null)
+                throw new Exception("No TRX data loaded");
 
-			HtmlNodeCollection htmlNodes = new HtmlNodeCollection(document.DocumentNode);
+			var document = LoadTemplate(_TemplatePath);
 
 			document = ChangeNameOfDocument(document, _TestLoadResult.totalTestsProp.TestCategory);
 			document = ReplaceAllTotalValues(document);
 			document = ReplaceAllRunTimeSummaryValues(document);
 			document = FillFailedTestsTable(document);
 			document = FillAllTestsByClasses(document);
-
-			document.DocumentNode.AppendChildren(htmlNodes);
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
@@ -47,37 +45,38 @@ namespace TrxToHtmlConverter
 
 		private HtmlNodeCollection testTableTitlesCreator(HtmlNode parentNode)
 		{
-			HtmlNode timeNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\">Start Time</th>");
-			HtmlNode statusNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Status\">Status</th>");
-			HtmlNode nameNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Test\">Test</th>");
-			HtmlNode idNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"ID\">ID</th>");
-			HtmlNode exeptionNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Duration\">Duration</th>");
 			HtmlNodeCollection columnTitles = new HtmlNodeCollection(parentNode);
-			columnTitles.Add(statusNode);
-			columnTitles.Add(nameNode);
-			columnTitles.Add(idNode);
-			columnTitles.Add(timeNode);
-			columnTitles.Add(exeptionNode);
+			
+			columnTitles.Add(CreateTestTableHeader("Status"));
+			columnTitles.Add(CreateTestTableHeader("Test"));
+			columnTitles.Add(CreateTestTableHeader("ID"));
+            columnTitles.Add(CreateTestTableHeader("Start Time"));
+            columnTitles.Add(CreateTestTableHeader("Duration"));
 
 			return columnTitles;
 
 		}
 
+        private HtmlNode CreateTestTableHeader(string headerContent)
+        {
+            return HtmlNode.CreateNode($"<th class=\"TestsTableHeader\">{headerContent}</th>");
+        }
+
 		public string summaryResultColor(string testedClassName)
 		{
-			var xd = PredicateCreator(t => t.ClassName, testedClassName);
+			var classNameFilter = PredicateCreator(t => t.ClassName, testedClassName);
 
-			var tests = _TestLoadResult.tests.Where(xd);
+			var classTests = _TestLoadResult.tests.Where(classNameFilter);
 
-			int allTestsCount = tests.Count();
+			int classTestsCount = classTests.Count();
 
-			IEnumerable<Test> result = tests.Where(PredicateCreator(t => t.Result, "Passed"));
+			int passedTestsCount = classTests.Where(PredicateCreator(t => t.Result, "Passed")).Count();
 
-			if (result.Count() == allTestsCount)
+			if (passedTestsCount == classTestsCount)
 				return "column1Passed";
-			else if (tests.Where(PredicateCreator(t => t.Result, "Failed")).Count() != 0)
+			else if (classTests.Where(PredicateCreator(t => t.Result, "Failed")).Count() != 0)
 				return "column1Failed";
-			else if (tests.Where(PredicateCreator(t => t.Result, "Warning")).Count() != 0)
+			else if (classTests.Where(PredicateCreator(t => t.Result, "Warning")).Count() != 0)
 				return "column1Warning";
 			return "column1Inconclusive";
 		}
@@ -107,9 +106,9 @@ namespace TrxToHtmlConverter
 
 				HtmlNode exNode = HtmlNode.CreateNode("<td class=\"ex\"></td>");
 				HtmlNode openMoreButtonNode = HtmlNode.CreateNode($"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{testedClass}TestsContainer', '{testedClass}Button', 'Show Tests', 'Hide Tests'); \"></div>");
-				HtmlNode moreButtonNode = HtmlNode.CreateNode($"<div class=\"MoreButtonText\" id=\"{testedClass}Button\">Hide Tests</div>");
+				HtmlNode moreButtonNode = HtmlNode.CreateNode($"<div class=\"MoreButtonText\" id=\"{testedClass}Button\">Show Tests</div>");
 
-				HtmlNode rowsNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}TestsContainer\" class=\"visibleRow\"></tr>");
+				HtmlNode rowsNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}TestsContainer\" class=\"hiddenRow\"></tr>");
 				HtmlNode colSpanNode = HtmlNode.CreateNode("<td colspan=\"4\"></td>");
 				HtmlNode arrowNode = HtmlNode.CreateNode("<div id=\"exceptionArrow\">↳</div>");
 				HtmlNode tableNode = HtmlNode.CreateNode("<table></table>");
@@ -164,7 +163,7 @@ namespace TrxToHtmlConverter
 
 			doc = ChangeNumberOfAllFailedTests(doc, _TestLoadResult.totalTestsProp.Failed);
 			var failedResults = PredicateCreator(t => t.Result, "Failed");
-			CreateTestCaseTableRows(tableTestCase, failedResults);
+            CreateFailedTestCaseTableRows(tableTestCase, failedResults);
 
 			return doc;
 		}
@@ -198,7 +197,8 @@ namespace TrxToHtmlConverter
         {
             doc = ReplaceOneRunTimeSummaryValue(doc, "startTime", _TestLoadResult.totalTestsProp.StartTime.ToString());
             doc = ReplaceOneRunTimeSummaryValue(doc, "endTime", _TestLoadResult.totalTestsProp.FinishTime.ToString());
-            doc = ReplaceOneRunTimeSummaryValue(doc, "duration", string.Format("{0:hh\\:mm\\:ss\\.fff}", TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)));
+            doc = ReplaceOneRunTimeSummaryValue(doc, "duration", string.Format("{0:hh\\:mm\\:ss\\.fff}",
+                TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)));
 
 			return doc;
 		}
@@ -263,17 +263,48 @@ namespace TrxToHtmlConverter
 				tableRowTestCase = HtmlNode.CreateNode($"<td class=\"ID\">{test.ID}</td>");
 				tableTestCase.AppendChild(tableRowTestCase);
 
-				tableRowTestCase = HtmlNode.CreateNode($"<th scope=\"row\" class=\"td\"></th>");
+				tableRowTestCase = HtmlNode.CreateNode($"<td class=\"StartTime\">{DateTime.Parse(test.StartTime.ToString())}</td>");
 				tableTestCase.AppendChild(tableRowTestCase);
 
-				tableRowTestCase = HtmlNode.CreateNode("<td class=\"Duration\"></td>");
+				tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Duration\">{test.Duration}</td>");
 				tableTestCase.AppendChild(tableRowTestCase);
 			}
 
 
 		}
 
-		private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
+        private void CreateFailedTestCaseTableRows(HtmlNode tableTestCase, Func<Test, bool> func)
+        {
+            foreach (Test test in _TestLoadResult.tests.Where(func))
+            {
+                HtmlNode tableRowTestCase = HtmlNode.CreateNode($"<tr id=\"{test.ID}\"class=\"Test\"></tr>");
+
+                tableTestCase.AppendChild(tableRowTestCase);
+                tableTestCase = tableTestCase.LastChild;
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"{test.Result}\">{CreateColoredResult(test.Result)}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Function\">{test.MethodName}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"ClassName\">{test.ClassName}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"ID\">{test.ID}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"StartTime\">{DateTime.Parse(test.StartTime.ToString())}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+
+                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Duration\">{test.Duration}</td>");
+                tableTestCase.AppendChild(tableRowTestCase);
+            }
+
+
+        }
+
+        private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
 		{
 			foreach (Test method in methodList)
 			{
@@ -322,7 +353,7 @@ namespace TrxToHtmlConverter
 			return stopTime - startTime;
 		}
 
-		private XmlReader InitializeTrxData()
+		public XmlReader InitializeTrxData()
 		{
 			XmlReader xmlReader = new XmlReader(_TrxFilePath);
 			_TestLoadResult = xmlReader.CreateTestLoadResult();
