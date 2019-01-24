@@ -53,6 +53,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunTimeSummaryTableCreator.cs" />
+    <Compile Include="TableCreator.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="TestLoadResult.cs" />
     <Compile Include="TestStatusesTableCreator.cs" />

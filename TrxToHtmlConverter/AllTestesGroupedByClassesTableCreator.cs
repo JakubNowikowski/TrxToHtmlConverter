@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter
 {
-    class AllTestesGroupedByClassesTableCreator
+    class AllTestesGroupedByClassesTableCreator : TableCreator
     {
         public static HtmlDocument CreateAllTestesGroupedByClassesTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
@@ -99,11 +99,6 @@ namespace TrxToHtmlConverter
             return "column1Inconclusive";
         }
 
-        private static Func<Test, bool> PredicateCreator<T>(Func<Test, T> selector, T expected) where T : IEquatable<T>
-        {
-            return t => selector(t).Equals(expected);
-        }
-
         private static string tagsCreator(string tagName, string content = "")
         {
             return $"<{tagName}>{content}</{tagName}>";
@@ -150,20 +145,6 @@ namespace TrxToHtmlConverter
         private static HtmlNode CreateTestTableHeader(string headerContent)
         {
             return HtmlNode.CreateNode($"<th class=\"TestsTableHeader\">{headerContent}</th>");
-        }
-
-        private static string CreateColoredResult(string result)
-        {
-            string color = "";
-            switch (result)
-            {
-                case "Passed": color = "green"; break;
-                case "Failed": color = "SaddleBrown"; break;
-                case "Inconclusive": color = "BlueViolet"; break;
-                case "Warning": color = "DarkGoldenrod"; break;
-            }
-
-            return $"<font color={color} size=4><strong>{result}</strong></font><br>";
         }
     }
 }
