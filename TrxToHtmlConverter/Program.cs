@@ -19,7 +19,8 @@ namespace TrxToHtmlConverter
 			//var summary = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns)).Attribute("total").Value;
 
 			HtmlGeneration Html = new HtmlGeneration("../../fullreport.trx", "../../nowyplik.html");
-			Html.Generation();
+            Html.InitializeTrxData();
+            Html.Generation();
 
 			//XmlReader reader = new XmlReader(filePathFullReport);
 
