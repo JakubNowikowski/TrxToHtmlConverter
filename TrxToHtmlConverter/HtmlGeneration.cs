@@ -30,7 +30,7 @@ namespace TrxToHtmlConverter
 
 			document = ChangeNameOfDocument(document, _TestLoadResult.totalTestsProp.TestCategory);
             document = TestStatusesTableCreator.CreateStatusesTable(document, _TestLoadResult);
-			document = ReplaceAllRunTimeSummaryValues(document);
+            document = RunTimeSummaryTableCreator.CreateRunTimeSummaryTable(document, _TestLoadResult);
 			document = FillFailedTestsTable(document);
 			document = FillAllTestsByClasses(document);
 
@@ -196,29 +196,6 @@ namespace TrxToHtmlConverter
 			return doc;
 		}
 
-        private HtmlDocument ReplaceAllRunTimeSummaryValues(HtmlDocument doc)
-        {
-            doc = ReplaceOneRunTimeSummaryValue(doc, "startTime", _TestLoadResult.totalTestsProp.StartTime.ToString());
-            doc = ReplaceOneRunTimeSummaryValue(doc, "endTime", _TestLoadResult.totalTestsProp.FinishTime.ToString());
-            doc = ReplaceOneRunTimeSummaryValue(doc, "duration", string.Format("{0:hh\\:mm\\:ss\\.fff}",
-                TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)));
-
-			return doc;
-		}
-
-		private HtmlDocument ReplaceOneRunTimeSummaryValue(HtmlDocument doc, string id, string value)
-		{
-			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-				.Element("div").Elements("div").First(d => d.Id == "test")
-				.Element("div").Elements("table").First(d => d.Id == "SummaryTable")
-				.Element("tbody").Elements("tr").First(d => d.Id == id);
-			var valueNode = totalResultNode.Element("td").InnerText;
-			valueNode = valueNode.Replace("VALUE", value);
-			totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
-
-			return doc;
-		}
-
 		public Func<Test, bool> PredicateCreator<T>(Func<Test, T> selector, T expected) where T : IEquatable<T>
 		{
 			return t => selector(t).Equals(expected);
@@ -319,11 +296,6 @@ namespace TrxToHtmlConverter
 			}
 
 			return $"<font color={color} size=4><strong>{result}</strong></font><br>";
-		}
-
-		private TimeSpan TestsDuration(DateTime startTime, DateTime stopTime)
-		{
-			return stopTime - startTime;
 		}
 
 		public XmlReader InitializeTrxData()
