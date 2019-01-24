@@ -211,7 +211,7 @@ namespace TrxToHtmlConverter
 		{
 			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
 				.Element("div").Elements("div").First(d => d.Id == "test")
-				.Element("div").Elements("table").First(d => d.Id == "SummaryTable")
+				.Element("div").Element("div").Elements("table").First(d => d.Id == "SummaryTable")
 				.Element("tbody").Elements("tr").First(d => d.Id == id);
 			var valueNode = totalResultNode.Element("td").InnerText;
 			valueNode = valueNode.Replace("VALUE", value);
@@ -235,7 +235,7 @@ namespace TrxToHtmlConverter
 		{
 			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
 				.Element("div").Elements("div").First(d => d.Id == "test")
-				.Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
+				.Element("div").Element("div").Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
 				.Element("tbody").Elements("tr").First(d => d.Id == id);
 			var valueNode = totalResultNode.Element("td").InnerText;
 			valueNode = valueNode.Replace("VALUE", value);
