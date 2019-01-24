@@ -15,6 +15,7 @@ namespace TrxToHtmlConverter
 		private string _TemplatePath;
 		private string _TrxFilePath;
 		private TestLoadResult _TestLoadResult;
+
 		public HtmlGeneration(string trxFilePath, string outputPath)
 		{
 			_OutputPath = outputPath;
@@ -29,10 +30,7 @@ namespace TrxToHtmlConverter
 			var document = LoadTemplate(_TemplatePath);
 
 			document = ChangeNameOfDocument(document, _TestLoadResult.totalTestsProp.TestCategory);
-            document = TestStatuses.CreateTable(document, _TestLoadResult);
-            document = RunTimeSummary.CreateTable(document, _TestLoadResult);
-            document = AllFailedTests.CreateTable(document, _TestLoadResult);
-            document = AllTestesGroupedByClasses.CreateTable(document, _TestLoadResult);
+            document = LoadTables(document);
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
@@ -106,8 +104,7 @@ namespace TrxToHtmlConverter
 
 			return xmlReader;
 		}
-
-
+        
 		private void ExportToFile(string fileContent)
 		{
 			StreamWriter fw = new StreamWriter(_OutputPath);
@@ -115,8 +112,18 @@ namespace TrxToHtmlConverter
 			fw.Close();
 		}
 
+        private HtmlDocument LoadTables(HtmlDocument doc)
+        {
+            doc = TestStatuses.CreateTable(doc, _TestLoadResult);
+            doc = RunTimeSummary.CreateTable(doc, _TestLoadResult);
+            doc = AllFailedTests.CreateTable(doc, _TestLoadResult);
+            doc = AllTestesGroupedByClasses.CreateTable(doc, _TestLoadResult);
+
+            return doc;
+        }
+
         //TODO: write exeption
-		private HtmlDocument LoadTemplate(string templatePath)
+        private HtmlDocument LoadTemplate(string templatePath)
 		{
 			var doc = new HtmlDocument();
 			doc.Load(templatePath, Encoding.UTF8);
