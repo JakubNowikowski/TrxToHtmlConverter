@@ -444,10 +444,6 @@
 			width: auto;
 		}
 
-		th.statusCount {
-			width: auto;
-		}
-
 		td.critical {
 			text-align: left;
 			width: 100px;
@@ -606,12 +602,12 @@
 		<div id="test">
 			<div id="SummaryDiv" class="SummaryDiv">
 				<div class="wrap">
-					<div class="cell-wrap left">
+					<div class="cell-wrap left" id="columnLeft">
 						<table id="DetailsTable_StatusesTable">
 							<caption>Tests Statuses</caption>
 							<tbody>
 								<tr id="total">
-									<th class="column1 statusCount">Total</th>
+									<th class="column1">Total</th>
 									<td class="statusCount">VALUE</td>
 								</tr>
 								<tr id="passed">
@@ -633,24 +629,25 @@
 							</tbody>
 						</table>
 					</div>
-
-					<table id="SummaryTable">
-						<caption>Run Time Summary</caption>
-						<tbody>
-							<tr class="odd" id="startTime">
-								<th class="column1">Start Time</th>
-								<td>VALUE</td>
-							</tr>
-							<tr id="endTime">
-								<th class="column1">End Time</th>
-								<td>VALUE</td>
-							</tr>
-							<tr id="duration">
-								<th class="column1">Duration</th>
-								<td>VALUE</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="cell-wrap left" id="columnRight">
+						<table id="SummaryTable">
+							<caption>Run Time Summary</caption>
+							<tbody>
+								<tr class="odd" id="startTime">
+									<th class="column1">Start Time</th>
+									<td>VALUE</td>
+								</tr>
+								<tr id="endTime">
+									<th class="column1">End Time</th>
+									<td>VALUE</td>
+								</tr>
+								<tr id="duration">
+									<th class="column1">Duration</th>
+									<td>VALUE</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 				<table id="FailedTestTable">
 					<caption>All Failed Tests</caption>

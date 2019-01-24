@@ -55,16 +55,6 @@ namespace TrxToHtmlConverter
 			return doc;
 		}
 
-        private HtmlDocument ReplaceAllRunTimeSummaryValues(HtmlDocument doc)
-        {
-            doc = ReplaceOneRunTimeSummaryValue(doc, "startTime", _TestLoadResult.totalTestsProp.StartTime.ToString());
-            doc = ReplaceOneRunTimeSummaryValue(doc, "endTime", _TestLoadResult.totalTestsProp.FinishTime.ToString());
-            doc = ReplaceOneRunTimeSummaryValue(doc, "duration", string.Format("{0:hh\\:mm\\:ss\\.fff}",
-                TestsDuration(_TestLoadResult.totalTestsProp.StartTime, _TestLoadResult.totalTestsProp.FinishTime)));
-
-			return doc;
-		}
-
 		private HtmlDocument ReplaceOneRunTimeSummaryValue(HtmlDocument doc, string id, string value)
 		{
 			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
@@ -78,29 +68,29 @@ namespace TrxToHtmlConverter
 			return doc;
 		}
 
-		private HtmlDocument ReplaceAllTotalValues(HtmlDocument doc)
-		{
-			doc = ReplaceOneTotalValue(doc, "total", _TestLoadResult.totalTestsProp.Total);
-			doc = ReplaceOneTotalValue(doc, "passed", _TestLoadResult.totalTestsProp.Passed);
-			doc = ReplaceOneTotalValue(doc, "failed", _TestLoadResult.totalTestsProp.Failed);
-			doc = ReplaceOneTotalValue(doc, "inconclusive", _TestLoadResult.totalTestsProp.Inconclusive);
-			doc = ReplaceOneTotalValue(doc, "warning", _TestLoadResult.totalTestsProp.Warning);
+		//private HtmlDocument ReplaceAllTotalValues(HtmlDocument doc)
+		//{
+		//	doc = ReplaceOneTotalValue(doc, "total", _TestLoadResult.totalTestsProp.Total);
+		//	doc = ReplaceOneTotalValue(doc, "passed", _TestLoadResult.totalTestsProp.Passed);
+		//	doc = ReplaceOneTotalValue(doc, "failed", _TestLoadResult.totalTestsProp.Failed);
+		//	doc = ReplaceOneTotalValue(doc, "inconclusive", _TestLoadResult.totalTestsProp.Inconclusive);
+		//	doc = ReplaceOneTotalValue(doc, "warning", _TestLoadResult.totalTestsProp.Warning);
 
-			return doc;
-		}
+		//	return doc;
+		//}
 
-		private HtmlDocument ReplaceOneTotalValue(HtmlDocument doc, string id, string value)
-		{
-			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-				.Element("div").Elements("div").First(d => d.Id == "test")
-				.Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
-				.Element("tbody").Elements("tr").First(d => d.Id == id);
-			var valueNode = totalResultNode.Element("td").InnerText;
-			valueNode = valueNode.Replace("VALUE", value);
-			totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
+		//private HtmlDocument ReplaceOneTotalValue(HtmlDocument doc, string id, string value)
+		//{
+		//	var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
+		//		.Element("div").Elements("div").First(d => d.Id == "test")
+		//		.Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
+		//		.Element("tbody").Elements("tr").First(d => d.Id == id);
+		//	var valueNode = totalResultNode.Element("td").InnerText;
+		//	valueNode = valueNode.Replace("VALUE", value);
+		//	totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
 
-			return doc;
-		}
+		//	return doc;
+		//}
 
 
 		private Func<Test, bool> PredicateCreator<T>(Func<Test, T> selector, T expected) where T : IEquatable<T>

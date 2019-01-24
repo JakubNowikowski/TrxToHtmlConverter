@@ -22,16 +22,22 @@ namespace TrxToHtmlConverter
 
         private static HtmlDocument ReplaceOneTotalValue(HtmlDocument doc, string id, string value)
         {
-            var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-                .Element("div").Elements("div").First(d => d.Id == "test")
-                .Element("div").Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
-                .Element("tbody").Elements("tr").First(d => d.Id == id);
-            var valueNode = totalResultNode.Element("td").InnerText;
+			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
+			.Element("div") // divToRefresh
+			.Elements("div")
+			.First(d => d.Id == "test")
+			.Element("div") //summaryDiv
+			.Element("div") //wrap
+			.Elements("div").First(d => d.Id == "columnLeft")
+			.Elements("table").First(d => d.Id == "DetailsTable_StatusesTable")
+			.Element("tbody")
+			.Elements("tr").First(d => d.Id == id)
+			;
+			var valueNode = totalResultNode.Element("td").InnerText;
             valueNode = valueNode.Replace("VALUE", value);
             totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
 
             return doc;
         }
-
     }
 }
