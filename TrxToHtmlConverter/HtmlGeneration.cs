@@ -40,6 +40,31 @@ namespace TrxToHtmlConverter
             ExportToFile(document.DocumentNode.InnerHtml);
         }
 
+        private string tagsCreator(string tagName, string content = "")
+        {
+            return $"<{tagName}>{content}</{tagName}>";
+        }
+
+        private HtmlNodeCollection testTableTitlesCreator(HtmlNode parentNode)
+        {
+            HtmlNode timeNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\">Time</th>");
+            HtmlNode statusNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Status\">Status</th>");
+            HtmlNode nameNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Test\">Test</th>");
+            HtmlNode messageNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Message\">Message</th>");
+            HtmlNode idNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Message\">ID</th>");
+            HtmlNode exeptionNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Exception\">Duration</th>");
+            HtmlNodeCollection columnTitles = new HtmlNodeCollection(parentNode);
+            columnTitles.Add(timeNode);
+            columnTitles.Add(statusNode);
+            columnTitles.Add(nameNode);
+            columnTitles.Add(messageNode);
+            columnTitles.Add(idNode);
+            columnTitles.Add(exeptionNode);
+
+            return columnTitles;
+
+        }
+
         private HtmlDocument FillAllTestsByClasses(HtmlDocument doc)
         {
             var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
@@ -47,7 +72,7 @@ namespace TrxToHtmlConverter
                 .Element("div").Elements("table").First(d => d.Id == "ReportsTable");
             foreach (string testedClass in _TestLoadResult.AllTestedClasses)
             {
-                HtmlNode tbodyNode = HtmlNode.CreateNode("<tbody></tbody>");
+                HtmlNode tbodyNode = HtmlNode.CreateNode(tagsCreator("tbody"));
                 HtmlNode headerNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}\"></tr>");
                 HtmlNode colummTdNode = HtmlNode.CreateNode("<td class=\"column1\"></td>");
 
@@ -64,25 +89,15 @@ namespace TrxToHtmlConverter
                 HtmlNode tableNode = HtmlNode.CreateNode("<table></table>");
                 HtmlNode theadNode = HtmlNode.CreateNode("<thead></thead>");
                 HtmlNode oddNode = HtmlNode.CreateNode("<tr class=\"odd\"></tr>");
+
+                HtmlNodeCollection tableTitlesColletion = testTableTitlesCreator(oddNode);
                 
-                HtmlNode timeNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\">Time</th>");
-                HtmlNode statusNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Status\">Status</th>");
-                HtmlNode nameNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Test\">Test</th>");
-                HtmlNode messageNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Message\">Message</th>");
-                HtmlNode idNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Message\">ID</th>");
-                HtmlNode exeptionNode = HtmlNode.CreateNode("<th scope=\"col\" class=\"TestsTable\" abbr=\"Exception\">Duration</th>");
-                HtmlNodeCollection columnTitles = new HtmlNodeCollection(oddNode);
                 HtmlNode tbodyTestsNode = HtmlNode.CreateNode("<tbody></tbody>");
 
                 var classPredicate = PredicateCreator(c => c.ClassName, testedClass);
                 CreateTestCaseTableRows(tbodyTestsNode, classPredicate);
-
-                columnTitles.Add(timeNode);
-                columnTitles.Add(statusNode);
-                columnTitles.Add(nameNode);
-                columnTitles.Add(messageNode);
-                columnTitles.Add(idNode);
-                columnTitles.Add(exeptionNode);
+                
+                
  
                 headerNode.AppendChild(colummTdNode);
                 headerNode.AppendChild(functionNode);
@@ -93,7 +108,7 @@ namespace TrxToHtmlConverter
                 headerNode.AppendChild(exNode);
                 tbodyNode.AppendChild(headerNode);
 
-                oddNode.AppendChildren(columnTitles);
+                oddNode.AppendChildren(tableTitlesColletion);
                 theadNode.AppendChild(oddNode);
 
                 tableNode.AppendChild(theadNode);
@@ -287,20 +302,8 @@ namespace TrxToHtmlConverter
 
             return xmlReader;
         }
-
-        private string TotalResultString()
-        {
-            if ((Convert.ToInt32(_TestLoadResult.totalTestsProp.Passed) / Convert.ToInt32(GetTotalTestNumber())) == 1)
-                return "Passed";
-            else
-                return "Failed";
-        }
-
-        private string GetTotalTestNumber()
-        {
-            return _TestLoadResult.totalTestsProp.Total;
-        }
-
+        
+        
         private void ExportToFile(string fileContent)
         {
             StreamWriter fw = new StreamWriter(_OutputPath);
