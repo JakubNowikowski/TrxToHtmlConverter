@@ -136,6 +136,8 @@ namespace TrxToHtmlConverter
 
                 tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Duration\">{test.Duration}</td>");
                 tableTestCase.AppendChild(tableRowTestCase);
+
+                tableTestCase = tableTestCase.ParentNode;
             }
 
 
