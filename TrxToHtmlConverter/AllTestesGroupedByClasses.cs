@@ -41,11 +41,11 @@ namespace TrxToHtmlConverter
             HtmlNode rowsNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}TestsContainer\" class=\"hiddenRow\"></tr>");
             HtmlNode colSpanNode = HtmlNode.CreateNode("<td colspan=\"8\"></td>");
             HtmlNode arrowNode = HtmlNode.CreateNode("<div id=\"exceptionArrow\">↳</div>");
-            HtmlNode tableNode = HtmlNode.CreateNode("<table></table>");
+            HtmlNode tableNode = HtmlNode.CreateNode($"<table id=\"{testedClass}\"></table>");
             HtmlNode theadNode = HtmlNode.CreateNode("<thead></thead>");
             HtmlNode oddNode = HtmlNode.CreateNode("<tr class=\"odd\"></tr>");
 
-            HtmlNodeCollection tableTitlesColletion = testTableTitlesCreator(oddNode);
+            HtmlNodeCollection tableTitlesColletion = testTableTitlesCreator(oddNode, testedClass);
 
             HtmlNode tbodyTestsNode = HtmlNode.CreateNode("<tbody></tbody>");
 
@@ -104,14 +104,14 @@ namespace TrxToHtmlConverter
             return $"<{tagName}>{content}</{tagName}>";
         }
 
-        private static HtmlNodeCollection testTableTitlesCreator(HtmlNode parentNode)
+        private static HtmlNodeCollection testTableTitlesCreator(HtmlNode parentNode, string testedClass)
         {
             HtmlNodeCollection columnTitles = new HtmlNodeCollection(parentNode);
 
-            columnTitles.Add(CreateTestTableHeader("Status"));
-            columnTitles.Add(CreateTestTableHeader("Test"));
-            columnTitles.Add(CreateTestTableHeader("Start Time"));
-            columnTitles.Add(CreateTestTableHeader("Duration"));
+            columnTitles.Add(CreateTestTableHeader(1, "Status", testedClass));
+            columnTitles.Add(CreateTestTableHeader(2, "Test", testedClass));
+            columnTitles.Add(CreateTestTableHeader(3, "Start Time", testedClass));
+            columnTitles.Add(CreateTestTableHeader(4, "Duration", testedClass));
 
             return columnTitles;
 
@@ -144,9 +144,10 @@ namespace TrxToHtmlConverter
 
         }
 
-        private static HtmlNode CreateTestTableHeader(string headerContent)
+        private static HtmlNode CreateTestTableHeader(int headerNumber, string headerContent, string testedClass)
         {
-            return HtmlNode.CreateNode($"<th class=\"TestsTableHeader\">{headerContent}</th>");
+            
+            return HtmlNode.CreateNode($"<th onclick=\"sortTable({headerNumber}, '" + testedClass + $"')\" class=\"TestsTableHeader\">{headerContent}</th>");
         }
     }
 }

@@ -184,9 +184,9 @@
 		}
 	</script>
 		<script>
-		function sortTable(n) {
+		function sortTable(n, dd) {
 		  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-		  table = document.getElementById("ReportsTable");
+		  table = document.getElementById(dd);
 		  switching = true;
 		  // Set the sorting direction to ascending:
 		  dir = "asc"; 
