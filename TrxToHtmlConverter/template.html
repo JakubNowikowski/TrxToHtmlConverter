@@ -58,39 +58,70 @@
 			caption-side: top;
 			text-align: center;
 			font-weight: normal;
-			border-top: 1px solid #141e8c;
-			border-left: 1px solid #141e8c;
-			border-right: 1px solid #141e8c;
-			background: #141e8c0d;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			background: #141e8c59;
 		}
 
 		th {
 			font-weight: normal;
 			color: #ffffff;
 			text-align: left;
-			border-left: 1px solid #141e8c;
-			border-top: 1px solid #141e8c;
-			padding: .3em 1em;
+			border-top: 1px solid #ffffff;
+		}
+
+		.ButtonText {
+			padding-top: 5px;
 		}
 
 		td {
 			color: #425b71;
 			padding: .3em 1em;
 			text-align: center;
-			border-left: 1px solid #141e8c;
-			border-top: 1px solid #141e8c;
+			border-top: 1px solid #ffffff;
 			word-wrap: break-word;
 		}
+
+			td.failedTest {
+				color: #425b71;
+				text-align: left;
+				border-top: 1px solid #f3f3f9;
+				word-wrap: break-word;
+			}
+
+			td.columnFailed {
+				background: #f44336d9;
+				width: 30px;
+				/*border-left: 5px solid #f3f3f9;
+				border-top: 5px solid #f3f3f9;*/
+				border-bottom: 10px solid #f3f3f9;
+			}
 
 		.mainColumn {
 			background: #141e8cad;
 			width: 170px;
+			padding: 10px;
 		}
 
-		table {
+		.mainColumnLastRow {
+			background: #141e8cad;
+			width: 170px;
+			padding: 10px;
+			border-bottom-left-radius: 10px;
+		}
+
+		/*table {
 			margin: 1em auto;
 			border-collapse: collapse;
 			border: 1px solid #141e8c;
+
+		}*/
+
+		table {
+			background: #141e8c0d;
+			border-collapse: collapse;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
 		}
 
 		.wrap {
@@ -118,23 +149,18 @@
 		.centerTable {
 			width: 90%;
 			border-collapse: collapse;
-		}
-
-		.columnFailed {
-			background: #f44336d9;
-			width: 30px;
+			margin: auto;
 		}
 
 		.OpenMoreButton {
-			height: auto;
+			height: 30px;
 			width: 200px;
 			cursor: pointer;
-			text-decoration: none;
 			text-align: center;
 			color: #141e8c;
 			background-color: #141e8c38;
-			border: 1px solid #141e8c;
 			float: right;
+			border-radius: 10px;
 		}
 
 		#exceptionArrow {
@@ -152,6 +178,18 @@
 			thead th.TestsTableHeader {
 				font-size: 17px;
 				font-weight: normal;
+			}
+
+			thead th.TestsTableHeaderFirst {
+				font-size: 17px;
+				font-weight: normal;
+				border-top-left-radius: 10px;
+			}
+
+			thead th.TestsTableHeaderLast {
+				font-size: 17px;
+				font-weight: normal;
+				border-top-right-radius: 10px;
 			}
 
 		.hiddenRow {
@@ -210,7 +248,7 @@
 					<td>VALUE</td>
 				</tr>
 				<tr id="warning">
-					<th scope="row" class="mainColumn">Warning</th>
+					<th scope="row" class="mainColumnLastRow">Warning</th>
 					<td>VALUE</td>
 				</tr>
 			</tbody>
@@ -227,7 +265,7 @@
 					<td>VALUE</td>
 				</tr>
 				<tr id="duration">
-					<th class="mainColumn">Duration</th>
+					<th class="mainColumnLastRow">Duration</th>
 					<td>VALUE</td>
 				</tr>
 			</tbody>
@@ -238,13 +276,11 @@
 		<tbody>
 			<tr id="FailedTestsHeader">
 				<td class="columnFailed"></td>
-				<td class="Function">
-					Failed tests
-				</td>
-				<td id="number" class="ID" name="Id">VALUE</td>
-				<td class="ex">
+				<td class="failedTest">Failed tests</td>
+				<td id="number" class="failedTest" name="Id">VALUE</td>
+				<td class="failedTest">
 					<div class="OpenMoreButton" onclick="ShowHide('TestsContainer','Button','Show Tests','Hide Tests');">
-						<div class="MoreButtonText" id="Button">Show Tests</div>
+						<div class="ButtonText" id="Button">Show Tests</div>
 					</div>
 				</td>
 			</tr>
@@ -253,12 +289,12 @@
 					<div id="exceptionArrow">↳</div>
 					<table class="centerTable">
 						<thead>
-							<tr class="odd">
-								<th scope="col" class="TestsTableHeader">Status</th>
+							<tr>
+								<th class="TestsTableHeaderFirst">Status</th>
 								<th class="TestsTableHeader">Test</th>
 								<th class="TestsTableHeader">Class Name</th>
 								<th class="TestsTableHeader">Start Time</th>
-								<th class="TestsTableHeader">Duration</th>
+								<th class="TestsTableHeaderLast">Duration</th>
 							</tr>
 						</thead>
 						<tbody></tbody>
@@ -270,7 +306,7 @@
 	<table id="ReportsTable" class="centerTable">
 		<caption>All Tests Grouped By Classes</caption>
 		<tbody>
-			<tr class="odd" id="startTime">
+			<tr id="startTime">
 				<th></th>
 				<th class="summaryClassTests">Class Name</th>
 				<th id="all">All</th>

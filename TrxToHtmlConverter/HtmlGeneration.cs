@@ -18,7 +18,6 @@ namespace TrxToHtmlConverter
 		{
 			_OutputPath = outputPath;
 			_TemplatePath = @"../../template.html";
-			//_TemplatePath = "C:\\Users\\User\\Documents\\template_test.html";
 			_TrxFilePath = trxFilePath;
 		}
 		public void Generation()
