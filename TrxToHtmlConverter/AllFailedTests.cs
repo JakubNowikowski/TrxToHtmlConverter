@@ -12,8 +12,7 @@ namespace TrxToHtmlConverter
         public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
             var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
-                .Element("div").Elements("div").First(d => d.Id == "test")
-                .Element("div").Elements("table").First(d => d.Id == "FailedTestTable").Element("tbody")
+                .Elements("table").First(d => d.Id == "AllFailedTestTable").Element("tbody")
                 .Elements("tr").First(d => d.Id == "TestsContainer").Element("td").Element("table").Element("tbody");
 
             doc = ChangeNumberOfAllFailedTests(doc, testLoadResult.totalTestsProp.Failed);
@@ -26,8 +25,7 @@ namespace TrxToHtmlConverter
         private static HtmlDocument ChangeNumberOfAllFailedTests(HtmlDocument doc, string number)
         {
             var failedTableTitleNode = doc.DocumentNode.SelectSingleNode("html/body")
-                .Element("div").Elements("div").First(d => d.Id == "test")
-                .Element("div").Elements("table").First(d => d.Id == "FailedTestTable")
+				.Elements("table").First(d => d.Id == "AllFailedTestTable")
                 .Element("tbody").Elements("tr").First(t => t.Id == "FailedTestsHeader")
                 .Elements("td").First(t => t.Id == "number");
             var valueNode = failedTableTitleNode.InnerHtml;

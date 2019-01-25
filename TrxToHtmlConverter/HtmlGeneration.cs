@@ -20,40 +20,41 @@ namespace TrxToHtmlConverter
 		{
 			_OutputPath = outputPath;
 			_TemplatePath = @"../../template.html";
+			//_TemplatePath = "C:\\Users\\User\\Documents\\template_test.html";
 			_TrxFilePath = trxFilePath;
 		}
 		public void Generation()
 		{
-            if (_TestLoadResult == null)
-                throw new Exception("No TRX data loaded");
+			if (_TestLoadResult == null)
+				throw new Exception("No TRX data loaded");
 
 			var document = LoadTemplate(_TemplatePath);
 
 			document = ChangeNameOfDocument(document, _TestLoadResult.totalTestsProp.TestCategory);
-            document = LoadTables(document);
+			document = LoadTables(document);
 
 			ExportToFile(document.DocumentNode.InnerHtml);
 		}
 
-        private HtmlDocument testTemplateTable(HtmlDocument doc)
-        {
-            var template = LoadTemplate(@"../../tableTemplate.html");
+		private HtmlDocument testTemplateTable(HtmlDocument doc)
+		{
+			var template = LoadTemplate(@"../../tableTemplate.html");
 
-            throw new NotImplementedException();
-        }
+			throw new NotImplementedException();
+		}
 
 		private HtmlDocument ChangeNameOfDocument(HtmlDocument doc, string nameValue)
 		{
 			var titleNode = doc.DocumentNode.SelectSingleNode("/html/body")
-				.Element("div").Elements("div").First(d => d.Id == "header");
+				.Elements("div").First(d => d.Id == "header");
 			var valueNode = titleNode.Element("h1").InnerHtml;
 			valueNode = valueNode.Replace("TEMPLATE", nameValue);
 			titleNode.Element("h1").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
 
 			return doc;
 		}
-        
-        private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
+
+		private void GetMethods(IEnumerable<Test> methodList, HtmlNodeCollection htmlNode)
 		{
 			foreach (Test method in methodList)
 			{
@@ -104,7 +105,7 @@ namespace TrxToHtmlConverter
 
 			return xmlReader;
 		}
-        
+
 		private void ExportToFile(string fileContent)
 		{
 			StreamWriter fw = new StreamWriter(_OutputPath);
@@ -112,18 +113,18 @@ namespace TrxToHtmlConverter
 			fw.Close();
 		}
 
-        private HtmlDocument LoadTables(HtmlDocument doc)
-        {
-            doc = TestStatuses.CreateTable(doc, _TestLoadResult);
-            doc = RunTimeSummary.CreateTable(doc, _TestLoadResult);
-            doc = AllFailedTests.CreateTable(doc, _TestLoadResult);
-            doc = AllTestesGroupedByClasses.CreateTable(doc, _TestLoadResult);
+		private HtmlDocument LoadTables(HtmlDocument doc)
+		{
+			doc = TestStatuses.CreateTable(doc, _TestLoadResult);
+			doc = RunTimeSummary.CreateTable(doc, _TestLoadResult);
+			doc = AllFailedTests.CreateTable(doc, _TestLoadResult);
+			doc = AllTestesGroupedByClasses.CreateTable(doc, _TestLoadResult);
 
-            return doc;
-        }
+			return doc;
+		}
 
-        //TODO: write exeption
-        private HtmlDocument LoadTemplate(string templatePath)
+		//TODO: write exeption
+		private HtmlDocument LoadTemplate(string templatePath)
 		{
 			var doc = new HtmlDocument();
 			doc.Load(templatePath, Encoding.UTF8);

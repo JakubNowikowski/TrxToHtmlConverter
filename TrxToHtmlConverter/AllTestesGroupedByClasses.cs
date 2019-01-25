@@ -12,8 +12,7 @@ namespace TrxToHtmlConverter
         public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
             var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
-                .Element("div").Elements("div").First(d => d.Id == "test")
-                .Element("div").Elements("table").First(d => d.Id == "ReportsTable");
+                .Elements("table").First(d => d.Id == "ReportsTable");
             foreach (string testedClass in testLoadResult.AllTestedClasses)
             {
                 string resultColor = summaryResultColor(testedClass, testLoadResult);

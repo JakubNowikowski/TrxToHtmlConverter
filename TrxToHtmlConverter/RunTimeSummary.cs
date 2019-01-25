@@ -22,13 +22,9 @@ namespace TrxToHtmlConverter
         private static HtmlDocument ReplaceOneRunTimeSummaryValue(HtmlDocument doc, string id, string value)
         {
             var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-			.Element("div") // divToRefresh
 			.Elements("div")
-			.First(d => d.Id == "test")
-			.Element("div") //summaryDiv
-			.Element("div") //wrap
-			.Elements("div").First(d => d.Id == "columnRight")
-			.Elements("table").First(d => d.Id == "SummaryTable")
+			.First(d => d.Id == "SummaryTables")
+			.Elements("table").First(d => d.Id == "RunTimeSummaryTable")
 			.Element("tbody")
 			.Elements("tr").First(d => d.Id == id)
 			;
