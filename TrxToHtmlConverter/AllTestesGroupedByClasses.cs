@@ -14,7 +14,6 @@ namespace TrxToHtmlConverter
             {
                 CreateTableNodes(doc, testLoadResult, testedClass, tableTestCase);
             }
-
             return doc;
         }
 
