@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace TrxToHtmlConverter
 {
-	public class XmlReader
+    public class XmlReader
 	{
 		XDocument doc;
 		string xmlns;
@@ -17,6 +15,18 @@ namespace TrxToHtmlConverter
 			doc = XDocument.Load(file);
 			xmlns = doc.Root.Name.Namespace.NamespaceName;
 		}
+
+        public TestLoadResult CreateTestLoadResult()
+		{
+			return new TestLoadResult()
+			{
+				tests = AllTestsResults(),
+				totalTestsProp = LoadTotalTestsProperties(),
+				AllTestedClasses = LoadAllTestedClasses()
+			};
+		}
+
+
 
 		public IEnumerable<Test> AllTestsResults()
 		{
@@ -36,16 +46,6 @@ namespace TrxToHtmlConverter
                     Duration = e.Attribute("duration").Value
                 });
 			return joinedList;
-		}
-
-		public TestLoadResult CreateTestLoadResult()
-		{
-			return new TestLoadResult()
-			{
-				tests = AllTestsResults(),
-				totalTestsProp = LoadTotalTestsProperties(),
-				AllTestedClasses = LoadAllTestedClasses()
-			};
 		}
 
 		public List<string> LoadAllTestedClasses()
@@ -70,7 +70,6 @@ namespace TrxToHtmlConverter
 			}
 			return list.Distinct().ToList();
 		}
-
 
 		public TotalTestsProperties LoadTotalTestsProperties()
 		{
