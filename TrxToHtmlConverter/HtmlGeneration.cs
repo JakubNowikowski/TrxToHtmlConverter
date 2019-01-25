@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI;
 using HtmlAgilityPack;
 
 namespace TrxToHtmlConverter
 {
-	class HtmlGeneration
+    class HtmlGeneration
 	{
 		private string _OutputPath;
 		private string _TemplatePath;

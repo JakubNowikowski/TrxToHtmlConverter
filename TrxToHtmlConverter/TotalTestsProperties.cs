@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter
 {
-	public class TotalTestsProperties
+    public class TotalTestsProperties
 	{
 		public string Total{ get; set; }
 		public string Executed { get; set; }

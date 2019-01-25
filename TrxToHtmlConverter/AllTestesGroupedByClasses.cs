@@ -1,9 +1,6 @@
 ﻿using HtmlAgilityPack;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter
 {
@@ -15,68 +12,72 @@ namespace TrxToHtmlConverter
                 .Elements("table").First(d => d.Id == "ReportsTable");
             foreach (string testedClass in testLoadResult.AllTestedClasses)
             {
-                string resultColor = summaryResultColor(testedClass, testLoadResult);
-                HtmlNode tbodyNode = HtmlNode.CreateNode(tagsCreator("tbody"));
-                HtmlNode headerNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}\"></tr>");
-                HtmlNode colummTdNode = HtmlNode.CreateNode($"<td class=\"{resultColor}\"></td>");
-
-                HtmlNode functionNode = HtmlNode.CreateNode($"<td class=\"Function\">{testedClass}</td>");
-                HtmlNode allNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
-                HtmlNode passedNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Passed").Count()}</td>");
-                HtmlNode failedNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count()}</td>");
-                HtmlNode warningNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Warning").Count()}</td>");
-                HtmlNode inconclusiveNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Inconclusive").Count()}</td>");
-
-
-
-                HtmlNode exNode = HtmlNode.CreateNode("<td class=\"ex\"></td>");
-                HtmlNode openMoreButtonNode = HtmlNode.CreateNode($"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{testedClass}TestsContainer', '{testedClass}Button', 'Show Tests', 'Hide Tests'); \"></div>");
-                HtmlNode moreButtonNode = HtmlNode.CreateNode($"<div class=\"MoreButtonText\" id=\"{testedClass}Button\">Show Tests</div>");
-
-                HtmlNode rowsNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}TestsContainer\" class=\"hiddenRow\"></tr>");
-                HtmlNode colSpanNode = HtmlNode.CreateNode("<td colspan=\"8\"></td>");
-                HtmlNode arrowNode = HtmlNode.CreateNode("<div id=\"exceptionArrow\">↳</div>");
-                HtmlNode tableNode = HtmlNode.CreateNode("<table></table>");
-                HtmlNode theadNode = HtmlNode.CreateNode("<thead></thead>");
-                HtmlNode oddNode = HtmlNode.CreateNode("<tr class=\"odd\"></tr>");
-
-                HtmlNodeCollection tableTitlesColletion = testTableTitlesCreator(oddNode);
-
-                HtmlNode tbodyTestsNode = HtmlNode.CreateNode("<tbody></tbody>");
-
-                var classPredicate = PredicateCreator(c => c.ClassName, testedClass);
-                CreateTestCaseTableRows(tbodyTestsNode, classPredicate, testLoadResult);
-
-
-
-                headerNode.AppendChild(colummTdNode);
-                headerNode.AppendChild(functionNode);
-                headerNode.AppendChild(allNumberNode);
-                headerNode.AppendChild(passedNumberNode);
-                headerNode.AppendChild(failedNumberNode);
-                headerNode.AppendChild(warningNumberNode);
-                headerNode.AppendChild(inconclusiveNumberNode);
-
-                openMoreButtonNode.AppendChild(moreButtonNode);
-                exNode.AppendChild(openMoreButtonNode);
-                headerNode.AppendChild(exNode);
-                tbodyNode.AppendChild(headerNode);
-
-                oddNode.AppendChildren(tableTitlesColletion);
-                theadNode.AppendChild(oddNode);
-
-                tableNode.AppendChild(theadNode);
-                tableNode.AppendChild(tbodyTestsNode);
-                colSpanNode.AppendChild(arrowNode);
-                colSpanNode.AppendChild(tableNode);
-                rowsNode.AppendChild(colSpanNode);
-                tbodyNode.AppendChild(rowsNode);
-
-                tableTestCase.ChildNodes.Append(tbodyNode);
-
+                CreateTableNodes(doc, testLoadResult, testedClass, tableTestCase);
             }
 
             return doc;
+        }
+
+        private static void CreateTableNodes(HtmlDocument doc, TestLoadResult testLoadResult, string testedClass, HtmlNode tableTestCase)
+        {
+            string resultColor = summaryResultColor(testedClass, testLoadResult);
+            HtmlNode tbodyNode = HtmlNode.CreateNode(tagsCreator("tbody"));
+            HtmlNode headerNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}\"></tr>");
+            HtmlNode colummTdNode = HtmlNode.CreateNode($"<td class=\"{resultColor}\"></td>");
+
+            HtmlNode functionNode = HtmlNode.CreateNode($"<td class=\"Function\">{testedClass}</td>");
+            HtmlNode allNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Count()}</td>");
+            HtmlNode passedNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Passed").Count()}</td>");
+            HtmlNode failedNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count()}</td>");
+            HtmlNode warningNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Warning").Count()}</td>");
+            HtmlNode inconclusiveNumberNode = HtmlNode.CreateNode($"<td id=\"number\" class=\"statusCount\" name=\"Id\">{testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Inconclusive").Count()}</td>");
+
+
+
+            HtmlNode exNode = HtmlNode.CreateNode("<td class=\"ex\"></td>");
+            HtmlNode openMoreButtonNode = HtmlNode.CreateNode($"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{testedClass}TestsContainer', '{testedClass}Button', 'Show Tests', 'Hide Tests'); \"></div>");
+            HtmlNode moreButtonNode = HtmlNode.CreateNode($"<div class=\"MoreButtonText\" id=\"{testedClass}Button\">Show Tests</div>");
+
+            HtmlNode rowsNode = HtmlNode.CreateNode($"<tr id=\"{testedClass}TestsContainer\" class=\"hiddenRow\"></tr>");
+            HtmlNode colSpanNode = HtmlNode.CreateNode("<td colspan=\"8\"></td>");
+            HtmlNode arrowNode = HtmlNode.CreateNode("<div id=\"exceptionArrow\">↳</div>");
+            HtmlNode tableNode = HtmlNode.CreateNode("<table></table>");
+            HtmlNode theadNode = HtmlNode.CreateNode("<thead></thead>");
+            HtmlNode oddNode = HtmlNode.CreateNode("<tr class=\"odd\"></tr>");
+
+            HtmlNodeCollection tableTitlesColletion = testTableTitlesCreator(oddNode);
+
+            HtmlNode tbodyTestsNode = HtmlNode.CreateNode("<tbody></tbody>");
+
+            var classPredicate = PredicateCreator(c => c.ClassName, testedClass);
+            CreateTestCaseTableRows(tbodyTestsNode, classPredicate, testLoadResult);
+
+
+
+            headerNode.AppendChild(colummTdNode);
+            headerNode.AppendChild(functionNode);
+            headerNode.AppendChild(allNumberNode);
+            headerNode.AppendChild(passedNumberNode);
+            headerNode.AppendChild(failedNumberNode);
+            headerNode.AppendChild(warningNumberNode);
+            headerNode.AppendChild(inconclusiveNumberNode);
+
+            openMoreButtonNode.AppendChild(moreButtonNode);
+            exNode.AppendChild(openMoreButtonNode);
+            headerNode.AppendChild(exNode);
+            tbodyNode.AppendChild(headerNode);
+
+            oddNode.AppendChildren(tableTitlesColletion);
+            theadNode.AppendChild(oddNode);
+
+            tableNode.AppendChild(theadNode);
+            tableNode.AppendChild(tbodyTestsNode);
+            colSpanNode.AppendChild(arrowNode);
+            colSpanNode.AppendChild(tableNode);
+            rowsNode.AppendChild(colSpanNode);
+            tbodyNode.AppendChild(rowsNode);
+
+            tableTestCase.ChildNodes.Append(tbodyNode);
         }
 
         private static string summaryResultColor(string testedClassName, TestLoadResult testLoadResult)

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace TrxToHtmlConverter
 {
-	public class Test
+    public class Test
 	{
 		public string MethodName { get; set; }
 		public string ClassName { get; set; }
