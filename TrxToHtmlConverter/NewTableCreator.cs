@@ -13,9 +13,48 @@ namespace TrxToHtmlConverter
         private string[] headers;
         private Row[] rows;
         private string caption;
+        public string Id { get; set; }
+        public string Class { get; set; }
+        public string Title { get; set; }
+        public HtmlNode CreatedTable { get; set; }
 
-        public NewTableCreator(params string[] headerValues)
+        public NewTableCreator(string Id, string Class, string Title)
         {
+            this.Id = Id;
+            this.Class = Class;
+            this.Title = Title;
+
+            CreateTable("pierwszy", "drugi");
+        }
+
+        private void CreateTable(params string[] headerValues)
+        {
+            //create table head and table structure
+            HtmlNode newTableNode = HtmlNode.CreateNode($"<table id=\"{Id}\" class=\"{Class}\"></table>");
+            HtmlNode tableTitleNode = HtmlNode.CreateNode($"<caption>{Title}</caption>");
+            newTableNode.AppendChild(tableTitleNode);
+            HtmlNode tableBodyNode = HtmlNode.CreateNode("<tbody></tbody>");
+            newTableNode.AppendChild(tableBodyNode);
+
+            //create table rows
+            foreach (string headerValue in headerValues)
+            {
+                HtmlNode tableRow = HtmlNode.CreateNode($"<tr id={headerValue.ToLower()}></tr>");
+                HtmlNode tableRowHead = HtmlNode.CreateNode($"<th class=\"mainColumn\">{ToUpperFirstLetter(headerValue)}</th>");
+                tableRow.AppendChild(tableRowHead);
+                HtmlNode tableRowBody = HtmlNode.CreateNode($"<td>value</td>");
+                tableRow.AppendChild(tableRowBody);
+                newTableNode.LastChild.AppendChild(tableRow);
+            }
+
+            Console.WriteLine(newTableNode.WriteTo());
+        }
+
+        private string ToUpperFirstLetter(string word)
+        {
+            if (word != null) { word = word[0].ToString().ToUpper() + word.Substring(1); }
+            else { }
+            return word;
         }
 
         public NewTableCreator AddRow(Row newRow)
@@ -36,10 +75,9 @@ namespace TrxToHtmlConverter
 
         private Cell[] cells;
         public string Id { get; set; }
+        string IStyled.styleClass { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public static Row[] openHideRow;
-
-        public string styleClass;
 
 
         public Row()
@@ -70,7 +108,7 @@ namespace TrxToHtmlConverter
 
         public static Cell Button(string targetId)
         {
-            var content = new HtmlNode(targetId);
+            HtmlNode content = HtmlNode.CreateNode(targetId);
             return new Cell(content);
         }
     }
