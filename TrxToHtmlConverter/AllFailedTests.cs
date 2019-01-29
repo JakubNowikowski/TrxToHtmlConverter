@@ -32,9 +32,9 @@ namespace TrxToHtmlConverter
             return doc;
         }
 
-        private static void CreateFailedTestCaseTableRows(HtmlNode tableTestCase, Func<Test, bool> func, TestLoadResult testLoadResult)
+        private static void CreateFailedTestCaseTableRows(HtmlNode tableTestCase, Func<Test, bool> condition, TestLoadResult testLoadResult)
         {
-            foreach (Test test in testLoadResult.tests.Where(func))
+            foreach (Test test in testLoadResult.tests.Where(condition))
             {
                 HtmlNode tableRowTestCase = HtmlNode.CreateNode($"<tr id=\"{test.ID}\"class=\"Test\"></tr>");
 

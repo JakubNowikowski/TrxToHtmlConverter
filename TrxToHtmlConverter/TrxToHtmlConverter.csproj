@@ -50,6 +50,7 @@
     <Compile Include="AllFailedTests.cs" />
     <Compile Include="AllTestesGroupedByClasses.cs" />
     <Compile Include="HtmlGeneration.cs" />
+    <Compile Include="NewTableCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunTimeSummary.cs" />
