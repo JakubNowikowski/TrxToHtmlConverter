@@ -1,4 +1,5 @@
 ﻿using System;
+using TrxToHtmlConverter.TableBuilder;
 
 namespace TrxToHtmlConverter
 {
@@ -6,7 +7,7 @@ namespace TrxToHtmlConverter
 	{
 		static void Main(string[] args)
 		{
-			//string filePathFullReport = @"..\..\fullreport.trx";
+            //string filePathFullReport = @"..\..\fullreport.trx";
 
             //XDocument doc = XDocument.Load("report.trx");
             //string xmlns = doc.Root.Name.Namespace.NamespaceName;
@@ -31,8 +32,14 @@ namespace TrxToHtmlConverter
             //DateTimeOffset loadedDate = DateTimeOffset.Parse(str);
 
             //Console.WriteLine(loadedDate.DateTime);
+            Table table = new Table("tableid","tableclass","tabletitle");
+            Row row = new Row("rowClass", "rowId");
+            Cell cell = new Cell("cellClass","cellId",false,"cellContent");
 
-            NewTableCreator newTableCreator = new NewTableCreator("id", "class", "title");
+            row.Add(cell);
+            table.Add(row);
+
+            Console.WriteLine(table.cellNode.WriteTo());
 
             Console.ReadKey();
 		}
