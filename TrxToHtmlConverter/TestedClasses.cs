@@ -22,9 +22,9 @@ namespace TrxToHtmlConverter
 		{
 			foreach (string test in testLoadResult.AllTestedClasses)
 			{
-				HtmlNode xd = HtmlNode.CreateNode($"<tr><td>{test}</td></tr>");
+				HtmlNode row = HtmlNode.CreateNode($"<tr><td>{test}</td></tr>");
 
-				tableTestCase.AppendChild(xd);
+				tableTestCase.AppendChild(row);
 			}
 		}
 	}
