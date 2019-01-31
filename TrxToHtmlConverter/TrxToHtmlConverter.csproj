@@ -47,12 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllFailedTests.cs" />
-    <Compile Include="AllTestesGroupedByClasses.cs" />
     <Compile Include="HtmlGeneration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RunTimeSummary.cs" />
     <Compile Include="TableBuilder\Cell.cs" />
     <Compile Include="TableBuilder\ICell.cs" />
     <Compile Include="TableBuilder\Row.cs" />
@@ -60,9 +57,7 @@
     <Compile Include="TableBuilder\Table.cs" />
     <Compile Include="TableCreator.cs" />
     <Compile Include="Test.cs" />
-    <Compile Include="TestedClasses.cs" />
     <Compile Include="TestLoadResult.cs" />
-    <Compile Include="TestStatuses.cs" />
     <Compile Include="TotalTestsProperties.cs" />
     <Compile Include="XmlReader.cs" />
   </ItemGroup>
