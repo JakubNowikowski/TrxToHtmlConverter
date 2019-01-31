@@ -56,15 +56,17 @@ namespace TrxToHtmlConverter
             Table table = new Table("RunTimeSummaryTable", "rightTable", "Run Time Summary");
             Row[] rows = new Row[]
             {
+                new Row("", "classCount"),
                 new Row("", "startTime"),
-                new Row("", "endTime"),
+				new Row("", "endTime"),
                 new Row("", "duration")
             };
             foreach (Row row in rows)
             {
                 string value = "", rowName = "", cellClass = "";
+                if (row.id == "classCount") { value = testLoadResult.AllTestedClasses.Count.ToString(); rowName = "Number of tested classes"; cellClass = "mainColumn"; }
                 if (row.id == "startTime") { value = testLoadResult.totalTestsProp.StartTime.ToString(); rowName = "Start Time"; cellClass = "mainColumn"; }
-                if (row.id == "endTime") { value = testLoadResult.totalTestsProp.FinishTime.ToString(); rowName = "End Time"; cellClass = "mainColumn"; }
+				if (row.id == "endTime") { value = testLoadResult.totalTestsProp.FinishTime.ToString(); rowName = "End Time"; cellClass = "mainColumn"; }
                 if (row.id == "duration") { value = TestsDuration(testLoadResult.totalTestsProp.StartTime, testLoadResult.totalTestsProp.FinishTime); rowName = "Duration"; cellClass = "mainColumnLastRow"; }
 
                 Cell[] cells = new Cell[]
@@ -121,7 +123,7 @@ namespace TrxToHtmlConverter
             };
             contentHeadRow.Add(contentHeadRowCells);
 
-            Table content = new Table("", "centerTable", contentHeadRow);
+            Table content = new Table("", "showHideTable", contentHeadRow);
 
             Row contentBodyRow = new Row("", "");
             var failedResults = PredicateCreator(t => t.Result, "Failed");
@@ -201,7 +203,7 @@ namespace TrxToHtmlConverter
                 };
                 contentHeadRow.Add(contentHeadRowCells);
 
-                Table containerTable = new Table("", "centerTable", contentHeadRow);
+                Table containerTable = new Table("", "showHideTable", contentHeadRow);
 
                 //create container table body
                 foreach (Test test in testLoadResult.tests.Where(PredicateCreator(t => t.ClassName, testedClass)))
