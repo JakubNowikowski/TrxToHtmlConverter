@@ -33,7 +33,7 @@ namespace TrxToHtmlConverter
             };
             contentHeadRow.Add(contentHeadRowCells);
             
-            Table content = new Table("", "centerTable", contentHeadRow);
+            Table content = new Table("", "showHideTable", contentHeadRow);
 
             Row contentBodyRow = new Row("","");
             var failedResults = PredicateCreator(t => t.Result, "Failed");

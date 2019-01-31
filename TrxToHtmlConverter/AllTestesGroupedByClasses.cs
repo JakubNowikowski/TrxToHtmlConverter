@@ -72,7 +72,7 @@ namespace TrxToHtmlConverter
                 };
                 contentHeadRow.Add(contentHeadRowCells);
 
-                Table containerTable = new Table("", "centerTable", contentHeadRow);
+                Table containerTable = new Table("", "showHideTable", contentHeadRow);
 
                 //create container table body
                 foreach (Test test in testLoadResult.tests.Where(PredicateCreator(t => t.ClassName, testedClass)))

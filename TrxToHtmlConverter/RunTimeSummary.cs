@@ -12,13 +12,15 @@ namespace TrxToHtmlConverter
             Table table = new Table("RunTimeSummaryTable", "rightTable", "Run Time Summary");
             Row[] rows = new Row[]
             {
-                new Row("", "startTime"),
+				new Row("", "classCount"),
+				new Row("", "startTime"),
                 new Row("", "endTime"),
                 new Row("", "duration")
-            };
+			};
             foreach (Row row in rows)
             {
                 string value = "", rowName = "";
+                if (row.id == "classCount") { value = testLoadResult.totalTestsProp.StartTime.ToString(); rowName = "Number of tested classes"; }
                 if (row.id == "startTime") { value = testLoadResult.totalTestsProp.StartTime.ToString(); rowName = "Start Time"; }
                 if (row.id == "endTime") { value = testLoadResult.totalTestsProp.FinishTime.ToString(); rowName = "End Time"; }
                 if (row.id == "duration") { value = TestsDuration(testLoadResult.totalTestsProp.StartTime, testLoadResult.totalTestsProp.FinishTime); rowName = "Duration"; }
