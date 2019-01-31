@@ -112,10 +112,9 @@ namespace TrxToHtmlConverter
 
 		private HtmlDocument LoadTables(HtmlDocument doc)
 		{
-			doc = TestStatuses.CreateTable(doc, _TestLoadResult);
-			doc = AllFailedTests.CreateTable(doc, _TestLoadResult);
-			//doc = TestedClasses.CreateTable(doc, _TestLoadResult);
-			doc = AllTestesGroupedByClasses.CreateTable(doc, _TestLoadResult);
+			doc = TableCreator.CreateTopTables(doc, _TestLoadResult);
+			doc = TableCreator.CreateAllFailedTestsTable(doc, _TestLoadResult);
+			doc = TableCreator.CreateAllTestsGroupedByClassesTable(doc, _TestLoadResult);
 			
 			return doc;
 		}
