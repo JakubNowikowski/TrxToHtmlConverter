@@ -60,6 +60,7 @@
     <Compile Include="TableBuilder\Table.cs" />
     <Compile Include="TableCreator.cs" />
     <Compile Include="Test.cs" />
+    <Compile Include="TestedClasses.cs" />
     <Compile Include="TestLoadResult.cs" />
     <Compile Include="TestStatuses.cs" />
     <Compile Include="TotalTestsProperties.cs" />

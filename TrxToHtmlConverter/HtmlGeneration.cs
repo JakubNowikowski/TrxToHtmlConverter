@@ -113,10 +113,10 @@ namespace TrxToHtmlConverter
 		private HtmlDocument LoadTables(HtmlDocument doc)
 		{
 			doc = TestStatuses.CreateTable(doc, _TestLoadResult);
-			doc = RunTimeSummary.CreateTable(doc, _TestLoadResult);
 			doc = AllFailedTests.CreateTable(doc, _TestLoadResult);
+			//doc = TestedClasses.CreateTable(doc, _TestLoadResult);
 			doc = AllTestesGroupedByClasses.CreateTable(doc, _TestLoadResult);
-
+			
 			return doc;
 		}
 		//TODO: write exeption
