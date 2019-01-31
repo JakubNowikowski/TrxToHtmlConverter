@@ -15,7 +15,7 @@ namespace TrxToHtmlConverter
 
             Cell[] headRowCells = new Cell[]
             {
-                new Cell("columnFailed", "", false,""),
+                new Cell("Failed", "", false,""),
                 new Cell("failedTest", "" ,false, "Failed Tests"),
                 new Cell("failedTest", "number", false, testLoadResult.totalTestsProp.Failed)
             };

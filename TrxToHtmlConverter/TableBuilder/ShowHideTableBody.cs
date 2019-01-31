@@ -29,10 +29,10 @@ namespace TrxToHtmlConverter.TableBuilder
             HtmlNode newTableBodyNode = HtmlNode.CreateNode("<tbody></tbody>");
             Row containerRow = new Row("hiddenRow", (headRow.id + "Container"));
             Cell button = new Cell("ex", "", false, $"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{containerRow.id}', '{(headRow.id + "Button")}', 'Show Tests', 'Hide Tests'); \">" +
-                $"<div class=\"MoreButtonText\" id=\"{(headRow.id + "Button")}\">Show Tests</div></div>");
-            Cell containerCell = new Cell("", "8");
+                $"<div class=\"ButtonText\" id=\"{(headRow.id + "Button")}\">Show Tests</div></div>");
+			Cell containerCell = new Cell("<div id=\"exceptionArrow\">↳</div>", "8");
 
-            headRow.Add(button);
+			headRow.Add(button);
             containerCell.Add(containerContent);
             containerRow.Add(containerCell);
             newTableBodyNode.AppendChild(headRow.cellNode);
