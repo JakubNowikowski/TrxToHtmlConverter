@@ -12,7 +12,8 @@ namespace TrxToHtmlConverter
 			HtmlNode div = HtmlNode.CreateNode("<div id=\"SummaryTables\" class=\"wrap\"></div");
 			div.AppendChild(CreateTestStatuses(doc, testLoadResult));
 			div.AppendChild(CreateRunTimeSummary(doc, testLoadResult));
-			doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(div);
+            div.AppendChild(CreateTestedClasses(doc, testLoadResult));
+            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(div);
 			return doc;
 		}
 
@@ -29,16 +30,16 @@ namespace TrxToHtmlConverter
 			};
 			foreach (Row row in rows)
 			{
-				string value = "";
-				if (row.id == "total") value = testLoadResult.totalTestsProp.Total;
-				if (row.id == "passed") value = testLoadResult.totalTestsProp.Passed;
-				if (row.id == "failed") value = testLoadResult.totalTestsProp.Failed;
-				if (row.id == "inconclusive") value = testLoadResult.totalTestsProp.Inconclusive;
-				if (row.id == "warning") value = testLoadResult.totalTestsProp.Warning;
+				string value = "", cellClass = "";
+                if (row.id == "total") { value = testLoadResult.totalTestsProp.Total; cellClass = "mainColumn"; }
+                if (row.id == "passed") { value = testLoadResult.totalTestsProp.Passed; cellClass = "mainColumn"; }
+                if (row.id == "failed") { value = testLoadResult.totalTestsProp.Failed; cellClass = "mainColumn"; }
+                if (row.id == "inconclusive") { value = testLoadResult.totalTestsProp.Inconclusive; cellClass = "mainColumn"; }
+                if (row.id == "warning") { value = testLoadResult.totalTestsProp.Warning; cellClass = "mainColumnLastRow"; }
 
 				Cell[] cells = new Cell[]
 			{
-				new Cell("mainColumn", "", true, Table.ToUpperFirstLetter(row.id)),
+				new Cell(cellClass, "", true, Table.ToUpperFirstLetter(row.id)),
 				new Cell(value)
 			};
 				row.Add(cells);
@@ -60,14 +61,14 @@ namespace TrxToHtmlConverter
 			};
 			foreach (Row row in rows)
 			{
-				string value = "", rowName = "";
-				if (row.id == "startTime") { value = testLoadResult.totalTestsProp.StartTime.ToString(); rowName = "Start Time"; }
-				if (row.id == "endTime") { value = testLoadResult.totalTestsProp.FinishTime.ToString(); rowName = "End Time"; }
-				if (row.id == "duration") { value = TestsDuration(testLoadResult.totalTestsProp.StartTime, testLoadResult.totalTestsProp.FinishTime); rowName = "Duration"; }
+				string value = "", rowName = "", cellClass = "";
+				if (row.id == "startTime") { value = testLoadResult.totalTestsProp.StartTime.ToString(); rowName = "Start Time"; cellClass = "mainColumn"; }
+				if (row.id == "endTime") { value = testLoadResult.totalTestsProp.FinishTime.ToString(); rowName = "End Time"; cellClass = "mainColumn"; }
+				if (row.id == "duration") { value = TestsDuration(testLoadResult.totalTestsProp.StartTime, testLoadResult.totalTestsProp.FinishTime); rowName = "Duration"; cellClass = "mainColumnLastRow"; }
 
 				Cell[] cells = new Cell[]
 			{
-				new Cell("mainColumn", "", true, rowName),
+				new Cell(cellClass, "", true, rowName),
 				new Cell(value)
 			};
 				row.Add(cells);
@@ -78,7 +79,22 @@ namespace TrxToHtmlConverter
 			return table.cellNode;
 		}
 
-		private static string TestsDuration(DateTime startTime, DateTime stopTime)
+        private static HtmlNode CreateTestedClasses(HtmlDocument doc, TestLoadResult testLoadResult)
+        {
+            Table table = new Table("TestedClassesTable", "hiddenTable", "Tested Classes");
+
+            foreach (string className in testLoadResult.AllTestedClasses)
+            {
+                Row row = new Row("", "");
+                Cell cell = new Cell(className);
+                row.Add(cell);
+                table.Add(row);
+            }
+
+            return table.cellNode;
+        }
+
+        private static string TestsDuration(DateTime startTime, DateTime stopTime)
 		{
 			return string.Format("{0:hh\\:mm\\:ss\\.fff}", (stopTime - startTime));
 		}
