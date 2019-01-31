@@ -170,12 +170,12 @@ namespace TrxToHtmlConverter
             int passedTestsCount = classTests.Where(PredicateCreator(t => t.Result, "Passed")).Count();
 
             if (passedTestsCount == classTestsCount)
-                return "column1Passed";
+                return "Passed";
             else if (classTests.Where(PredicateCreator(t => t.Result, "Failed")).Count() != 0)
-                return "column1Failed";
+                return "Failed";
             else if (classTests.Where(PredicateCreator(t => t.Result, "Warning")).Count() != 0)
-                return "column1Warning";
-            return "column1Inconclusive";
+                return "Warning";
+            return "Inconclusive";
         }
 
         private static string tagsCreator(string tagName, string content = "")
