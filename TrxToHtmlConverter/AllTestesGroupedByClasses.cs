@@ -1,19 +1,101 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Linq;
+using TrxToHtmlConverter.TableBuilder;
 
 namespace TrxToHtmlConverter
 {
     class AllTestesGroupedByClasses : TableCreator
     {
+        //public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
+        //{
+        //    var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
+        //        .Elements("table").First(d => d.Id == "ReportsTable");
+        //    foreach (string testedClass in testLoadResult.AllTestedClasses)
+        //    {
+        //        CreateTableNodes(doc, testLoadResult, testedClass, tableTestCase);
+        //    }
+        //    return doc;
+        //}
+
         public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
-            var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
-                .Elements("table").First(d => d.Id == "ReportsTable");
+            //create main table
+            Table table = new Table("ReportsTable", "centerTable", "All Tests Grouped By Classes");
+
+            //create table header row
+            Row tableHeadRow = new Row("", "");
+
+            Cell[] tableHeadRowCells = new Cell[]
+            {
+                new Cell("", "", true,""),
+                new Cell("summaryClassTests", "" ,true, "Class Name"),
+                new Cell("", "all" ,true, "All"),
+                new Cell("", "passed" ,true, "Passed"),
+                new Cell("", "failed" ,true, "Failed"),
+                new Cell("", "warning" ,true, "Warning"),
+                new Cell("", "inconclusive", true, "Inconclusive"),
+                new Cell("", "", true,""),
+                new Cell("", "", true,"")
+            };
+
+            tableHeadRow.Add(tableHeadRowCells);
+            table.Add(tableHeadRow);
+            
+            //create table show-hide rows
             foreach (string testedClass in testLoadResult.AllTestedClasses)
             {
-                CreateTableNodes(doc, testLoadResult, testedClass, tableTestCase);
+                //create head row for show-hide row
+                string resultColor = summaryResultColor(testedClass, testLoadResult);
+                Row headRow = new Row("", testedClass);
+                Cell[] headRowCells = new Cell[]
+                {
+                new Cell(resultColor, "", false ,""),
+                new Cell("Fuction", "", false, testedClass),
+                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Count().ToString()),
+                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Passed").Count().ToString()),
+                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count().ToString()),
+                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Warning").Count().ToString()),
+                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Inconclusive").Count().ToString()),
+                new Cell("ex", "", false ,"")
+                };
+                headRow.Add(headRowCells);
+
+                //create container table and its head row
+                Row contentHeadRow = new Row("", "");
+                Cell[] contentHeadRowCells = new Cell[]
+                {
+                new Cell("TestsTableHeaderFirst","",true,"Status"),
+                new Cell("TestsTableHeader","",true,"Test"),
+                new Cell("TestsTableHeader","",true,"Class Name"),
+                new Cell("TestsTableHeader","",true,"Start Time"),
+                new Cell("TestsTableHeaderLast","",true,"Duration")
+                };
+                contentHeadRow.Add(contentHeadRowCells);
+
+                Table containerTable = new Table("", "centerTable", contentHeadRow);
+
+                //create container table body
+                foreach (Test test in testLoadResult.tests.Where(PredicateCreator(t => t.ClassName, testedClass)))
+                {
+                    Row testRow = new Row("Test", test.ID);
+                    Cell[] testCells = new Cell[]
+                    {
+                new Cell(test.Result, "", false, CreateColoredResult(test.Result)),
+                new Cell("Function", "", false, test.MethodName),
+                new Cell("ClassName", "", false, test.ClassName),
+                new Cell("StartTime", "", false, DateTime.Parse(test.StartTime.ToString()).ToString()),
+                new Cell("statusCount", "", false, test.Duration)
+                    };
+                    testRow.Add(testCells);
+                    containerTable.Add(testRow);
+                }
+
+                ShowHideTableBody tableBody = new ShowHideTableBody(headRow, containerTable);
+                table.Add(tableBody);
+
             }
+            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.cellNode);
             return doc;
         }
 

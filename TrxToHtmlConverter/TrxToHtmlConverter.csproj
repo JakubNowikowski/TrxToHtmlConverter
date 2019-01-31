@@ -56,6 +56,7 @@
     <Compile Include="TableBuilder\Cell.cs" />
     <Compile Include="TableBuilder\ICell.cs" />
     <Compile Include="TableBuilder\Row.cs" />
+    <Compile Include="TableBuilder\ShowHideTableBody.cs" />
     <Compile Include="TableBuilder\Table.cs" />
     <Compile Include="TableCreator.cs" />
     <Compile Include="Test.cs" />

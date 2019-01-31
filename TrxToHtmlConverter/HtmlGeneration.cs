@@ -119,7 +119,6 @@ namespace TrxToHtmlConverter
 
 			return doc;
 		}
-
 		//TODO: write exeption
 		private HtmlDocument LoadTemplate(string templatePath)
 		{

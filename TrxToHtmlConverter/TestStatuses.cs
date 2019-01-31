@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using System.Linq;
+using TrxToHtmlConverter.TableBuilder;
 
 namespace TrxToHtmlConverter
 {
@@ -7,27 +8,35 @@ namespace TrxToHtmlConverter
     {
         public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
-            doc = ReplaceOneTotalValue(doc, "total", testLoadResult.totalTestsProp.Total);
-            doc = ReplaceOneTotalValue(doc, "passed", testLoadResult.totalTestsProp.Passed);
-            doc = ReplaceOneTotalValue(doc, "failed", testLoadResult.totalTestsProp.Failed);
-            doc = ReplaceOneTotalValue(doc, "inconclusive", testLoadResult.totalTestsProp.Inconclusive);
-            doc = ReplaceOneTotalValue(doc, "warning", testLoadResult.totalTestsProp.Warning);
+            Table table = new Table("testsStatusesTable", "leftTable","Tests Statuses");
+            Row[] rows = new Row[] 
+            { 
+                new Row("", "total"),
+                new Row("", "passed"),
+                new Row("", "failed"),
+                new Row("", "inconclusive"),
+                new Row("", "warning")
+            };
+            foreach(Row row in rows)
+            {
+                string value = "";
+                if (row.id == "total") value = testLoadResult.totalTestsProp.Total;
+                if (row.id == "passed") value = testLoadResult.totalTestsProp.Passed;
+                if (row.id == "failed") value = testLoadResult.totalTestsProp.Failed;
+                if (row.id == "inconclusive") value = testLoadResult.totalTestsProp.Inconclusive;
+                if (row.id == "warning") value = testLoadResult.totalTestsProp.Warning;
 
-            return doc;
-        }
+                Cell[] cells = new Cell[]
+            {
+                new Cell("mainColumn", "", true, Table.ToUpperFirstLetter(row.id)),
+                new Cell(value)
+            };
+                row.Add(cells);
+            }
 
-        private static HtmlDocument ReplaceOneTotalValue(HtmlDocument doc, string id, string value)
-        {
-			var totalResultNode = doc.DocumentNode.SelectSingleNode("/html/body")
-			.Elements("div")
-			.First(d => d.Id == "SummaryTables")
-			.Elements("table").First(d => d.Id == "TestsStatusesTable")
-			.Element("tbody")
-			.Elements("tr").First(d => d.Id == id);
-			var valueNode = totalResultNode.Element("td").InnerText;
-            valueNode = valueNode.Replace("VALUE", value);
-            totalResultNode.Element("td").InnerHtml = HtmlDocument.HtmlEncode(valueNode);
+            table.Add(rows);
 
+            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.cellNode);
             return doc;
         }
     }

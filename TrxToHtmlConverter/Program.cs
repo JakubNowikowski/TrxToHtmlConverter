@@ -14,9 +14,9 @@ namespace TrxToHtmlConverter
             //var results = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Results", xmlns));
             //var summary = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns)).Attribute("total").Value;
 
-            //HtmlGeneration Html = new HtmlGeneration("../../fullreport.trx", "../../nowyplik.html");
-            //         Html.InitializeTrxData();
-            //         Html.Generation();
+            HtmlGeneration Html = new HtmlGeneration("../../fullreport.trx", "../../nowyplik.html");
+            Html.InitializeTrxData();
+            Html.Generation();
 
             //XmlReader reader = new XmlReader(filePathFullReport);
 
@@ -32,16 +32,16 @@ namespace TrxToHtmlConverter
             //DateTimeOffset loadedDate = DateTimeOffset.Parse(str);
 
             //Console.WriteLine(loadedDate.DateTime);
-            Table table = new Table("tableid","tableclass","tabletitle");
-            Row row = new Row("rowClass", "rowId");
-            Cell cell = new Cell("cellClass","cellId",false,"cellContent");
+            //Table table = new Table("tableid","tableclass","tabletitle");
+            //Row row = new Row("rowClass", "rowId");
+            //Cell cell = new Cell("cellClass","cellId",false,"cellContent");
 
-            row.Add(cell);
-            table.Add(row);
+            //row.Add(cell);
+            //table.Add(row);
 
-            Console.WriteLine(table.cellNode.WriteTo());
+            //Console.WriteLine(table.cellNode.WriteTo());
 
-            Console.ReadKey();
-		}
+            //Console.ReadKey();
+        }
 	}
 }

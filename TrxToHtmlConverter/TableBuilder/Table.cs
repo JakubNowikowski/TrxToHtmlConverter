@@ -11,6 +11,7 @@ namespace TrxToHtmlConverter.TableBuilder
     {
         private string id;
         private string styleClass;
+        private Row tableHeadRow;
         public HtmlNode cellNode;
         string ICell.Id { get { return id; } set { id = value; } }
         string ICell.StyleClass { get { return styleClass; } set { styleClass = value; } }
@@ -30,12 +31,28 @@ namespace TrxToHtmlConverter.TableBuilder
             cellNode = CreateCellNode();
         }
 
+        public Table(string id, string styleClass, Row tableHeadRow)
+        {
+            this.id = id;
+            this.styleClass = styleClass;
+            this.tableHeadRow = tableHeadRow;
+            cellNode = CreateCellNode();
+        }
+
         private HtmlNode CreateCellNode()
         {
             //create table head and table empty table body
             HtmlNode newTableNode = HtmlNode.CreateNode($"<table id=\"{id}\" class=\"{styleClass}\"></table>");
-            HtmlNode tableTitleNode = HtmlNode.CreateNode($"<caption>{Title}</caption>");
-            newTableNode.AppendChild(tableTitleNode);
+            if (tableHeadRow == null)
+            {
+                HtmlNode tableTitleNode = HtmlNode.CreateNode($"<caption>{Title}</caption>");
+                newTableNode.AppendChild(tableTitleNode);
+            }
+            else
+            {
+                HtmlNode tableHeadNode = HtmlNode.CreateNode($"<thead>{tableHeadRow.cellNode.WriteTo()}</thead>");
+                newTableNode.AppendChild(tableHeadNode);
+            }
             HtmlNode tableBodyNode = HtmlNode.CreateNode("<tbody></tbody>");
             newTableNode.AppendChild(tableBodyNode);
 
@@ -52,7 +69,7 @@ namespace TrxToHtmlConverter.TableBuilder
             foreach (ICell cell in cells)
                 cellNode.LastChild.AppendChild(cell.CellNode);
         }
-        public string ToUpperFirstLetter(string word)
+        public static string ToUpperFirstLetter(string word)
         {
             if (word != null) { word = word[0].ToString().ToUpper() + word.Substring(1); }
             else { }

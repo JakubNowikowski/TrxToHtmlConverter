@@ -9,9 +9,9 @@ namespace TrxToHtmlConverter.TableBuilder
 {
     public class Row : ICell
     {
-        private string id;
+        public string id;
         private string styleClass;
-        HtmlNode cellNode;
+        public HtmlNode cellNode;
 
         string ICell.Id { get { return id; } set { id = value; } }
         string ICell.StyleClass { get { return styleClass; } set { styleClass = value; } }

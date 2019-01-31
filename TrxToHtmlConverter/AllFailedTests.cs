@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Linq;
+using TrxToHtmlConverter.TableBuilder;
 
 namespace TrxToHtmlConverter
 {
@@ -8,54 +9,54 @@ namespace TrxToHtmlConverter
     {
         public static HtmlDocument CreateTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
-            var tableTestCase = doc.DocumentNode.SelectSingleNode("/html/body")
-                .Elements("table").First(d => d.Id == "AllFailedTestTable").Element("tbody")
-                .Elements("tr").First(d => d.Id == "TestsContainer").Element("td").Element("table").Element("tbody");
+            Table table = new Table("AllFailedTestsTable", "centerTable", "All Failed Tests");
 
-            doc = ChangeNumberOfAllFailedTests(doc, testLoadResult.totalTestsProp.Failed);
-            var failedResults = PredicateCreator(t => t.Result, "Failed");
-            CreateFailedTestCaseTableRows(tableTestCase, failedResults, testLoadResult);
+            Row headRow = new Row("","");
 
-            return doc;
-        }
-
-        private static HtmlDocument ChangeNumberOfAllFailedTests(HtmlDocument doc, string number)
-        {
-            var failedTableTitleNode = doc.DocumentNode.SelectSingleNode("html/body")
-				.Elements("table").First(d => d.Id == "AllFailedTestTable")
-                .Element("tbody").Elements("tr").First(t => t.Id == "FailedTestsHeader")
-                .Elements("td").First(t => t.Id == "number");
-            var valueNode = failedTableTitleNode.InnerHtml;
-            valueNode = valueNode.Replace("VALUE", number);
-            failedTableTitleNode.InnerHtml = HtmlDocument.HtmlEncode(valueNode);
-
-            return doc;
-        }
-
-        private static void CreateFailedTestCaseTableRows(HtmlNode tableTestCase, Func<Test, bool> condition, TestLoadResult testLoadResult)
-        {
-            foreach (Test test in testLoadResult.tests.Where(condition))
+            Cell[] headRowCells = new Cell[]
             {
-                HtmlNode tableRowTestCase = HtmlNode.CreateNode($"<tr id=\"{test.ID}\"class=\"Test\"></tr>");
+                new Cell("columnFailed", "", false,""),
+                new Cell("failedTest", "" ,false, "Failed Tests"),
+                new Cell("failedTest", "number", false, testLoadResult.totalTestsProp.Failed)
+            };
 
-                tableTestCase.AppendChild(tableRowTestCase);
-                tableTestCase = tableTestCase.LastChild;
+            headRow.Add(headRowCells);
+            
+            Row contentHeadRow = new Row("","");
+            Cell[] contentHeadRowCells = new Cell[]
+            {
+                new Cell("TestsTableHeaderFirst","",true,"Status"),
+                new Cell("TestsTableHeader","",true,"Test"),
+                new Cell("TestsTableHeader","",true,"Class Name"),
+                new Cell("TestsTableHeader","",true,"Start Time"),
+                new Cell("TestsTableHeaderLast","",true,"Duration"),
+            };
+            contentHeadRow.Add(contentHeadRowCells);
+            
+            Table content = new Table("", "centerTable", contentHeadRow);
 
-                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"{test.Result}\">{CreateColoredResult(test.Result)}</td>");
-                tableTestCase.AppendChild(tableRowTestCase);
-
-                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"Function\">{test.MethodName}</td>");
-                tableTestCase.AppendChild(tableRowTestCase);
-
-                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"ClassName\">{test.ClassName}</td>");
-                tableTestCase.AppendChild(tableRowTestCase);
-
-                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"StartTime\">{DateTime.Parse(test.StartTime.ToString())}</td>");
-                tableTestCase.AppendChild(tableRowTestCase);
-
-                tableRowTestCase = HtmlNode.CreateNode($"<td class=\"statusCount\">{test.Duration}</td>");
-                tableTestCase.AppendChild(tableRowTestCase);
+            Row contentBodyRow = new Row("","");
+            var failedResults = PredicateCreator(t => t.Result, "Failed");
+            foreach (Test test in testLoadResult.tests.Where(PredicateCreator(t => t.Result, "Failed")))
+            {
+                Row testRow = new Row("Test", test.ID);
+                Cell[] testCells = new Cell[]
+                {
+                new Cell(test.Result, "", false, CreateColoredResult(test.Result)),
+                new Cell("Function", "", false, test.MethodName),
+                new Cell("ClassName", "", false, test.ClassName),
+                new Cell("StartTime", "", false, DateTime.Parse(test.StartTime.ToString()).ToString()),
+                new Cell("statusCount", "", false, test.Duration)
+                };
+                testRow.Add(testCells);
+                content.Add(testRow);
             }
+            
+            ShowHideTableBody tableBody = new ShowHideTableBody(headRow, content);
+
+            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.cellNode).AppendChild(tableBody.cellNode);
+
+            return doc;
         }
     }
 }
