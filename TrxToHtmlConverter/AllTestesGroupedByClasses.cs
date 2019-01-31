@@ -67,7 +67,6 @@ namespace TrxToHtmlConverter
                 {
                 new Cell("TestsTableHeaderFirst","",true,"Status"),
                 new Cell("TestsTableHeader","",true,"Test"),
-                new Cell("TestsTableHeader","",true,"Class Name"),
                 new Cell("TestsTableHeader","",true,"Start Time"),
                 new Cell("TestsTableHeaderLast","",true,"Duration")
                 };
@@ -83,7 +82,6 @@ namespace TrxToHtmlConverter
                     {
                 new Cell(test.Result, "", false, CreateColoredResult(test.Result)),
                 new Cell("Function", "", false, test.MethodName),
-                new Cell("ClassName", "", false, test.ClassName),
                 new Cell("StartTime", "", false, DateTime.Parse(test.StartTime.ToString()).ToString()),
                 new Cell("statusCount", "", false, test.Duration)
                     };
