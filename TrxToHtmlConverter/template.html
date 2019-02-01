@@ -88,13 +88,6 @@
 			word-wrap: break-word;
 		}
 
-			td.failedTest {
-				color: #425b71;
-				text-align: left;
-				border-top: 1px solid #f3f3f9;
-				word-wrap: break-word;
-			}
-
 			td.failedBackground {
 				background: #f44336d9;
 				width: 30px;
@@ -120,15 +113,15 @@
 				width: 30px;
 			}
 
-			td.marginCell{
-				padding-left:1px;
-				width:20px;
+			td.marginCell {
+				padding-left: 1px;
+				width: 20px;
 			}
 
 			td.leftAlign {
 				color: #425b71;
 				text-align: left;
-				border-top: 1px solid #f3f3f9;
+				border-top: 1px solid #ffffff;
 				word-wrap: break-word;
 			}
 
@@ -365,10 +358,20 @@
 		}
 
 		function ChangeToPdfVersion() {
-
-			ChangeClass('OpenMoreButton', 'hiddenButton');
-			ChangeClass('hiddenRow', 'visibleRow');
-			ChangeClass('hiddenTable', 'visibleTable');
+			if (document.getElementById('SwitchButton').innerHTML = 'HTML') {
+				ChangeClass('OpenMoreButton', 'hiddenButton');
+				ChangeClass('hiddenRow', 'visibleRow');
+				ChangeClass('hiddenTable', 'visibleTable');
+			}
+			else {
+				ChangeClass('hiddenButton', 'OpenMoreButton');
+				ChangeClass('visibleRow', 'hiddenRow');
+				ChangeClass('visibleTable', 'hiddenTable');
+			}
+				var x = document.getElementsByClassName('ButtonText');
+				for (var i = 0; i < x.length; i++) {
+					x[i].textContent = "Show Tests";
+				}
 		}
 
 	</script>
