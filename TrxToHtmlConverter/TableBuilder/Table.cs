@@ -7,30 +7,26 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public class Table : ICell
+    public class Table : NodeBase
     {
         private Row tableHeadRow;
         private string title;
 
-        public Table(string id, string styleClass, string title)
+        public Table(string id, string styleClass, string title) : base()
         {
             this.id = id;
             this.styleClass = styleClass;
             this.title = title;
-            children = new List<ICell>();
-            cellNode = CreateCellNode();
         }
 
-        public Table(string id, string styleClass, Row tableHeadRow)
+        public Table(string id, string styleClass, Row tableHeadRow) : base()
         {
             this.id = id;
             this.styleClass = styleClass;
             this.tableHeadRow = tableHeadRow;
-            children = new List<ICell>();
-            cellNode = CreateCellNode();
         }
 
-        private HtmlNode CreateCellNode()
+        protected override HtmlNode CreateCellNode()
         {
             //create table head and table empty table body
             HtmlNode newTableNode = HtmlNode.CreateNode($"<table id=\"{id}\" class=\"{styleClass}\"></table>");

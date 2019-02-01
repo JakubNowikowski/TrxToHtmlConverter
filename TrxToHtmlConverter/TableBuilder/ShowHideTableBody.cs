@@ -7,26 +7,24 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public class ShowHideTableBody : ICell
+    public class ShowHideTableBody : NodeBase
     {
 
         private Row headRow;
-        private ICell containerContent;
+        private NodeBase containerContent;
 
-        public ShowHideTableBody(Row headRow, ICell containerContent)
+        public ShowHideTableBody(Row headRow, NodeBase containerContent) : base()
         {
             this.headRow = headRow;
             this.containerContent = containerContent;
-            children = new List<ICell>();
-            cellNode = CreateCellNode();
         }
 
-        private HtmlNode CreateCellNode()
+        protected override HtmlNode CreateCellNode()
         {
             HtmlNode newTableBodyNode = HtmlNode.CreateNode("<tbody></tbody>");
             Row containerRow = new Row("hiddenRow", (headRow.id + "Container"));
-            Cell button = new Cell("ex", "", false, $"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{containerRow.id}', '{(headRow.id + "Button")}', 'Show Tests', 'Hide Tests'); \">" +
-                $"<div class=\"ButtonText\" id=\"{(headRow.id + "Button")}\">Show Tests</div></div>");
+            Cell button = new Cell($"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{containerRow.id}', '{(headRow.id + "Button")}', 'Show Tests', 'Hide Tests'); \">" +
+                $"<div class=\"ButtonText\" id=\"{(headRow.id + "Button")}\">Show Tests</div></div>", "", "ex", false);
 			Cell containerCell = new Cell("<div></div>", "10");
 
 			headRow.Add(button);

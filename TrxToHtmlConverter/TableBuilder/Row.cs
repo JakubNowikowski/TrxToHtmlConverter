@@ -7,18 +7,13 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public class Row : ICell
+    public class Row : NodeBase
     {
-        public Row(string styleClass, string id)
+        protected override string tagName { get; set; } = "tr";
+        public Row(string styleClass, string id) : base()
         {
             this.styleClass = styleClass;
             this.id = id;
-            children = new List<ICell>();
-            cellNode = CreateCellNode();
-        }
-        private HtmlNode CreateCellNode()
-        {
-            return HtmlNode.CreateNode($"<tr id=\"{id}\" class=\"{styleClass}\"></tr>");
         }
     }
 }

@@ -37,5 +37,10 @@ namespace TrxToHtmlConverter
                     Warning == o.Warning && Completed == o.Completed && InProgress == o.InProgress && Pending == o.Pending &&
                     StartTime == o.StartTime && FinishTime == o.FinishTime && InProgress == o.InProgress && TestCategory == o.TestCategory;
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

@@ -7,35 +7,32 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public class Cell : ICell
+    public class Cell : NodeBase
     {
-        public Cell(string styleClass, string id, bool isTh, string content/*, string colSpan = ""*/) //: this(content, colSpan)
+        protected bool isTh;
+        protected string colSpan;
+        protected override string tagName { get; set; } = "td";
+
+        public Cell(string content, string styleClass, string id, bool isTh, string colSpan = "") : base(content, styleClass, id)
         {
-            this.styleClass = styleClass;
             this.isTh = isTh;
-            this.id = id;
-            this.content = ToUpperFirstLetter(content);
-            children = new List<ICell>();
-            cellNode = CreateCellNode();
+            this.colSpan = colSpan;
         }
-        public Cell(string content, string colSpan) //: this(content)
+
+        public Cell(string content, string colSpan = "", bool isTh = false) : base(content)
         {
             this.colSpan = colSpan;
-            this.content = ToUpperFirstLetter(content);
-            children = new List<ICell>();
-            cellNode = CreateCellNode();
+            this.isTh = isTh;
         }
-        public Cell(string content)
-        {
-            this.content = ToUpperFirstLetter(content);
-            children = new List<ICell>();
-            cellNode = CreateCellNode();
-        }
-        private HtmlNode CreateCellNode()
+
+        public Cell() : base() { }
+
+        protected override HtmlNode CreateCellNode()
         {
             if (isTh)
-                return HtmlNode.CreateNode($"<th id=\"{id}\" colspan=\"{colSpan}\" class=\"{styleClass}\">{content}</th>");
-            return HtmlNode.CreateNode($"<td id=\"{id}\" colspan=\"{colSpan}\" class=\"{styleClass}\">{content}</td>");
+                tagName = "th";
+            additional = $"colspan=\"{colSpan}\"";
+            return base.CreateCellNode();
         }
     }
 }

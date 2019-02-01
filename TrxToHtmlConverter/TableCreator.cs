@@ -40,7 +40,7 @@ namespace TrxToHtmlConverter
 
                 Cell[] cells = new Cell[]
             {
-                new Cell(cellClass, "", true, Table.ToUpperFirstLetter(row.id)),
+                new Cell(Table.ToUpperFirstLetter(row.id), cellClass, "", true),
                 new Cell(value)
             };
                 row.Add(cells);
@@ -71,7 +71,7 @@ namespace TrxToHtmlConverter
 
                 Cell[] cells = new Cell[]
             {
-                new Cell(cellClass, "", true, rowName),
+                new Cell(rowName, cellClass, "", true),
                 new Cell(value)
             };
                 row.Add(cells);
@@ -105,10 +105,10 @@ namespace TrxToHtmlConverter
 
             Cell[] headRowCells = new Cell[]
             {
-				new Cell("marginCell", "", false,""),
-                new Cell("Failed", "", false,""),
-                new Cell("leftAlign", "" ,false, "Failed Tests"),
-                new Cell("", "number", false, testLoadResult.totalTestsProp.Failed)
+				new Cell("", "marginCell", "",false),
+                new Cell("", "Failed", "",false),
+                new Cell("Failed Tests", "leftAlign","" , false),
+                new Cell(testLoadResult.totalTestsProp.Failed, "", "number", false)
             };
 
             headRow.Add(headRowCells);
@@ -116,11 +116,11 @@ namespace TrxToHtmlConverter
             Row contentHeadRow = new Row("", "");
             Cell[] contentHeadRowCells = new Cell[]
             {
-                new Cell("TestsTableHeaderFirst","",true,"Status"),
-                new Cell("TestsTableHeader","",true,"Test"),
-                new Cell("TestsTableHeader","",true,"Class Name"),
-                new Cell("TestsTableHeader","",true,"Start Time"),
-                new Cell("TestsTableHeaderLast","",true,"Duration"),
+                new Cell("Status","TestsTableHeaderFirst","",true),
+                new Cell("Test","TestsTableHeader","",true),
+                new Cell("Class Name","TestsTableHeader","",true),
+                new Cell("Start Time","TestsTableHeader","",true),
+                new Cell("Duration","TestsTableHeaderLast","",true),
             };
             contentHeadRow.Add(contentHeadRowCells);
 
@@ -133,11 +133,11 @@ namespace TrxToHtmlConverter
                 Row testRow = new Row("Test", test.ID);
                 Cell[] testCells = new Cell[]
                 {
-                new Cell(test.Result, "", false, CreateColoredResult(test.Result)),
-                new Cell("leftAlign", "", false, test.MethodName),
-                new Cell("ClassName", "", false, test.ClassName),
-                new Cell("StartTime", "", false, DateTime.Parse(test.StartTime.ToString()).ToString()),
-                new Cell("statusCount", "", false, test.Duration)
+                new Cell(CreateColoredResult(test.Result), test.Result, "", false),
+                new Cell(test.MethodName, "leftAlign", "", false),
+                new Cell(test.ClassName, "ClassName", "", false),
+                new Cell(DateTime.Parse(test.StartTime.ToString()).ToString(), "StartTime", "", false),
+                new Cell(test.Duration, "statusCount", "", false)
                 };
                 testRow.Add(testCells);
                 content.Add(testRow);
@@ -160,16 +160,16 @@ namespace TrxToHtmlConverter
 
             Cell[] tableHeadRowCells = new Cell[]
             {
-                new Cell("", "", true,""),
-				new Cell("", "", true,""),
-				new Cell("summaryClassTests", "" ,true, "Class Name"),
-                new Cell("", "all" ,true, "All"),
-                new Cell("", "passed" ,true, "Passed"),
-                new Cell("", "failed" ,true, "Failed"),
-                new Cell("", "warning" ,true, "Warning"),
-                new Cell("", "inconclusive", true, "Inconclusive"),
-                new Cell("", "", true,""),
-                new Cell("", "", true,"")
+                new Cell("", "", "",true),
+				new Cell("", "", "",true),
+				new Cell("Class Name", "summaryClassTests","" , true),
+                new Cell("All", "","all" , true),
+                new Cell("Passed", "","passed" , true),
+                new Cell("Failed", "","failed" , true),
+                new Cell("Warning", "","warning" , true),
+                new Cell("Inconclusive", "", "inconclusive", true),
+                new Cell("", "", "",true),
+                new Cell("", "", "",true)
             };
 
             tableHeadRow.Add(tableHeadRowCells);
@@ -183,15 +183,15 @@ namespace TrxToHtmlConverter
                 Row headRow = new Row("", testedClass);
                 Cell[] headRowCells = new Cell[]
                 {
-				new Cell("marginCell", "", false,""),
-				new Cell(resultColor, "", false ,""),
-                new Cell("leftAlign", "", false, testedClass),
-                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Count().ToString()),
-                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Passed").Count().ToString()),
-                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count().ToString()),
-                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Warning").Count().ToString()),
-                new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Inconclusive").Count().ToString()),
-                new Cell("ex", "", false ,"")
+				new Cell("", "marginCell", "",false),
+				new Cell("", resultColor, "",false ),
+                new Cell(testedClass, "leftAlign", "", false),
+                new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Count().ToString(),"statusCount","number", false),
+                new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Passed").Count().ToString(),"statusCount","number", false),
+                new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count().ToString(),"statusCount","number", false),
+                new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Warning").Count().ToString(),"statusCount","number", false),
+                new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Inconclusive").Count().ToString(),"statusCount","number", false),
+                new Cell("", "ex", "",false )
                 };
                 headRow.Add(headRowCells);
 
@@ -199,10 +199,10 @@ namespace TrxToHtmlConverter
                 Row contentHeadRow = new Row("", "");
                 Cell[] contentHeadRowCells = new Cell[]
                 {
-                new Cell("TestsTableHeaderFirst","",true,"Status"),
-                new Cell("TestsTableHeader","",true,"Test"),
-                new Cell("TestsTableHeader","",true,"Start Time"),
-                new Cell("TestsTableHeaderLast","",true,"Duration")
+                new Cell("Status","TestsTableHeaderFirst","",true),
+                new Cell("Test","TestsTableHeader","",true),
+                new Cell("Start Time","TestsTableHeader","",true),
+                new Cell("Duration","TestsTableHeaderLast","",true)
                 };
                 contentHeadRow.Add(contentHeadRowCells);
 
@@ -214,10 +214,10 @@ namespace TrxToHtmlConverter
                     Row testRow = new Row("Test", test.ID);
                     Cell[] testCells = new Cell[]
                     {
-                new Cell(test.Result, "", false, CreateColoredResult(test.Result)),
-                new Cell("leftAlign", "", false, test.MethodName),
-                new Cell("StartTime", "", false, DateTime.Parse(test.StartTime.ToString()).ToString()),
-                new Cell("statusCount", "", false, test.Duration)
+                new Cell(CreateColoredResult(test.Result), test.Result, "", false),
+                new Cell(test.MethodName, "leftAlign", "", false),
+                new Cell(DateTime.Parse(test.StartTime.ToString()).ToString(), "StartTime", "", false),
+                new Cell(test.Duration, "statusCount", "", false)
                     };
                     testRow.Add(testCells);
                     containerTable.Add(testRow);

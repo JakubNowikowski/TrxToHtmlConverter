@@ -25,5 +25,10 @@ namespace TrxToHtmlConverter
 
             return MethodName == o.MethodName && ClassName == o.ClassName && ID == o.ID && Result == o.Result;
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
