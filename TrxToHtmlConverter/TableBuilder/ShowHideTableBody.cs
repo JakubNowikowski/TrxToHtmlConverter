@@ -12,10 +12,6 @@ namespace TrxToHtmlConverter.TableBuilder
 
         private Row headRow;
         private ICell containerContent;
-        public HtmlNode cellNode;
-        public string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string StyleClass { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public HtmlNode CellNode { get => cellNode; set => throw new NotImplementedException(); }
 
         public ShowHideTableBody(Row headRow, ICell containerContent)
         {
@@ -39,16 +35,6 @@ namespace TrxToHtmlConverter.TableBuilder
             newTableBodyNode.AppendChild(containerRow.cellNode);
 
             return newTableBodyNode;
-        }
-
-        public void Add(ICell cell)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add(ICell[] cells)
-        {
-            throw new NotImplementedException();
         }
     }
 }

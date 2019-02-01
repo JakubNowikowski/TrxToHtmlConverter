@@ -9,19 +9,9 @@ namespace TrxToHtmlConverter.TableBuilder
 {
     public class Table : ICell
     {
-        private string id;
-        private string styleClass;
         private Row tableHeadRow;
-        public HtmlNode cellNode;
-        string ICell.Id { get { return id; } set { id = value; } }
-        string ICell.StyleClass { get { return styleClass; } set { styleClass = value; } }
-
-        private int columnCount;
-        private string[] headers;
-        private Row[] rows;
         public string Title { get; set; }
         public HtmlNode CreatedTable { get; set; }
-        HtmlNode ICell.CellNode { get { return cellNode; } set { cellNode = value; } }
 
         public Table(string id, string styleClass, string Title)
         {
@@ -57,23 +47,6 @@ namespace TrxToHtmlConverter.TableBuilder
             newTableNode.AppendChild(tableBodyNode);
 
             return newTableNode;
-        }
-
-        public void Add(ICell cell)
-        {
-            cellNode.LastChild.AppendChild(cell.CellNode);
-        }
-
-        public void Add(ICell[] cells)
-        {
-            foreach (ICell cell in cells)
-                cellNode.LastChild.AppendChild(cell.CellNode);
-        }
-        public static string ToUpperFirstLetter(string word)
-        {
-            if (word != null) { word = word[0].ToString().ToUpper() + word.Substring(1); }
-            else { }
-            return word;
         }
     }
 }

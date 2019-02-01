@@ -9,14 +9,6 @@ namespace TrxToHtmlConverter.TableBuilder
 {
     public class Row : ICell
     {
-        public string id;
-        private string styleClass;
-        public HtmlNode cellNode;
-
-        string ICell.Id { get { return id; } set { id = value; } }
-        string ICell.StyleClass { get { return styleClass; } set { styleClass = value; } }
-        HtmlNode ICell.CellNode { get { return cellNode; } set { cellNode = value; } }
-
         public Row(string styleClass, string id)
         {
             this.styleClass = styleClass;
@@ -26,16 +18,6 @@ namespace TrxToHtmlConverter.TableBuilder
         private HtmlNode CreateCellNode()
         {
             return HtmlNode.CreateNode($"<tr id=\"{id}\" class=\"{styleClass}\"></tr>");
-        }
-        public void Add(ICell cell)
-        {
-            cellNode.AppendChild(cell.CellNode);
-        }
-
-        public void Add(ICell[] cells)
-        {
-            foreach (ICell cell in cells)
-                cellNode.AppendChild(cell.CellNode);
         }
     }
 }

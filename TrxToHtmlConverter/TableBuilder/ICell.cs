@@ -7,12 +7,29 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public interface ICell
+    public abstract class ICell
     {
-        string Id { get; set; }
-        string StyleClass { get; set; }
-        HtmlNode CellNode { get; set; }
-        void Add(ICell cell);
-        void Add(ICell[] cells);
+        public string id;
+        protected string styleClass;
+        protected string content;
+        public HtmlNode cellNode;
+        protected string colSpan;
+        protected List<ICell> children;
+
+        public void Add(ICell cell)
+        {
+                cellNode.AppendChild(cell.cellNode); //todo
+        }
+        public void Add(ICell[] cells)
+        {
+            foreach (ICell cell in cells)
+                cellNode.AppendChild(cell.cellNode);
+        }
+        public static string ToUpperFirstLetter(string word)
+        {
+            if (word != "") { word = word[0].ToString().ToUpper() + word.Substring(1); }
+            else { }
+            return word;
+        }
     }
 }
