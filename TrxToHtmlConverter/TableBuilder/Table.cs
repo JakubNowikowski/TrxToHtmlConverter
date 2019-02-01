@@ -18,6 +18,7 @@ namespace TrxToHtmlConverter.TableBuilder
             this.id = id;
             this.styleClass = styleClass;
             this.Title = Title;
+            children = new List<ICell>();
             cellNode = CreateCellNode();
         }
 
@@ -26,6 +27,7 @@ namespace TrxToHtmlConverter.TableBuilder
             this.id = id;
             this.styleClass = styleClass;
             this.tableHeadRow = tableHeadRow;
+            children = new List<ICell>();
             cellNode = CreateCellNode();
         }
 
@@ -40,7 +42,7 @@ namespace TrxToHtmlConverter.TableBuilder
             }
             else
             {
-                HtmlNode tableHeadNode = HtmlNode.CreateNode($"<thead>{tableHeadRow.cellNode.WriteTo()}</thead>");
+                HtmlNode tableHeadNode = HtmlNode.CreateNode($"<thead>{tableHeadRow.Export().WriteTo()}</thead>");
                 newTableNode.AppendChild(tableHeadNode);
             }
             HtmlNode tableBodyNode = HtmlNode.CreateNode("<tbody></tbody>");

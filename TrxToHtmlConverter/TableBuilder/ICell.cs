@@ -12,18 +12,29 @@ namespace TrxToHtmlConverter.TableBuilder
         public string id;
         protected string styleClass;
         protected string content;
-        public HtmlNode cellNode;
+        protected HtmlNode cellNode;
         protected string colSpan;
         protected List<ICell> children;
+        protected bool isTh;
 
+        public HtmlNode Export()
+        {
+            if(children.Count != 0)
+            foreach(ICell cell in children)
+            {
+                cellNode.AppendChild(cell.Export());
+            }
+
+            return cellNode;
+        }
         public void Add(ICell cell)
         {
-                cellNode.AppendChild(cell.cellNode); //todo
+            children.Add(cell); //todo
         }
         public void Add(ICell[] cells)
         {
             foreach (ICell cell in cells)
-                cellNode.AppendChild(cell.cellNode);
+                children.Add(cell);
         }
         public static string ToUpperFirstLetter(string word)
         {

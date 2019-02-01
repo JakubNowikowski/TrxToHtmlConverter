@@ -13,6 +13,7 @@ namespace TrxToHtmlConverter.TableBuilder
         {
             this.styleClass = styleClass;
             this.id = id;
+            children = new List<ICell>();
             cellNode = CreateCellNode();
         }
         private HtmlNode CreateCellNode()

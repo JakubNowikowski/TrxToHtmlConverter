@@ -9,25 +9,26 @@ namespace TrxToHtmlConverter.TableBuilder
 {
     public class Cell : ICell
     {
-        private bool isTh;
-
         public Cell(string styleClass, string id, bool isTh, string content/*, string colSpan = ""*/) //: this(content, colSpan)
         {
             this.styleClass = styleClass;
             this.isTh = isTh;
             this.id = id;
             this.content = ToUpperFirstLetter(content);
+            children = new List<ICell>();
             cellNode = CreateCellNode();
         }
         public Cell(string content, string colSpan) //: this(content)
         {
             this.colSpan = colSpan;
             this.content = ToUpperFirstLetter(content);
+            children = new List<ICell>();
             cellNode = CreateCellNode();
         }
         public Cell(string content)
         {
             this.content = ToUpperFirstLetter(content);
+            children = new List<ICell>();
             cellNode = CreateCellNode();
         }
         private HtmlNode CreateCellNode()

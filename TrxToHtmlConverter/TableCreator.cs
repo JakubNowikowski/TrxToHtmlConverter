@@ -48,7 +48,7 @@ namespace TrxToHtmlConverter
 
             table.Add(rows);
 
-            return table.cellNode;
+            return table.Export();
         }
 
         private static HtmlNode CreateRunTimeSummaryTable(HtmlDocument doc, TestLoadResult testLoadResult)
@@ -79,7 +79,7 @@ namespace TrxToHtmlConverter
 
             table.Add(rows);
 
-            return table.cellNode;
+            return table.Export();
         }
 
         private static HtmlNode CreateTestedClassesTable(HtmlDocument doc, TestLoadResult testLoadResult)
@@ -94,7 +94,7 @@ namespace TrxToHtmlConverter
                 table.Add(row);
             }
 
-            return table.cellNode;
+            return table.Export();
         }
 
         public static HtmlDocument CreateAllFailedTestsTable(HtmlDocument doc, TestLoadResult testLoadResult)
@@ -145,7 +145,7 @@ namespace TrxToHtmlConverter
 
             ShowHideTableBody tableBody = new ShowHideTableBody(headRow, content);
 
-            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.cellNode).AppendChild(tableBody.cellNode);
+            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.Export()).AppendChild(tableBody.Export());
 
             return doc;
         }
@@ -227,7 +227,7 @@ namespace TrxToHtmlConverter
                 table.Add(tableBody);
 
             }
-            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.cellNode);
+            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.Export());
             return doc;
         }
         #endregion

@@ -17,6 +17,7 @@ namespace TrxToHtmlConverter.TableBuilder
         {
             this.headRow = headRow;
             this.containerContent = containerContent;
+            children = new List<ICell>();
             cellNode = CreateCellNode();
         }
 
@@ -31,8 +32,8 @@ namespace TrxToHtmlConverter.TableBuilder
 			headRow.Add(button);
             containerCell.Add(containerContent);
             containerRow.Add(containerCell);
-            newTableBodyNode.AppendChild(headRow.cellNode);
-            newTableBodyNode.AppendChild(containerRow.cellNode);
+            newTableBodyNode.AppendChild(headRow.Export());
+            newTableBodyNode.AppendChild(containerRow.Export());
 
             return newTableBodyNode;
         }
