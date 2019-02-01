@@ -10,14 +10,13 @@ namespace TrxToHtmlConverter.TableBuilder
     public class Table : ICell
     {
         private Row tableHeadRow;
-        public string Title { get; set; }
-        public HtmlNode CreatedTable { get; set; }
+        private string title;
 
-        public Table(string id, string styleClass, string Title)
+        public Table(string id, string styleClass, string title)
         {
             this.id = id;
             this.styleClass = styleClass;
-            this.Title = Title;
+            this.title = title;
             children = new List<ICell>();
             cellNode = CreateCellNode();
         }
@@ -37,7 +36,7 @@ namespace TrxToHtmlConverter.TableBuilder
             HtmlNode newTableNode = HtmlNode.CreateNode($"<table id=\"{id}\" class=\"{styleClass}\"></table>");
             if (tableHeadRow == null)
             {
-                HtmlNode tableTitleNode = HtmlNode.CreateNode($"<caption>{Title}</caption>");
+                HtmlNode tableTitleNode = HtmlNode.CreateNode($"<caption>{title}</caption>");
                 newTableNode.AppendChild(tableTitleNode);
             }
             else
