@@ -105,9 +105,10 @@ namespace TrxToHtmlConverter
 
             Cell[] headRowCells = new Cell[]
             {
+				new Cell("marginCell", "", false,""),
                 new Cell("Failed", "", false,""),
-                new Cell("failedTest", "" ,false, "Failed Tests"),
-                new Cell("failedTest", "number", false, testLoadResult.totalTestsProp.Failed)
+                new Cell("leftAlign", "" ,false, "Failed Tests"),
+                new Cell("", "number", false, testLoadResult.totalTestsProp.Failed)
             };
 
             headRow.Add(headRowCells);
@@ -133,7 +134,7 @@ namespace TrxToHtmlConverter
                 Cell[] testCells = new Cell[]
                 {
                 new Cell(test.Result, "", false, CreateColoredResult(test.Result)),
-                new Cell("Function", "", false, test.MethodName),
+                new Cell("leftAlign", "", false, test.MethodName),
                 new Cell("ClassName", "", false, test.ClassName),
                 new Cell("StartTime", "", false, DateTime.Parse(test.StartTime.ToString()).ToString()),
                 new Cell("statusCount", "", false, test.Duration)
@@ -160,7 +161,8 @@ namespace TrxToHtmlConverter
             Cell[] tableHeadRowCells = new Cell[]
             {
                 new Cell("", "", true,""),
-                new Cell("summaryClassTests", "" ,true, "Class Name"),
+				new Cell("", "", true,""),
+				new Cell("summaryClassTests", "" ,true, "Class Name"),
                 new Cell("", "all" ,true, "All"),
                 new Cell("", "passed" ,true, "Passed"),
                 new Cell("", "failed" ,true, "Failed"),
@@ -181,8 +183,9 @@ namespace TrxToHtmlConverter
                 Row headRow = new Row("", testedClass);
                 Cell[] headRowCells = new Cell[]
                 {
-                new Cell(resultColor, "", false ,""),
-                new Cell("Fuction", "", false, testedClass),
+				new Cell("marginCell", "", false,""),
+				new Cell(resultColor, "", false ,""),
+                new Cell("leftAlign", "", false, testedClass),
                 new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Count().ToString()),
                 new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Passed").Count().ToString()),
                 new Cell("statusCount","number",false, testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count().ToString()),
@@ -212,7 +215,7 @@ namespace TrxToHtmlConverter
                     Cell[] testCells = new Cell[]
                     {
                 new Cell(test.Result, "", false, CreateColoredResult(test.Result)),
-                new Cell("Function", "", false, test.MethodName),
+                new Cell("leftAlign", "", false, test.MethodName),
                 new Cell("StartTime", "", false, DateTime.Parse(test.StartTime.ToString()).ToString()),
                 new Cell("statusCount", "", false, test.Duration)
                     };
