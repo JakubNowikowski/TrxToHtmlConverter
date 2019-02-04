@@ -32,7 +32,7 @@ namespace WPFApplication
         public ApplicationViewModel()
         {
             SearchCommand = new RelayCommand((obj) => { InputPath = app.OpenFileDialog(); OutputPath = InputPath.Replace(".trx",".html"); });
-            ConvertCommand = new RelayCommand((obj) => { app.Convert(); Result = "Wyeksportowano plik do :\n" + OutputPath; });
+            ConvertCommand = new RelayCommand((obj) => { app.Convert(); Result = "Exported file to:\n" + OutputPath; });
         }
     }
 }
