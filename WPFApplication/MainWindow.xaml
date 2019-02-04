@@ -1,0 +1,27 @@
+﻿<Window x:Class="WPFApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WPFApplication"
+        mc:Ignorable="d"
+        Title="Trx To Html Converter" Height="202.151" Width="740.362">
+    <Window.Resources>
+        <ResourceDictionary>
+            <vm:ApplicationViewModel  x:Key="viewModel" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="0,0,2,0">
+        <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="49,40,67,39" Width="614">
+            <Label>Path to file:</Label>
+            <TextBox Text="{Binding InputPath}" Margin="10,0"/>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Margin="-21,0" Width="635">
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Height="48">
+                    <Label FontSize ="10" Width="494" Content="{Binding Result}"/>
+                </StackPanel>
+                <Button Height="20" Width="55" Command="{Binding SearchCommand}" Content="Search..."></Button>
+                <Button Height="20" Width="55" Command="{Binding ConvertCommand}" Content="Convert"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrxToHtmlConverter", "TrxTo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestTrxToHtmlConverter", "UnitTestTrxToHtmlConverter\UnitTestTrxToHtmlConverter.csproj", "{014F1D42-2442-4AE2-9913-25481CD7EE12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFApplication", "WPFApplication\WPFApplication.csproj", "{26743F47-D819-4B12-94A7-E6F5BEEC88CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{014F1D42-2442-4AE2-9913-25481CD7EE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{014F1D42-2442-4AE2-9913-25481CD7EE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{014F1D42-2442-4AE2-9913-25481CD7EE12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26743F47-D819-4B12-94A7-E6F5BEEC88CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26743F47-D819-4B12-94A7-E6F5BEEC88CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26743F47-D819-4B12-94A7-E6F5BEEC88CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26743F47-D819-4B12-94A7-E6F5BEEC88CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
