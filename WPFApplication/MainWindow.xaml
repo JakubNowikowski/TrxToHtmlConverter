@@ -11,10 +11,10 @@
             <vm:ApplicationViewModel  x:Key="viewModel" />
         </ResourceDictionary>
     </Window.Resources>
-    <Grid Margin="0,0,2,0">
+    <Grid Drop="DragAndDrop" AllowDrop="true" Margin="0,0,2,0">
         <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="49,40,67,39" Width="614">
             <Label>Path to file:</Label>
-            <TextBox Text="{Binding InputPath}" Margin="10,0"/>
+            <TextBox Name="TextBox" Text="{Binding InputPath}" Margin="10,0"/>
             <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Margin="-21,0" Width="635">
                 <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Height="48">
                     <Label FontSize ="10" Width="494" Content="{Binding Result}"/>

@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace WPFApplication
 {
     class ApplicationViewModel : ViewModelBase
     {
-        ApplicationModel app = new ApplicationModel();
+        static ApplicationModel app = new ApplicationModel();
         public ICommand SearchCommand { private set; get; }
         public ICommand ConvertCommand { private set; get; }
 
         public string InputPath
         {
             set => SetProperty(ref app.inputPath, value);
-            private get => app.inputPath;
+            get => app.inputPath;
         }
         public string OutputPath
         {
-            private set => SetProperty(ref app.outputPath, value);
+            set => SetProperty(ref app.outputPath, value);
             get => app.outputPath;
         }
         public string Result
@@ -31,8 +32,9 @@ namespace WPFApplication
 
         public ApplicationViewModel()
         {
-            SearchCommand = new RelayCommand((obj) => { InputPath = app.OpenFileDialog(); OutputPath = InputPath.Replace(".trx",".html"); });
-            ConvertCommand = new RelayCommand((obj) => { app.Convert(); Result = "Exported file to:\n" + OutputPath; });
+            SearchCommand = new RelayCommand((obj) => { InputPath = app.OpenFileDialog(); });
+            ConvertCommand = new RelayCommand((obj) => { OutputPath = InputPath.Replace(".trx", ".html"); app.Convert(); Result = "Exported file to:\n" + OutputPath; });
         }
+
     }
 }

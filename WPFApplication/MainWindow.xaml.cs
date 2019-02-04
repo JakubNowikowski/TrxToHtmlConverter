@@ -23,6 +23,19 @@ namespace WPFApplication
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void DragAndDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent("FileName"))
+            {
+                if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                {
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                    TextBox.Text = files[0];
+                }
+            }
         }
     }
 }
