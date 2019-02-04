@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace TrxToHtmlConverter
 {
-    public class XmlReader
+	public class XmlReader
 	{
 		XDocument doc;
 		string xmlns;
@@ -16,7 +16,7 @@ namespace TrxToHtmlConverter
 			xmlns = doc.Root.Name.Namespace.NamespaceName;
 		}
 
-        public TestLoadResult CreateTestLoadResult()
+		public TestLoadResult CreateTestLoadResult()
 		{
 			return new TestLoadResult()
 			{
@@ -42,9 +42,9 @@ namespace TrxToHtmlConverter
 					ID = e.Attribute("testId").Value,
 					ClassName = e2.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value.ToString().Split('.').Last().Split('+').First(),
 					Result = e.Attribute("outcome").Value,
-                    StartTime = e.Attribute("startTime").Value,
-                    Duration = e.Attribute("duration").Value
-                });
+					StartTime = e.Attribute("startTime").Value,
+					Duration = e.Attribute("duration").Value
+				});
 			return joinedList;
 		}
 
@@ -56,6 +56,7 @@ namespace TrxToHtmlConverter
 			{
 				AllTestedClasses.Add(e.Element(XName.Get("TestMethod", xmlns)).Attribute("className").Value);
 			}
+			AllTestedClasses.Sort();
 			return RemoveDuplicates(AllTestedClasses);
 		}
 
@@ -76,12 +77,23 @@ namespace TrxToHtmlConverter
 			var total = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns));
 			var startTime = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Times", xmlns)).Attribute("start");
 			var finishTime = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Times", xmlns)).Attribute("finish");
-			var testCategory = doc.Element(XName.Get("TestRun", xmlns))
-				.Element(XName.Get("TestDefinitions", xmlns))
-				.Element(XName.Get("UnitTest", xmlns))
-				.Element(XName.Get("TestCategory", xmlns))
-				.Element(XName.Get("TestCategoryItem", xmlns))
-				.Attribute("TestCategory");
+			XAttribute testCategory;
+
+			if (
+			doc.Element(XName.Get("TestRun", xmlns))
+			.Element(XName.Get("TestDefinitions", xmlns))
+			.Element(XName.Get("UnitTest", xmlns))
+			.Element(XName.Get("TestCategory", xmlns)) != null)
+			{
+				testCategory = doc.Element(XName.Get("TestRun", xmlns))
+					.Element(XName.Get("TestDefinitions", xmlns))
+					.Element(XName.Get("UnitTest", xmlns))
+					.Element(XName.Get("TestCategory", xmlns))
+					.Element(XName.Get("TestCategoryItem", xmlns))
+					.Attribute("TestCategory");
+			}
+			else
+				testCategory = doc.Element(XName.Get("TestRun", xmlns)).Attribute("name");
 
 			return new TotalTestsProperties()
 			{

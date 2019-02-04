@@ -27,8 +27,9 @@ namespace TrxToHtmlConverter
                 new Row("", "passed"),
                 new Row("", "failed"),
                 new Row("", "inconclusive"),
-                new Row("", "warning")
-            };
+                new Row("", "warning"),
+                new Row("", "not executed")
+			};
             foreach (Row row in rows)
             {
                 string value = "", cellClass = "";
@@ -36,9 +37,10 @@ namespace TrxToHtmlConverter
                 if (row.id == "passed") { value = testLoadResult.totalTestsProp.Passed; cellClass = "mainColumn"; }
                 if (row.id == "failed") { value = testLoadResult.totalTestsProp.Failed; cellClass = "mainColumn"; }
                 if (row.id == "inconclusive") { value = testLoadResult.totalTestsProp.Inconclusive; cellClass = "mainColumn"; }
-                if (row.id == "warning") { value = testLoadResult.totalTestsProp.Warning; cellClass = "mainColumnLastRow"; }
+                if (row.id == "warning") { value = testLoadResult.totalTestsProp.Warning; cellClass = "mainColumn"; }
+                if (row.id == "not executed") { value = (Convert.ToInt32(testLoadResult.totalTestsProp.Total) - Convert.ToInt32(testLoadResult.totalTestsProp.Executed)).ToString(); cellClass = "mainColumnLastRow"; }
 
-                Cell[] cells = new Cell[]
+				Cell[] cells = new Cell[]
             {
                 new Cell(Table.ToUpperFirstLetter(row.id), cellClass, "", true),
                 new Cell(value)
@@ -168,7 +170,8 @@ namespace TrxToHtmlConverter
                 new Cell("Failed", "","failed" , true),
                 new Cell("Warning", "","warning" , true),
                 new Cell("Inconclusive", "", "inconclusive", true),
-                new Cell("", "", "",true),
+				new Cell("Not Executed", "", "not executed", true),
+				new Cell("", "", "",true),
                 new Cell("", "", "",true)
             };
 
@@ -191,7 +194,8 @@ namespace TrxToHtmlConverter
                 new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Failed").Count().ToString(),"statusCount","number", false),
                 new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Warning").Count().ToString(),"statusCount","number", false),
                 new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "Inconclusive").Count().ToString(),"statusCount","number", false),
-                new Cell("", "ex", "",false )
+				new Cell(testLoadResult.tests.Where(c => c.ClassName == testedClass).Where(t => t.Result == "NotExecuted").Count().ToString(),"statusCount","number", false),
+				new Cell("", "ex", "",false )
                 };
                 headRow.Add(headRowCells);
 
@@ -271,7 +275,8 @@ namespace TrxToHtmlConverter
                 case "Failed": color = "SaddleBrown"; break;
                 case "Inconclusive": color = "BlueViolet"; break;
                 case "Warning": color = "DarkGoldenrod"; break;
-            }
+				case "NotExecuted": color = "BlueViolet"; break;
+			}
 
             return $"<font color={color} size=4><strong>{result}</strong></font><br>";
         }

@@ -89,6 +89,7 @@ namespace TrxToHtmlConverter
 				case "Passed": color = "green"; break;
 				case "Failed": color = "SaddleBrown"; break;
 				case "Inconclusive": color = "BlueViolet"; break;
+				case "NotExecuted": color = "BlueViolet"; break;
 				case "Warning": color = "DarkGoldenrod"; break;
 			}
 

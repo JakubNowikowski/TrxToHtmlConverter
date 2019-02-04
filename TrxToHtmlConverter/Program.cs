@@ -7,15 +7,21 @@ namespace TrxToHtmlConverter
 	{
 		static void Main(string[] args)
 		{
-            //string filePathFullReport = @"..\..\fullreport.trx";
+			//string filePathFullReport = @"..\..\fullreport.trx";
 
-            //XDocument doc = XDocument.Load("report.trx");
-            //string xmlns = doc.Root.Name.Namespace.NamespaceName;
-            //var results = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Results", xmlns));
-            //var summary = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns)).Attribute("total").Value;
+			//XDocument doc = XDocument.Load("report.trx");
+			//string xmlns = doc.Root.Name.Namespace.NamespaceName;
+			//var results = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("Results", xmlns));
+			//var summary = doc.Element(XName.Get("TestRun", xmlns)).Element(XName.Get("ResultSummary", xmlns)).Element(XName.Get("Counters", xmlns)).Attribute("total").Value;
 
-            HtmlGeneration Html = new HtmlGeneration("../../fullreport.trx", "../../nowyplik.html");
-            Html.InitializeTrxData();
+			HtmlGeneration Html = new HtmlGeneration(@"C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\TestResults\MSTest.NetFramework.trx", "../../nowyplik.html");
+			//HtmlGeneration Html = new HtmlGeneration(@"C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\TestResults\MSTest.NetFrameworkWithoutCat.trx", "../../nowyplik.html");
+			//HtmlGeneration Html = new HtmlGeneration(@"C:\Users\OptiNav\source\repos\MSTest.Net Core\UnitTests\bin\Debug\netcoreapp2.1\TestResults\MSTest.NetCore.trx", "../../nowyplik.html");
+
+
+
+			//HtmlGeneration Html = new HtmlGeneration("../../fullreport.trx", "../../nowyplik.html");
+			Html.InitializeTrxData();
             Html.Generation();
 
             //XmlReader reader = new XmlReader(filePathFullReport);
