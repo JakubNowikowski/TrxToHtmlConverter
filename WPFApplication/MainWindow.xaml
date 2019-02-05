@@ -13,6 +13,7 @@
     </Window.Resources>
     <Grid Drop="DragAndDrop" AllowDrop="true" Background="Transparent" Margin="0,0,2,0">
         <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="850" Height="180">
+            <Label FontSize="14" FontWeight="Bold">Drag and drop or search trx file</Label>
             <Label>Path to file:</Label>
             <TextBox Name="TextBox" AllowDrop="True" Text="{Binding InputPath, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
             <Grid Margin="10,0">
@@ -23,10 +24,12 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Margin="0,10" FontSize ="10" Content="{Binding Result}"/>
-                <Button Grid.Row="1" Grid.Column="0" Margin="305,10,10.2,10" Height="40" Width="80" Command="{Binding SearchCommand}" Content="Search..." RenderTransformOrigin="0.962,1.315"></Button>
-                <Button Grid.Row="1" Grid.Column="1" Margin="9.8,10,304.6,10" Height="40" Width="80" Command="{Binding ConvertCommand}" Content="Convert"></Button>
+                <Label Grid.Row="0" Margin="0,10,10,10" FontSize ="10" Content="{Binding Result}" Grid.ColumnSpan="3"/>
+                <Button Grid.Row="1" Grid.Column="0" Height="40" Width="80" Command="{Binding SearchCommand}" Content="Search..." Margin="187,0,9.8,0"></Button>
+                <Button Grid.Row="1" Grid.Column="1" Height="40" Width="80" Command="{Binding ConvertCommand}" Content="Convert"></Button>
+                <Button Grid.Row="1" Grid.Column="2" Height="40" Command="{Binding OpenCommand}" IsEnabled="{Binding EnableToOpen, UpdateSourceTrigger=PropertyChanged}" Content="Open html file" Margin="10.4,7,158.6,-7"/>
             </Grid>
             <!--<StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0" Orientation="Horizontal" Width="635">
                 <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Height="50">

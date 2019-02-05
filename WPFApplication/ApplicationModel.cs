@@ -11,6 +11,8 @@ namespace WPFApplication
     {
         public string inputPath;
         public string outputPath;
+        public string enableToOpen="false";
+        public string enableToConvert="false";
         public string result = "";
         
         public string OpenFileDialog()
