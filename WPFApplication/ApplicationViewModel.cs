@@ -21,6 +21,18 @@ namespace WPFApplication
             get => app.inputPath;
         }
 
+        public string ChangeSetNumber
+        {
+            set => SetProperty(ref app.changeSetNumber, value);
+            get => app.changeSetNumber;
+        }
+
+        public string PbiNumber
+        {
+            set => SetProperty(ref app.pbiNumber, value);
+            get => app.pbiNumber;
+        }
+
         public string OutputPath
         {
             set => SetProperty(ref app.outputPath, value);

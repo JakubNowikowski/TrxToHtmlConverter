@@ -33,7 +33,7 @@ namespace WPFApplication
                 if (e.Data.GetDataPresent(DataFormats.FileDrop))
                 {
                     string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                    TextBox.Text = files[0];
+                    PathTextBox.Text = files[0];
                 }
             }
         }

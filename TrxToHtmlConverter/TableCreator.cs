@@ -8,19 +8,48 @@ namespace TrxToHtmlConverter
     public class TableCreator
     {
         #region create tables
-        public static HtmlDocument CreateTopTables(HtmlDocument doc, TestLoadResult testLoadResult)
+        public static HtmlDocument CreateTopTables(HtmlDocument doc, TestLoadResult testLoadResult, string pbiNumber, string changeSetNumber)
         {
             HtmlNode div = HtmlNode.CreateNode("<div id=\"SummaryTables\" class=\"wrap\"></div");
-            div.AppendChild(CreateTestStatusesTable(doc, testLoadResult));
+
+            div.AppendChild(CreateTestInformationTable(doc, pbiNumber, changeSetNumber));
             div.AppendChild(CreateRunTimeSummaryTable(doc, testLoadResult));
+            div.AppendChild(CreateTestStatusesTable(doc, testLoadResult));
             div.AppendChild(CreateTestedClassesTable(doc, testLoadResult));
             doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(div);
             return doc;
         }
 
+        private static HtmlNode CreateTestInformationTable(HtmlDocument doc, string pbiNumber, string changeSetNumber)
+        {
+            Table table = new Table("TestInformationTable", "rightTable", "Test Information");
+            Row[] rows = new Row[]
+            {
+                new Row("", "pbiNumber"),
+                new Row("", "changeSetNumber"),
+            };
+            foreach (Row row in rows)
+            {
+                string value = "", rowName = "", cellClass = "";
+                if (row.id == "pbiNumber") { value = pbiNumber; rowName = "PBI Number"; cellClass = "mainColumn"; }
+                if (row.id == "changeSetNumber") { value = changeSetNumber; rowName = "Change Set Number"; cellClass = "mainColumnLastRow"; }
+
+                Cell[] cells = new Cell[]
+            {
+                new Cell(rowName, cellClass, "", true),
+                new Cell(value)
+            };
+                row.Add(cells);
+            }
+
+            table.Add(rows);
+
+            return table.Export();
+        }
+
         private static HtmlNode CreateTestStatusesTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
-            Table table = new Table("testsStatusesTable", "leftTable", "Tests Statuses");
+            Table table = new Table("testsStatusesTable", "rightTable", "Tests Statuses");
             Row[] rows = new Row[]
             {
                 new Row("", "total"),
@@ -55,7 +84,7 @@ namespace TrxToHtmlConverter
 
         private static HtmlNode CreateRunTimeSummaryTable(HtmlDocument doc, TestLoadResult testLoadResult)
         {
-            Table table = new Table("RunTimeSummaryTable", "rightTable", "Run Time Summary");
+            Table table = new Table("RunTimeSummaryTable", "leftTable", "Run Time Summary");
             Row[] rows = new Row[]
             {
                 new Row("", "classCount"),
@@ -273,9 +302,9 @@ namespace TrxToHtmlConverter
             {
                 case "Passed": color = "green"; break;
                 case "Failed": color = "SaddleBrown"; break;
-                case "Inconclusive": color = "BlueViolet"; break;
+                case "Inconclusive": color = "green"; break;
                 case "Warning": color = "DarkGoldenrod"; break;
-				case "NotExecuted": color = "BlueViolet"; break;
+				case "NotExecuted": color = "DarkGoldenrod"; break;
 			}
 
             return $"<font color={color} size=4><strong>{result}</strong></font><br>";

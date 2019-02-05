@@ -40,15 +40,18 @@ namespace TrxToHtmlConverter.TableBuilder
 
             return cellNode;
         }
+
         public void Add(NodeBase cell)
         {
             children.Add(cell); //todo
         }
+
         public void Add(NodeBase[] cells)
         {
             foreach (NodeBase cell in cells)
                 children.Add(cell);
         }
+
         public static string ToUpperFirstLetter(string word)
         {
             if (word != "") { word = word[0].ToString().ToUpper() + word.Substring(1); }
