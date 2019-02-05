@@ -30,7 +30,7 @@ namespace WPFApplication
             {
                 // Open document 
                 string filename = dlg.FileName;
-                return filename;
+                return filename + ".html";
             }
             return null;
         }

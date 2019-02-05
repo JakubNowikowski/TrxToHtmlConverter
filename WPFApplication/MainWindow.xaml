@@ -5,23 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:WPFApplication"
         mc:Ignorable="d"
-        Title="Trx To Html Converter" Height="202.151" Width="740.362">
+        Title="Trx To Html Converter" Height="250" Width="950">
     <Window.Resources>
         <ResourceDictionary>
             <vm:ApplicationViewModel  x:Key="viewModel" />
         </ResourceDictionary>
     </Window.Resources>
-    <Grid Drop="DragAndDrop" AllowDrop="true" Margin="0,0,2,0">
-        <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="49,40,67,39" Width="614">
+    <Grid Drop="DragAndDrop" AllowDrop="true" Background="Transparent" Margin="0,0,2,0">
+        <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="850" Height="180">
             <Label>Path to file:</Label>
-            <TextBox Name="TextBox" Text="{Binding InputPath}" Margin="10,0"/>
-            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Margin="-21,0" Width="635">
-                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal" Height="48">
-                    <Label FontSize ="10" Width="494" Content="{Binding Result}"/>
+            <TextBox Name="TextBox" AllowDrop="True" Text="{Binding InputPath, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
+            <Grid Margin="10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Margin="0,10" FontSize ="10" Content="{Binding Result}"/>
+                <Button Grid.Row="1" Grid.Column="0" Margin="305,10,10.2,10" Height="40" Width="80" Command="{Binding SearchCommand}" Content="Search..." RenderTransformOrigin="0.962,1.315"></Button>
+                <Button Grid.Row="1" Grid.Column="1" Margin="9.8,10,304.6,10" Height="40" Width="80" Command="{Binding ConvertCommand}" Content="Convert"></Button>
+            </Grid>
+            <!--<StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0" Orientation="Horizontal" Width="635">
+                <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Height="50">
+                    <Label FontSize ="10" Width="341" Content="{Binding Result}"/>
                 </StackPanel>
                 <Button Height="20" Width="55" Command="{Binding SearchCommand}" Content="Search..."></Button>
                 <Button Height="20" Width="55" Command="{Binding ConvertCommand}" Content="Convert"></Button>
-            </StackPanel>
+            </StackPanel>-->
         </StackPanel>
     </Grid>
 </Window>
