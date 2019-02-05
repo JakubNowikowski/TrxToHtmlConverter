@@ -7,7 +7,7 @@ using HtmlAgilityPack;
 
 namespace TrxToHtmlConverter
 {
-    class HtmlGeneration
+    public class HtmlGeneration
 	{
 		private string _OutputPath;
 		private string _TemplatePath;
@@ -17,7 +17,7 @@ namespace TrxToHtmlConverter
 		public HtmlGeneration(string trxFilePath, string outputPath)
 		{
 			_OutputPath = outputPath;
-			_TemplatePath = @"../../template.html";
+			_TemplatePath = @"../../../TrxToHtmlConverter/template.html";
 			_TrxFilePath = trxFilePath;
 		}
 		public void Generation()
@@ -35,7 +35,7 @@ namespace TrxToHtmlConverter
 
 		private HtmlDocument testTemplateTable(HtmlDocument doc)
 		{
-			var template = LoadTemplate(@"../../tableTemplate.html");
+			var template = LoadTemplate(@"../../../TrxToHtmlConverter/tableTemplate.html");
 
 			throw new NotImplementedException();
 		}
