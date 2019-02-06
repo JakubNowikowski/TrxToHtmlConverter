@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public class Table : NodeBase
+    public class Table : CellBase
     {
         private Row tableHeadRow;
         private string title;

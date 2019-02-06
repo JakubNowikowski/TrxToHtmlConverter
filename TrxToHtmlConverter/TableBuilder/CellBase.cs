@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public abstract class NodeBase
+    public abstract class CellBase
     {
         public string id;
         protected string styleClass;
         protected string content;
-        protected List<NodeBase> children;
+        protected List<CellBase> children;
         protected virtual string tagName { get; set; } = "";
         protected string additional { get; set; }
 
-        public NodeBase(string content, string styleClass = "", string id = "") : this()
+        public CellBase(string content, string styleClass = "", string id = "") : this()
         {
             this.styleClass = styleClass;
             this.id = id;
             this.content = ToUpperFirstLetter(content);
         }
 
-        public NodeBase()
+        public CellBase()
         {
-            children = new List<NodeBase>();
+            children = new List<CellBase>();
         }
 
         public HtmlNode Export()
@@ -33,7 +33,7 @@ namespace TrxToHtmlConverter.TableBuilder
             var cellNode = CreateCellNode();
 
             if(children.Count != 0)
-            foreach(NodeBase cell in children)
+            foreach(CellBase cell in children)
             {
                 cellNode.AppendChild(cell.Export());
             }
@@ -41,21 +41,20 @@ namespace TrxToHtmlConverter.TableBuilder
             return cellNode;
         }
 
-        public void Add(NodeBase cell)
+        public void Add(CellBase cell)
         {
             children.Add(cell); //todo
         }
 
-        public void Add(NodeBase[] cells)
+        public void Add(CellBase[] cells)
         {
-            foreach (NodeBase cell in cells)
+            foreach (CellBase cell in cells)
                 children.Add(cell);
         }
 
         public static string ToUpperFirstLetter(string word)
         {
-            if (word != "") { word = word[0].ToString().ToUpper() + word.Substring(1); }
-            else { }
+            if (!string.IsNullOrWhiteSpace(word)) { word = word[0].ToString().ToUpper() + word.Substring(1); }
             return word;
         }
 

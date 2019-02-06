@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace TrxToHtmlConverter.TableBuilder
 {
-    public class ShowHideTableBody : NodeBase
+    public class ShowHideTableBody : CellBase
     {
 
         private Row headRow;
-        private NodeBase containerContent;
+        private CellBase containerContent;
 
-        public ShowHideTableBody(Row headRow, NodeBase containerContent) : base()
+        public ShowHideTableBody(Row headRow, CellBase containerContent) : base()
         {
             this.headRow = headRow;
             this.containerContent = containerContent;
