@@ -11,15 +11,16 @@ namespace TrxToHtmlConverter.TableBuilder
     {
         protected bool isTh;
         protected string colSpan;
+        protected string onClick;
         protected override string tagName { get; set; } = "td";
 
-        public Cell(string content, string styleClass, string id, bool isTh, string colSpan = "") : base(content, styleClass, id)
+        public Cell(string content, string styleClass, string id, bool isTh, string colSpan = null, string onClick = null) : base(content, styleClass, id)
         {
             this.isTh = isTh;
             this.colSpan = colSpan;
         }
 
-        public Cell(string content, string colSpan = "", bool isTh = false) : base(content)
+        public Cell(string content, bool isTh = false, string colSpan = null, string onClick = null) : base(content)
         {
             this.colSpan = colSpan;
             this.isTh = isTh;
@@ -31,7 +32,11 @@ namespace TrxToHtmlConverter.TableBuilder
         {
             if (isTh)
                 tagName = "th";
-            additional = $"colspan=\"{colSpan}\"";
+            var hasColSpan = !string.IsNullOrWhiteSpace(colSpan);
+            var hasOnClick = !string.IsNullOrWhiteSpace(onClick);
+            var colSpanString = hasColSpan ? $"colspan=\"{colSpan}\" " : "";
+            var onClickString = hasOnClick ? $"onclick=\"{onClick}\" " : "";
+            additional = colSpanString + onClickString;
             return base.CreateCellNode();
         }
     }

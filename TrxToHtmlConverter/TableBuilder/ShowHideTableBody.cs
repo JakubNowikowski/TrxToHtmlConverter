@@ -15,6 +15,8 @@ namespace TrxToHtmlConverter.TableBuilder
 
         public ShowHideTableBody(Row headRow, CellBase containerContent) : base()
         {
+            headRow.Parent = this;
+            containerContent.Parent = this;
             this.headRow = headRow;
             this.containerContent = containerContent;
         }
@@ -25,7 +27,7 @@ namespace TrxToHtmlConverter.TableBuilder
             Row containerRow = new Row("hiddenRow", (headRow.id + "Container"));
             Cell button = new Cell($"<div class=\"OpenMoreButton\" onclick=\"ShowHide('{containerRow.id}', '{(headRow.id + "Button")}', 'Show Tests', 'Hide Tests'); \">" +
                 $"<div class=\"ButtonText\" id=\"{(headRow.id + "Button")}\">Show Tests</div></div>", "", "ex", false);
-			Cell containerCell = new Cell("<div></div>", "11");
+			Cell containerCell = new Cell("<div></div>", colSpan: "11");
 
 			headRow.Add(button);
             containerCell.Add(containerContent);

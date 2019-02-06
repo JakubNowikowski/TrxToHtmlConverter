@@ -138,7 +138,7 @@ namespace TrxToHtmlConverter
             {
 				new Cell("", "marginCell", "",false),
                 new Cell("", "Failed", "",false),
-                new Cell("Failed Tests", "leftAlign","" , false),
+                new Cell("Failed Tests", "leftAlign", "", false),
                 new Cell(testLoadResult.totalTestsProp.Failed, "", "number", false)
             };
 
@@ -147,7 +147,7 @@ namespace TrxToHtmlConverter
             Row contentHeadRow = new Row("", "");
             Cell[] contentHeadRowCells = new Cell[]
             {
-                new Cell("Status","TestsTableHeaderFirst","",true),
+                new Cell("Status","TestsTableHeaderFirst","",true, onClick: "costam"),
                 new Cell("Test","TestsTableHeader","",true),
                 new Cell("Class Name","TestsTableHeader","",true),
                 new Cell("Start Time","TestsTableHeader","",true),
