@@ -15,11 +15,10 @@
         <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="850" Height="270">
             <Label FontSize="14" FontWeight="Bold">Drag and drop or search trx file</Label>
             <Label>Path to file:</Label>
-            <!--<TextBox Name="PathTextBox" AllowDrop="True" Text="{Binding InputPath, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>-->
             <TextBox Name="PathTextBox" AllowDrop="True" Text="{Binding InputPath, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
             <Label FontSize="14" FontWeight="Bold">Enter PBI number</Label>
             <TextBox AllowDrop="True" Text="{Binding PbiNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
-            <Label FontSize="14" FontWeight="Bold">Enter change set number</Label>
+            <Label FontSize="14" FontWeight="Bold">Enter changeset number</Label>
             <TextBox AllowDrop="True" Text="{Binding ChangeSetNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
             <Grid Margin="10,0">
                 <Grid.RowDefinitions>

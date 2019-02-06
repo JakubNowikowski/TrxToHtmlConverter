@@ -41,7 +41,7 @@ namespace WPFApplication
 
         public void Convert()
         {
-            HtmlGeneration Html = new HtmlGeneration(inputPath, outputPath, changeSetNumber, pbiNumber);
+            HtmlGeneration Html = new HtmlGeneration(inputPath, outputPath, pbiNumber, changeSetNumber);
             Html.InitializeTrxData();
             Html.Generation();
         }

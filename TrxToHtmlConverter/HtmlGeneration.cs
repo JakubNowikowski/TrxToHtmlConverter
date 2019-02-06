@@ -16,7 +16,7 @@ namespace TrxToHtmlConverter
         private string _PbiNumber;
         private TestLoadResult _TestLoadResult;
 
-        public HtmlGeneration(string trxFilePath, string outputPath, string changeSetNumber, string pbiNumber)
+        public HtmlGeneration(string trxFilePath, string outputPath, string pbiNumber, string changeSetNumber)
         {
             _OutputPath = outputPath;
             _TemplatePath = @"../../../TrxToHtmlConverter/template.html";
@@ -24,6 +24,7 @@ namespace TrxToHtmlConverter
             _ChangeSetNumber = changeSetNumber;
             _PbiNumber = pbiNumber;
         }
+
         public void Generation()
         {
             if (_TestLoadResult == null)

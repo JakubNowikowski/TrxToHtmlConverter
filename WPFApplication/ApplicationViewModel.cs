@@ -70,8 +70,6 @@ namespace WPFApplication
                 }
             });
             OpenCommand = new RelayCommand((obj) => { OpenHtmlFile(); });
-
         }
-
     }
 }

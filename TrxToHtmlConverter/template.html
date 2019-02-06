@@ -130,6 +130,18 @@
 				word-wrap: break-word;
 			}
 
+			td.message {
+				background: #b2b6cba3;
+				text-align: left;
+				color: black;
+			}
+
+			td.messageTitle {
+				background: #8e92a2;
+				color: #0000009c;
+				font-weight: bold;
+			}
+
 		.mainColumn {
 			background: #141e8cad;
 			width: 170px;
@@ -373,10 +385,10 @@
 				ChangeClass('visibleRow', 'hiddenRow');
 				ChangeClass('visibleTable', 'hiddenTable');
 			}
-				var x = document.getElementsByClassName('ButtonText');
-				for (var i = 0; i < x.length; i++) {
-					x[i].textContent = "Show Tests";
-				}
+			var x = document.getElementsByClassName('ButtonText');
+			for (var i = 0; i < x.length; i++) {
+				x[i].textContent = "Show Tests";
+			}
 		}
 
 	</script>
