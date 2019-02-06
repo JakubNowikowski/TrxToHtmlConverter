@@ -232,7 +232,7 @@ namespace TrxToHtmlConverter
                 Row contentHeadRow = new Row("", "");
                 Cell[] contentHeadRowCells = new Cell[]
                 {
-                new Cell("Status","TestsTableHeaderFirst","",true),
+                new Cell("Status","TestsTableHeaderFirst","",true, onClick: "costam"),
                 new Cell("Test","TestsTableHeader","",true),
                 new Cell("Start Time","TestsTableHeader","",true),
                 new Cell("Duration","TestsTableHeaderLast","",true)

@@ -18,12 +18,14 @@ namespace TrxToHtmlConverter.TableBuilder
         {
             this.isTh = isTh;
             this.colSpan = colSpan;
+            this.onClick = onClick;
         }
 
         public Cell(string content, bool isTh = false, string colSpan = null, string onClick = null) : base(content)
         {
             this.colSpan = colSpan;
             this.isTh = isTh;
+            this.onClick = onClick;
         }
 
         public Cell() : base() { }
