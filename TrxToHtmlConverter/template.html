@@ -96,7 +96,27 @@
 			td.Failed {
 				background: #f44336d9;
 				width: 30px;
+				height:41px; 
 			}
+				td.Failed span {
+					display: none;
+					padding: 2px 3px;
+					margin-left: 8px;
+					width: auto;
+				}
+
+				td.Failed:hover span {
+					display: inline;
+					position: absolute;
+					margin: 0 110px 100px 5px;
+					background: #dddddd;
+					border: 1px solid #b30000;
+					color: #000000;
+					-moz-opacity: 0.8;
+					opacity: .90;
+					filter: alpha(opacity=80);
+					text-align: center;
+				}
 
 			td.Passed {
 				background: #c0eec0;
@@ -113,10 +133,50 @@
 				width: 30px;
 			}
 
+				td.Warning span {
+					display: none;
+					padding: 2px 3px;
+					margin-left: 8px;
+					width: auto;
+				}
+
+				td.Warning:hover span {
+					display: inline;
+					position: absolute;
+					margin: 0 0 0 5px;
+					background: #dddddd;
+					border: 1px solid #ffd337;
+					color: #000000;
+					-moz-opacity: 0.8;
+					opacity: .90;
+					filter: alpha(opacity=80);
+					text-align: center;
+				}
+
 			td.Notexecuted {
 				background: #ffce1b85;
 				width: 30px;
 			}
+
+				td.Notexecuted span {
+					display: none;
+					padding: 2px 3px;
+					margin-left: 8px;
+					width: auto;
+				}
+
+				td.Notexecuted:hover span {
+					display: inline;
+					position: absolute;
+					margin: 0 0 0 5px;
+					background: #dddddd;
+					border: 1px solid #ffd337;
+					color: #000000;
+					-moz-opacity: 0.8;
+					opacity: .90;
+					filter: alpha(opacity=80);
+					text-align: center;
+				}
 
 			td.marginCell {
 				padding-left: 1px;
@@ -128,18 +188,38 @@
 				text-align: left;
 				border-top: 1px solid #ffffff;
 				word-wrap: break-word;
+				width: 50%;
+			}
+
+			td.StartTime {
+				color: #425b71;
+				border-top: 1px solid #ffffff;
+				word-wrap: break-word;
+			}
+
+			td.statusCount{
+				color: #425b71;
+				border-top: 1px solid #ffffff;
+				word-wrap: break-word;
 			}
 
 			td.message {
+				visibility: visible;
 				background: #b2b6cb61;
 				text-align: left;
 				color: black;
 			}
 
 			td.messageTitle {
+				visibility: visible;
 				background: #8e92a2;
 				color: #0000009c;
 				font-weight: bold;
+			}
+						
+			td: hover {
+				background: #ffffff;
+				text-decoration: none;
 			}
 
 		.mainColumn {
@@ -179,7 +259,7 @@
 		}
 
 		.leftTable {
-			width: 500px;
+			width: 400px;
 			float: left;
 			height: 160px;
 		}
@@ -248,6 +328,18 @@
 				cursor: pointer;
 			}
 
+		.showMessage {
+			visibility: visible;
+			text-align: left;
+			color: #0000007d;
+			font-size: 14;
+		}
+
+		.hiddenShowMessage {
+			visibility: hidden;
+			display: none;
+		}
+
 		.hiddenRow {
 			visibility: hidden;
 			display: none;
@@ -273,7 +365,17 @@
 			visibility: hidden;
 			display: none;
 		}
+		
+		.hiddenMessage {
+			visibility: hidden;
+			display: none;
+		}
 
+		.hiddenMessageTitle {
+			visibility: hidden;
+			display: none;
+		}
+		
 		#ReportsTable > tbody > tr > th {
 			background: #cbcde6;
 			color: #141e8c;
@@ -379,11 +481,17 @@
 				ChangeClass('OpenMoreButton', 'hiddenButton');
 				ChangeClass('hiddenRow', 'visibleRow');
 				ChangeClass('hiddenTable', 'visibleTable');
+				ChangeClass('hiddenMessage', 'message');
+				ChangeClass('hiddenMessageTitle', 'messageTitle');
+				ChangeClass('showMessage','hiddenShowMessage');
 			}
 			else {
 				ChangeClass('hiddenButton', 'OpenMoreButton');
 				ChangeClass('visibleRow', 'hiddenRow');
 				ChangeClass('visibleTable', 'hiddenTable');
+				ChangeClass('message', 'hiddenMessage');
+				ChangeClass('messageTitle','hiddenMessageTitle');
+				ChangeClass('hiddenShowMessage','showMessage');
 			}
 			var x = document.getElementsByClassName('ButtonText');
 			for (var i = 0; i < x.length; i++) {
@@ -400,7 +508,6 @@
 			var arrowDown = ' \u25BC';
 
 			element.parentNode.childNodes.forEach((n) => n.innerText = n.innerText.replace(arrowUp, '').replace(arrowDown, ''));
-
 
 			table = document.getElementById(dd);
 			switching = true;

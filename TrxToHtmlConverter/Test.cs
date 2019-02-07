@@ -12,8 +12,6 @@ namespace TrxToHtmlConverter
         public string Duration { get; set; }
         public string Message { get; set; }
 
-
-
         public override string ToString()
         {
             return $"{MethodName} - {ClassName.Split('.').Last()} - Result: {Result}";

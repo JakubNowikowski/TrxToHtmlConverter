@@ -42,7 +42,6 @@ namespace TrxToHtmlConverter
                     Result = e.Attribute("outcome").Value,
                     StartTime = e.Attribute("startTime").Value,
                     Duration = e.Attribute("duration").Value,
-                    //Message = e.Element(XName.Get("Output", xmlns)).Element(XName.Get("ErrorInfo", xmlns)).Element(XName.Get("Message", xmlns)).Value
                     Message = TryGetMessageValue(e)
                 });
                 return joinedList;

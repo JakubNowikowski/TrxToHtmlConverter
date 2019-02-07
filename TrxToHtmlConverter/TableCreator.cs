@@ -143,54 +143,60 @@ namespace TrxToHtmlConverter
             };
 
             headRow.Add(headRowCells);
-
-            Row contentHeadRow = new Row("", "");
-            Cell[] contentHeadRowCells = new Cell[]
+            if (testLoadResult.totalTestsProp.Failed != "0")
             {
+                Row contentHeadRow = new Row("", "");
+                Cell[] contentHeadRowCells = new Cell[]
+                {
                 new Cell("Status","TestsTableHeaderFirst","",true, onClick: "sortTable(0, 'AllFailedTestsTableContent', this)"),
                 new Cell("Test","TestsTableHeader","",true, onClick: "sortTable(1, 'AllFailedTestsTableContent', this)"),
                 new Cell("Class Name","TestsTableHeader","",true, onClick: "sortTable(2, 'AllFailedTestsTableContent', this)"),
                 new Cell("Start Time","TestsTableHeader","",true, onClick: "sortTable(3, 'AllFailedTestsTableContent', this)"),
                 new Cell("Duration","TestsTableHeaderLast","",true, onClick: "sortTable(4, 'AllFailedTestsTableContent', this)"),
-            };
-            contentHeadRow.Add(contentHeadRowCells);
+                };
+                contentHeadRow.Add(contentHeadRowCells);
 
-            Table content = new Table("AllFailedTestsTableContent", "showHideTable", contentHeadRow);
+                Table content = new Table("AllFailedTestsTableContent", "showHideTable", contentHeadRow);
 
-            Row contentBodyRow = new Row("", "");
-            var failedResults = PredicateCreator(t => t.Result, "Failed");
-            foreach (Test test in testLoadResult.tests.Where(PredicateCreator(t => t.Result, "Failed")))
-            {
-                Row testRow = new Row("Test", test.ID);
-                Cell[] testCells = new Cell[]
+                Row contentBodyRow = new Row("", "");
+                var failedResults = PredicateCreator(t => t.Result, "Failed");
+                foreach (Test test in testLoadResult.tests.Where(PredicateCreator(t => t.Result, "Failed")))
                 {
-                new Cell(CreateColoredResult(test.Result), test.Result, "", false),
+                    Row testRow = new Row("Test", test.ID);
+                    Cell[] testCells = new Cell[]
+                    {
+                new Cell(CreateColoredResult(test.Result,test.Message), test.Result, "", false),
                 new Cell(test.MethodName, "leftAlign", "", false),
                 new Cell(test.ClassName, "ClassName", "", false),
                 new Cell(DateTime.Parse(test.StartTime.ToString()).ToString(), "StartTime", "", false),
                 new Cell(test.Duration, "statusCount", "", false)
-                };
-                testRow.Add(testCells);
-                content.Add(testRow);
-
-                if (test.Message != "")
-                {
-                    Row msgRow = new Row("Test", test.ID);
-                    Cell[] msgCells = new Cell[]
-                    {
-                new Cell("Message", "messageTitle", "", false),
-                new Cell(test.Message, "message", "", false,colSpan: "4")
                     };
+                    testRow.Add(testCells);
+                    content.Add(testRow);
 
-                    msgRow.Add(msgCells);
-                    content.Add(msgRow);
+                    if (test.Message != "")
+                    {
+                        Row msgRow = new Row("Test", test.ID);
+                        Cell[] msgCells = new Cell[]
+                        {
+                new Cell("Message", "hiddenMessageTitle", "", false),
+                new Cell(test.Message, "hiddenMessage", "", false,colSpan: "4")
+                        };
+
+                        msgRow.Add(msgCells);
+                        content.Add(msgRow);
+                    }
                 }
 
+                ShowHideTableBody tableBody = new ShowHideTableBody(headRow, content);
+
+                doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.Export()).AppendChild(tableBody.Export());
             }
-
-            ShowHideTableBody tableBody = new ShowHideTableBody(headRow, content);
-
-            doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.Export()).AppendChild(tableBody.Export());
+            else
+            {
+                table.Add(headRow);
+                doc.DocumentNode.SelectSingleNode("/html/body").AppendChild(table.Export());
+            }
 
             return doc;
         }
@@ -262,7 +268,7 @@ namespace TrxToHtmlConverter
                     Row testRow = new Row("Test", test.ID);
                     Cell[] testCells = new Cell[]
                     {
-                new Cell(CreateColoredResult(test.Result), test.Result, "", false),
+                new Cell(CreateColoredResult(test.Result,test.Message), test.Result, "", false),
                 new Cell(test.MethodName, "leftAlign", "", false),
                 new Cell(DateTime.Parse(test.StartTime.ToString()).ToString(), "StartTime", "", false),
                 new Cell(test.Duration, "statusCount", "", false)
@@ -276,8 +282,8 @@ namespace TrxToHtmlConverter
                         Row msgRow = new Row("Test", test.ID);
                         Cell[] msgCells = new Cell[]
                         {
-                new Cell("Message:", "messageTitle", "", false),
-                new Cell(test.Message, "message", "", false,colSpan: "3")
+                new Cell("Message", "hiddenMessageTitle", "", false),
+                new Cell(test.Message, "hiddenMessage", "", false,colSpan: "3")
                         };
 
                         msgRow.Add(msgCells);
@@ -324,9 +330,10 @@ namespace TrxToHtmlConverter
             return string.Format("{0:hh\\:mm\\:ss\\.fff}", (stopTime - startTime));
         }
 
-        private static string CreateColoredResult(string result)
+        private static string CreateColoredResult(string result, string message)
         {
             string color = "";
+            string showMessage = message == "" ? "" : $"<br><a class='showMessage'>Show Message</a><span>{message}</span>";
             switch (result)
             {
                 case "Passed": color = "green"; break;
@@ -335,8 +342,7 @@ namespace TrxToHtmlConverter
                 case "Warning": color = "DarkGoldenrod"; break;
                 case "NotExecuted": color = "DarkGoldenrod"; break;
             }
-
-            return $"<font color={color} size=4><strong>{result}</strong></font><br>";
+            return $"<font color={color} size=4><strong>{result}</strong></font>" + showMessage;
         }
         #endregion
     }
