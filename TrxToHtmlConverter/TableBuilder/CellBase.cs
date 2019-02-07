@@ -15,6 +15,7 @@ namespace TrxToHtmlConverter.TableBuilder
         protected List<CellBase> children;
         protected virtual string tagName { get; set; } = "";
         protected string additional { get; set; }
+        public CellBase Parent { get; set; }
 
         public CellBase(string content, string styleClass = "", string id = "") : this()
         {
@@ -43,13 +44,17 @@ namespace TrxToHtmlConverter.TableBuilder
 
         public void Add(CellBase cell)
         {
-            children.Add(cell); //todo
+            cell.Parent = this;
+            children.Add(cell);
         }
 
         public void Add(CellBase[] cells)
         {
             foreach (CellBase cell in cells)
+            {
+                cell.Parent = this;
                 children.Add(cell);
+            }   
         }
 
         public static string ToUpperFirstLetter(string word)

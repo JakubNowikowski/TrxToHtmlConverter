@@ -138,7 +138,7 @@ namespace TrxToHtmlConverter
             {
                 new Cell("", "marginCell", "",false),
                 new Cell("", "Failed", "",false),
-                new Cell("Failed Tests", "leftAlign","" , false),
+                new Cell("Failed Tests", "leftAlign", "", false),
                 new Cell(testLoadResult.totalTestsProp.Failed, "", "number", false)
             };
 
@@ -147,15 +147,15 @@ namespace TrxToHtmlConverter
             Row contentHeadRow = new Row("", "");
             Cell[] contentHeadRowCells = new Cell[]
             {
-                new Cell("Status","TestsTableHeaderFirst","",true),
-                new Cell("Test","TestsTableHeader","",true),
-                new Cell("Class Name","TestsTableHeader","",true),
-                new Cell("Start Time","TestsTableHeader","",true),
-                new Cell("Duration","TestsTableHeaderLast","",true),
+                new Cell("Status","TestsTableHeaderFirst","",true, onClick: "sortTable(0, 'AllFailedTestsTableContent', this)"),
+                new Cell("Test","TestsTableHeader","",true, onClick: "sortTable(1, 'AllFailedTestsTableContent', this)"),
+                new Cell("Class Name","TestsTableHeader","",true, onClick: "sortTable(2, 'AllFailedTestsTableContent', this)"),
+                new Cell("Start Time","TestsTableHeader","",true, onClick: "sortTable(3, 'AllFailedTestsTableContent', this)"),
+                new Cell("Duration","TestsTableHeaderLast","",true, onClick: "sortTable(4, 'AllFailedTestsTableContent', this)"),
             };
             contentHeadRow.Add(contentHeadRowCells);
 
-            Table content = new Table("", "showHideTable", contentHeadRow);
+            Table content = new Table("AllFailedTestsTableContent", "showHideTable", contentHeadRow);
 
             Row contentBodyRow = new Row("", "");
             var failedResults = PredicateCreator(t => t.Result, "Failed");
@@ -244,16 +244,17 @@ namespace TrxToHtmlConverter
 
                 //create container table and its head row
                 Row contentHeadRow = new Row("", "");
+                string tableId = testedClass + "Table";
                 Cell[] contentHeadRowCells = new Cell[]
                 {
-                new Cell("Status","TestsTableHeaderFirst","",true),
-                new Cell("Test","TestsTableHeader","",true),
-                new Cell("Start Time","TestsTableHeader","",true),
-                new Cell("Duration","TestsTableHeaderLast","",true)
+                new Cell("Status","TestsTableHeaderFirst","",true, onClick: $"sortTable(0, '{tableId}', this)"),
+                new Cell("Test","TestsTableHeader","",true, onClick: $"sortTable(1, '{tableId}', this)"),
+                new Cell("Start Time","TestsTableHeader","",true, onClick: $"sortTable(2, '{tableId}', this)"),
+                new Cell("Duration","TestsTableHeaderLast","",true, onClick: $"sortTable(3, '{tableId}', this)")
                 };
                 contentHeadRow.Add(contentHeadRowCells);
 
-                Table containerTable = new Table("", "showHideTable", contentHeadRow);
+                Table containerTable = new Table(tableId, "showHideTable", contentHeadRow);
 
                 //create container table body
                 foreach (Test test in testLoadResult.tests.Where(PredicateCreator(t => t.ClassName, testedClass)))
