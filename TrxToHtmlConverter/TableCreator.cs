@@ -173,14 +173,17 @@ namespace TrxToHtmlConverter
                     };
                     testRow.Add(testCells);
                     content.Add(testRow);
-
+                    
                     if (test.Message != "")
                     {
                         Row msgRow = new Row("Test", test.ID);
                         Cell[] msgCells = new Cell[]
                         {
                 new Cell("Message", "hiddenMessageTitle", "", false),
-                new Cell(test.Message, "hiddenMessage", "", false,colSpan: "4")
+                new Cell(test.Message, "hiddenMessage", "", false),
+                new Cell("", "hiddenMessage", "", false),
+                new Cell("", "hiddenMessage", "", false),
+                new Cell("", "hiddenMessage", "", false)
                         };
 
                         msgRow.Add(msgCells);
@@ -283,7 +286,9 @@ namespace TrxToHtmlConverter
                         Cell[] msgCells = new Cell[]
                         {
                 new Cell("Message", "hiddenMessageTitle", "", false),
-                new Cell(test.Message, "hiddenMessage", "", false,colSpan: "3")
+                new Cell(test.Message, "hiddenMessage", "", false),
+                new Cell("", "hiddenMessage", "", false),
+                new Cell("", "hiddenMessage", "", false)
                         };
 
                         msgRow.Add(msgCells);
