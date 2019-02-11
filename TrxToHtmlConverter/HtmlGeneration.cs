@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using HtmlAgilityPack;
+using System.Diagnostics;
 
 namespace TrxToHtmlConverter
 {
@@ -12,19 +13,47 @@ namespace TrxToHtmlConverter
         private string _OutputPath;
         private string _TemplatePath;
         private string _TrxFilePath;
+        private string _DllFilePath;
         private string _ChangeSetNumber;
         private string _PbiNumber;
         private TestLoadResult _TestLoadResult;
 
-        public HtmlGeneration(string trxFilePath, string outputPath, string pbiNumber, string changeSetNumber)
+        public HtmlGeneration(string dllFilePath, string outputPath, string pbiNumber, string changeSetNumber)
         {
             _OutputPath = outputPath;
             _TemplatePath = @"../../../TrxToHtmlConverter/template.html";
-            _TrxFilePath = trxFilePath;
+            _DllFilePath = dllFilePath;
             _ChangeSetNumber = changeSetNumber;
             _PbiNumber = pbiNumber;
         }
 
+        public void CreateTrxFile()
+        {
+            var vsTestConsolePath = @"vstest.console.exe";
+            var resultDir = @"""C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\TestResults""";
+            var dllFilePath = @"""C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\UnitTests.dll""";
+            var arguments = $@" /logger:trx;LogFileName=Results.trx /ResultsDirectory:{resultDir}";
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = "cmd.exe",
+                Arguments = $@"/K """"{vsTestConsolePath}"" {dllFilePath + arguments}""",
+                RedirectStandardInput = true,
+                RedirectStandardOutput = false,
+                RedirectStandardError = false,
+                UseShellExecute = false,
+                CreateNoWindow = false
+            };
+
+            var process = new Process { StartInfo = startInfo };
+
+            process.Start();
+            process.StandardInput.WriteLine("exit");
+            process.WaitForExit();
+
+            _TrxFilePath = @"C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\TestResults\Results.trx";
+
+        }
+      
         public void Generation()
         {
             if (_TestLoadResult == null)
@@ -118,7 +147,7 @@ namespace TrxToHtmlConverter
 
         private HtmlDocument LoadTables(HtmlDocument doc)
         {
-            doc = TableCreator.CreateTopTables(doc, _TestLoadResult,_PbiNumber, _ChangeSetNumber);
+            doc = TableCreator.CreateTopTables(doc, _TestLoadResult, _PbiNumber, _ChangeSetNumber);
             doc = TableCreator.CreateAllFailedTestsTable(doc, _TestLoadResult);
             doc = TableCreator.CreateAllTestsGroupedByClassesTable(doc, _TestLoadResult);
 

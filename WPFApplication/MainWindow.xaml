@@ -5,21 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:WPFApplication"
         mc:Ignorable="d"
-        Title="Trx To Html Converter" Height="350" Width="950">
+        Title="Trx To Html Converter" Height="450" Width="950">
     <Window.Resources>
         <ResourceDictionary>
             <vm:ApplicationViewModel  x:Key="viewModel" />
         </ResourceDictionary>
     </Window.Resources>
     <Grid Drop="DragAndDrop" AllowDrop="true" Background="Transparent" Margin="0,0,2,0">
-        <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="850" Height="270">
-            <Label FontSize="14" FontWeight="Bold">Drag and drop or search trx file</Label>
+        <StackPanel DataContext="{StaticResource ResourceKey=viewModel}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="850" Height="370">
+            <Label FontSize="14" FontWeight="Bold">Enter VstestConsole.exe directory</Label>
+            <Label>Path:</Label>
+            <TextBox Name="VstestPathTextBox" AllowDrop="True" Text="{Binding VstestConsolePath, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
+            <Label FontSize="14" FontWeight="Bold">Drag and drop or search dll file</Label>
             <Label>Path to file:</Label>
-            <TextBox Name="PathTextBox" AllowDrop="True" Text="{Binding InputPath, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
-            <Label FontSize="14" FontWeight="Bold">Enter PBI number</Label>
-            <TextBox AllowDrop="True" Text="{Binding PbiNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
-            <Label FontSize="14" FontWeight="Bold">Enter changeset number</Label>
-            <TextBox AllowDrop="True" Text="{Binding ChangeSetNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
+            <TextBox Name="FilePathTextBox" AllowDrop="True" Text="{Binding FilePath, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="14" FontWeight="Bold">Enter PBI number</Label>
+                <TextBox Grid.Row="1" Grid.Column="0" AllowDrop="True" Text="{Binding PbiNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
+                <Label Grid.Row="0" Grid.Column="1" FontSize="14" FontWeight="Bold">Enter changeset number</Label>
+                <TextBox Grid.Row="1" Grid.Column="1" AllowDrop="True" Text="{Binding ChangeSetNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10,0" Height="20"/>
+            </Grid>
             <Grid Margin="10,0">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>

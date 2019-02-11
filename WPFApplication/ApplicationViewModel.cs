@@ -15,10 +15,10 @@ namespace WPFApplication
         public ICommand ConvertCommand { private set; get; }
         public ICommand OpenCommand { private set; get; }
 
-        public string InputPath
+        public string FilePath
         {
-            set => SetProperty(ref app.inputPath, value);
-            get => app.inputPath;
+            set => SetProperty(ref app.filePath, value);
+            get => app.filePath;
         }
 
         public string ChangeSetNumber
@@ -58,12 +58,13 @@ namespace WPFApplication
 
         public ApplicationViewModel()
         {
-            SearchCommand = new RelayCommand((obj) => { InputPath = app.OpenFileDialog(); });
+            SearchCommand = new RelayCommand((obj) => { FilePath = app.OpenFileDialog(); });
             ConvertCommand = new RelayCommand((obj) =>
             {
-                if (InputPath != null)
+                if (FilePath != null)
                 {
-                    OutputPath = InputPath.Replace(".trx", ".html");
+                    //OutputPath = FilePath.Replace(".trx", ".html");
+                    OutputPath = FilePath.Replace(".dll", ".html");
                     app.Convert();
                     Result = "Exported file to:\n" + OutputPath;
                     EnableToOpen = "true";

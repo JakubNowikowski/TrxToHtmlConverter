@@ -9,7 +9,7 @@ namespace WPFApplication
 {
     class ApplicationModel
     {
-        public string inputPath;
+        public string filePath;
         public string changeSetNumber;
         public string pbiNumber;
         public string outputPath;
@@ -41,7 +41,8 @@ namespace WPFApplication
 
         public void Convert()
         {
-            HtmlGeneration Html = new HtmlGeneration(inputPath, outputPath, pbiNumber, changeSetNumber);
+            HtmlGeneration Html = new HtmlGeneration(filePath, outputPath, pbiNumber, changeSetNumber);
+            Html.CreateTrxFile();
             Html.InitializeTrxData();
             Html.Generation();
         }
