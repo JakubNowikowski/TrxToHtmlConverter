@@ -14,36 +14,43 @@ namespace TrxToHtmlConverter
         private string _TemplatePath;
         private string _TrxFilePath;
         private string _DllFilePath;
+        private string _VsTestConsolePath;
         private string _ChangeSetNumber;
         private string _PbiNumber;
         private TestLoadResult _TestLoadResult;
 
-        public HtmlGeneration(string dllFilePath, string outputPath, string pbiNumber, string changeSetNumber)
+        public HtmlGeneration(string vsTestConsolePath, string dllFilePath, string outputPath, string pbiNumber, string changeSetNumber)
         {
             _OutputPath = outputPath;
             _TemplatePath = @"../../../TrxToHtmlConverter/template.html";
             _DllFilePath = dllFilePath;
             _ChangeSetNumber = changeSetNumber;
             _PbiNumber = pbiNumber;
+            _VsTestConsolePath = vsTestConsolePath;
         }
 
         public void CreateTrxFile()
         {
-            var vsTestConsolePath = @"vstest.console.exe";
+            //var vsTestConsolePath = @"vstest.console.exe";
+            //"C:\\Program Files(x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe"
+            //string consolePath = @"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\TestPlatform\vstest.console.exe";
+            string consolePath = _VsTestConsolePath + "vstest.console.exe";
+
             var resultDir = @"""C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\TestResults""";
             var dllFilePath = @"""C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\UnitTests.dll""";
             var arguments = $@" /logger:trx;LogFileName=Results.trx /ResultsDirectory:{resultDir}";
             var startInfo = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
-                Arguments = $@"/K """"{vsTestConsolePath}"" {dllFilePath + arguments}""",
+                Arguments = $@"/K """"{_VsTestConsolePath}"" {dllFilePath + arguments}""",
                 RedirectStandardInput = true,
                 RedirectStandardOutput = false,
                 RedirectStandardError = false,
                 UseShellExecute = false,
                 CreateNoWindow = false
             };
-
+            //"/K \"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe\" \"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\UnitTests.dll\" /logger:trx;LogFileName=Results.trx /ResultsDirectory:\"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\TestResults\"\""
+            //"/K \"\"C:\\Program Files(x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe\" \"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\UnitTests.dll\" /logger:trx;LogFileName=Results.trx /ResultsDirectory:\"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\TestResults\"\""
             var process = new Process { StartInfo = startInfo };
 
             process.Start();
@@ -51,9 +58,8 @@ namespace TrxToHtmlConverter
             process.WaitForExit();
 
             _TrxFilePath = @"C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\TestResults\Results.trx";
-
         }
-      
+
         public void Generation()
         {
             if (_TestLoadResult == null)

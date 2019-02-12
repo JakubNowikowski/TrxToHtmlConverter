@@ -11,7 +11,8 @@ namespace WPFApplication
     class ApplicationViewModel : ViewModelBase
     {
         static ApplicationModel app = new ApplicationModel();
-        public ICommand SearchCommand { private set; get; }
+        public ICommand SearchFileCommand { private set; get; }
+        public ICommand SearchExeCommand { private set; get; }
         public ICommand ConvertCommand { private set; get; }
         public ICommand OpenCommand { private set; get; }
 
@@ -21,6 +22,12 @@ namespace WPFApplication
             get => app.filePath;
         }
 
+        public string VsTestConsolePath
+        {
+            set => SetProperty(ref app.vsTestConsolePath, value);
+            get => app.vsTestConsolePath;
+        }
+        
         public string ChangeSetNumber
         {
             set => SetProperty(ref app.changeSetNumber, value);
@@ -58,7 +65,8 @@ namespace WPFApplication
 
         public ApplicationViewModel()
         {
-            SearchCommand = new RelayCommand((obj) => { FilePath = app.OpenFileDialog(); });
+            SearchFileCommand = new RelayCommand((obj) => { FilePath = app.OpenFileDialog("dll"); });
+            SearchExeCommand = new RelayCommand((obj) => { VsTestConsolePath = app.OpenFileDialog("exe"); });
             ConvertCommand = new RelayCommand((obj) =>
             {
                 if (FilePath != null)
