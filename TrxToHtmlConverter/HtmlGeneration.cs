@@ -14,45 +14,37 @@ namespace TrxToHtmlConverter
         private string _TemplatePath;
         private string _TrxFilePath;
         private string _DllFilePath;
-        private string _VsTestConsolePath;
         private string _ChangeSetNumber;
         private string _PbiNumber;
         private TestLoadResult _TestLoadResult;
 
-        public HtmlGeneration(string vsTestConsolePath, string dllFilePath, string outputPath, string pbiNumber, string changeSetNumber)
+        public HtmlGeneration(string outputPath, string dllFilePath, string pbiNumber, string changeSetNumber)
         {
-            _OutputPath = outputPath;
             _TemplatePath = @"../../../TrxToHtmlConverter/template.html";
-            _DllFilePath = dllFilePath;
+            _DllFilePath = '"' + dllFilePath + '"';
             _ChangeSetNumber = changeSetNumber;
             _PbiNumber = pbiNumber;
-            _VsTestConsolePath = vsTestConsolePath;
+            _OutputPath = outputPath;
+            //_OutputPath = @"C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\UnitTests.html";
         }
 
-        public void CreateTrxFile()
+        //TODO if statement checks file extension .trx or .dll
+        public void CreateTrxFile(string consolePath)
         {
-            //var vsTestConsolePath = @"vstest.console.exe";
-            //"C:\\Program Files(x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe"
-            //string consolePath = @"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\TestPlatform\vstest.console.exe";
-            string consolePath = _VsTestConsolePath + "vstest.console.exe";
-
             var resultDir = @"""C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\TestResults""";
-            var dllFilePath = @"""C:\Users\OptiNav\source\repos\MSTest.Net Framework\UnitTests\bin\Debug\UnitTests.dll""";
             var arguments = $@" /logger:trx;LogFileName=Results.trx /ResultsDirectory:{resultDir}";
             var startInfo = new ProcessStartInfo
             {
                 FileName = "cmd.exe",
-                Arguments = $@"/K """"{_VsTestConsolePath}"" {dllFilePath + arguments}""",
+                Arguments = $@"/K """"{consolePath}"" {_DllFilePath + arguments}""",
                 RedirectStandardInput = true,
                 RedirectStandardOutput = false,
                 RedirectStandardError = false,
                 UseShellExecute = false,
                 CreateNoWindow = false
             };
-            //"/K \"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe\" \"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\UnitTests.dll\" /logger:trx;LogFileName=Results.trx /ResultsDirectory:\"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\TestResults\"\""
-            //"/K \"\"C:\\Program Files(x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\Extensions\\TestPlatform\\vstest.console.exe\" \"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\UnitTests.dll\" /logger:trx;LogFileName=Results.trx /ResultsDirectory:\"C:\\Users\\OptiNav\\source\\repos\\MSTest.Net Framework\\UnitTests\\bin\\Debug\\TestResults\"\""
-            var process = new Process { StartInfo = startInfo };
 
+            var process = new Process { StartInfo = startInfo };
             process.Start();
             process.StandardInput.WriteLine("exit");
             process.WaitForExit();

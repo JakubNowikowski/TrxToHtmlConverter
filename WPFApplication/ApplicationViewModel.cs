@@ -18,8 +18,26 @@ namespace WPFApplication
 
         public string FilePath
         {
-            set => SetProperty(ref app.filePath, value);
+            set => SetProperty(ref app.filePath,value );
             get => app.filePath;
+        }
+
+        public bool IsTestCategorySearchChecked
+        {
+            set
+            {
+                if (app.isTestCategorySearchChecked == value) return;
+
+                app.isTestCategorySearchChecked = value;
+                TestCategoryEnable = app.isTestCategorySearchChecked ? true : false;
+            }
+            get => app.isTestCategorySearchChecked;
+        }
+
+        public string TestCategory
+        {
+            set => SetProperty(ref app.testCategory, value);
+            get => app.testCategory;
         }
 
         public string VsTestConsolePath
@@ -27,7 +45,7 @@ namespace WPFApplication
             set => SetProperty(ref app.vsTestConsolePath, value);
             get => app.vsTestConsolePath;
         }
-        
+
         public string ChangeSetNumber
         {
             set => SetProperty(ref app.changeSetNumber, value);
@@ -52,10 +70,16 @@ namespace WPFApplication
             get => app.result;
         }
 
-        public string EnableToOpen
+        public bool EnableToOpen
         {
             private set => SetProperty(ref app.enableToOpen, value);
             get => app.enableToOpen;
+        }
+
+        public bool TestCategoryEnable
+        {
+            private set => SetProperty(ref app.testCategoryEnable, value);
+            get => app.testCategoryEnable;
         }
 
         void OpenHtmlFile()
@@ -71,11 +95,11 @@ namespace WPFApplication
             {
                 if (FilePath != null)
                 {
-                    //OutputPath = FilePath.Replace(".trx", ".html");
                     OutputPath = FilePath.Replace(".dll", ".html");
                     app.Convert();
+                    //OutputPath = FilePath.Replace(".trx", ".html");
                     Result = "Exported file to:\n" + OutputPath;
-                    EnableToOpen = "true";
+                    EnableToOpen = true;
                 }
             });
             OpenCommand = new RelayCommand((obj) => { OpenHtmlFile(); });
